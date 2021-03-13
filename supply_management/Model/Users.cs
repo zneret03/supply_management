@@ -17,8 +17,51 @@ namespace supply_management.Model
         MySqlConnection conn;
         MySqlCommand command;
         String con;
-
+        MySqlDataReader reader;
         DateTime now = DateTime.Now;
+
+        protected MySqlDataReader returnData(String username)
+        {
+            conn = new MySqlConnection(this.connection());
+            conn.Open();
+            using(command = new MySqlCommand("SELECT * FROM users WHERE username = '" + username + "'", conn))
+            {
+                reader = command.ExecuteReader();
+            }
+
+            return reader;
+        }
+
+        protected void DeleteCashier(String id, frmEmployeeReg clear)
+        {
+            try
+            {
+                DialogResult check = MessageBox.Show("Delete this account?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                conn = new MySqlConnection(this.connection());
+                conn.Open();
+
+                if(check == DialogResult.Yes)
+                {
+                    using (command = new MySqlCommand("DELETE FROM users WHERE user_id = '" + id + "'", conn))
+                    {
+                        bool checkResult = (int)command.ExecuteNonQuery() > 0;
+
+                        if (checkResult == true)
+                        {
+                            MessageBox.Show("Deleted Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            clear.clearTheWay();
+                        }
+                    }
+                    return;
+                }
+              
+                conn.Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         //Login Credentials
         protected void userLogin(String username, String password, Form1 suspend)
         {
@@ -47,7 +90,7 @@ namespace supply_management.Model
                     if(usertype == "Admin")
                     {
                         MessageBox.Show("Successfully Login " + username.ToUpper(), "success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        Main main = new Main(username);
+                        Main main = new Main(suspend);
                         suspend.Hide();
                         main.Show();
                     }
@@ -56,7 +99,6 @@ namespace supply_management.Model
                         MessageBox.Show("Successfully Login " + username.ToUpper(), "success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         frmPOS pos = new frmPOS(username);
                         pos.Show();
-                        pos.back.Hide();
                         pos.Logout.Show();
                         suspend.Hide();
                         
@@ -75,18 +117,6 @@ namespace supply_management.Model
                 MessageBox.Show(ex.Message);
             }
 
-        }
-
-        protected object countUsers()
-        {
-            conn = new MySqlConnection(this.connection());
-            conn.Open();
-            object count;
-            using (command = new MySqlCommand("SELECT count(*) FROM users", conn))
-            {
-                count = command.ExecuteScalar();
-            }   
-            return count;
         }
 
         //Check user if exist
@@ -110,7 +140,7 @@ namespace supply_management.Model
         }
 
         //Delete user from table
-        protected void Delete(String id, EmployeeReg suspend)
+        protected void Delete(String id, Form1 frm, Main main)
         {
             try
             {
@@ -127,7 +157,14 @@ namespace supply_management.Model
                     if (isConfirm == true)
                     {
                         MessageBox.Show("Data deleted successfully", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        suspend.Hide();
+
+                        if(MessageBox.Show("You are no longer access to this account","Warning",MessageBoxButtons.OK, MessageBoxIcon.Warning) == DialogResult.OK)
+                        {
+                            main.Hide();
+                            frm.username.Text = "";
+                            frm.password.Text = "";
+                            frm.Show();
+                        }
                     }
                    
                     command.Dispose();
@@ -150,7 +187,7 @@ namespace supply_management.Model
            try
            {
                    Model.Users use = new Model.Users();
-                   Register reg = new Register();
+                   //Register reg = new Register();
 
                    conn = new MySqlConnection(this.connection());
                    conn.Open();
@@ -193,75 +230,56 @@ namespace supply_management.Model
            }
         }
 
-        //Update Data From Database
-        protected void UpdateData(String id, TextBox[] text, ComboBox[] combo, EmployeeReg suspend)
+        //Change Password
+        protected String getPassword(String username)
+        {
+                String password = "";
+                conn = new MySqlConnection(this.connection());
+                conn.Open();
+                using(command = new MySqlCommand("SELECT * FROM users WHERE username = @user",conn))
+                {
+                    command.Parameters.AddWithValue("@user", username);
+                    reader = command.ExecuteReader();
+                    reader.Read();
+                    if(reader.HasRows)
+                    {
+                        password = reader["password"].ToString();
+                    }
+                }
+                conn.Close();
+                return password;
+        }
+
+        protected void ChangePassword(String username, String password)
         {
             try
             {
-                Model.Users use = new Model.Users();
-                Register reg = new Register();
-
                 conn = new MySqlConnection(this.connection());
-                conn.Open();        
-
-                command = new MySqlCommand("UPDATE users SET username = @username, password = @password, fname = @fname, mname = @mname, lname = @lname, address = @address, age = @age, gender = @gender, usertype = @usertype, date_updated = @date_updated WHERE user_id = @user_id", conn);
-                command.Parameters.AddWithValue("@username", text[0].Text);
-                command.Parameters.AddWithValue("@password", text[1].Text);
-                command.Parameters.AddWithValue("@fname", text[2].Text);
-                command.Parameters.AddWithValue("@mname", text[3].Text);
-                command.Parameters.AddWithValue("@lname", text[4].Text);
-                command.Parameters.AddWithValue("@address", text[5].Text);
-                command.Parameters.AddWithValue("@age", text[6].Text);
-                command.Parameters.AddWithValue("@gender", combo[0].SelectedItem.ToString());
-                command.Parameters.AddWithValue("@usertype", combo[1].SelectedItem.ToString());
-                command.Parameters.AddWithValue("@date_updated", now);
-                command.Parameters.AddWithValue("@user_id", id);
-
-                int count = command.ExecuteNonQuery();
-
-                if (count > 0)
+                conn.Open();
+                using(command = new MySqlCommand("UPDATE users SET password = @password WHERE username = @username", conn))
                 {
-                    MessageBox.Show("Updated Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    reg.dataGridView1.DataSource = use.loadData();
-                    suspend.Hide();
+                    command.Parameters.AddWithValue("@password", password);
+                    command.Parameters.AddWithValue("@username", username);
+
+                    bool checkResult = (int)command.ExecuteNonQuery() > 0;
+
+                    if(checkResult == true)
+                    {
+                        MessageBox.Show("Your password change successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
                 }
 
-                foreach (TextBox txt in text)
-                {
-                    txt.Clear();
-                }
-
-                foreach (ComboBox options in combo)
-                {
-                    options.SelectedIndex = 0;
-                }
-                
-                command.Dispose();
                 conn.Close();
-
             }
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            finally
-            {
-                command.Dispose();
-                conn.Close();
-            }
+
         }
 
-        //Search data
-        public DataTable searchData(String query)
-        {
-                conn = new MySqlConnection(this.connection());
-                conn.Open();
-                DataTable dt = new DataTable();
-                MySqlDataAdapter sda = new MySqlDataAdapter(query, conn);
-                sda.Fill(dt);
-
-                return dt;
-        }
+        //Change Password
 
         //Load Data From specific Table
         protected BindingSource loadData()

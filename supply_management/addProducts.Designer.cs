@@ -53,6 +53,8 @@
             this.Date = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.barcode = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.reorder = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -151,7 +153,7 @@
             // 
             this.IdLabel.AutoSize = true;
             this.IdLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IdLabel.Location = new System.Drawing.Point(38, 430);
+            this.IdLabel.Location = new System.Drawing.Point(282, 409);
             this.IdLabel.Name = "IdLabel";
             this.IdLabel.Size = new System.Drawing.Size(32, 21);
             this.IdLabel.TabIndex = 17;
@@ -167,6 +169,7 @@
             this.categoryName.Name = "categoryName";
             this.categoryName.Size = new System.Drawing.Size(273, 33);
             this.categoryName.TabIndex = 39;
+            this.categoryName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.categoryName_KeyPress);
             // 
             // brandName
             // 
@@ -178,6 +181,7 @@
             this.brandName.Name = "brandName";
             this.brandName.Size = new System.Drawing.Size(273, 33);
             this.brandName.TabIndex = 38;
+            this.brandName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.brandName_KeyPress);
             // 
             // label9
             // 
@@ -226,7 +230,7 @@
             this.description.Multiline = true;
             this.description.Name = "description";
             this.description.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.description.Size = new System.Drawing.Size(274, 138);
+            this.description.Size = new System.Drawing.Size(274, 102);
             this.description.TabIndex = 41;
             this.description.TextChanged += new System.EventHandler(this.description_TextChanged);
             // 
@@ -235,7 +239,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(374, 347);
+            this.label5.Location = new System.Drawing.Point(67, 409);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(112, 21);
             this.label5.TabIndex = 44;
@@ -248,7 +252,7 @@
             this.checkDelete.Checked = false;
             this.checkDelete.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
             this.checkDelete.ForeColor = System.Drawing.Color.White;
-            this.checkDelete.Location = new System.Drawing.Point(348, 348);
+            this.checkDelete.Location = new System.Drawing.Point(41, 410);
             this.checkDelete.Name = "checkDelete";
             this.checkDelete.Size = new System.Drawing.Size(20, 20);
             this.checkDelete.TabIndex = 43;
@@ -275,7 +279,7 @@
             this.btnUpdate.IconVisible = true;
             this.btnUpdate.IconZoom = 90D;
             this.btnUpdate.IsTab = false;
-            this.btnUpdate.Location = new System.Drawing.Point(344, 387);
+            this.btnUpdate.Location = new System.Drawing.Point(337, 410);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Normalcolor = System.Drawing.Color.Silver;
             this.btnUpdate.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
@@ -310,7 +314,7 @@
             this.submit.IconVisible = true;
             this.submit.IconZoom = 90D;
             this.submit.IsTab = false;
-            this.submit.Location = new System.Drawing.Point(483, 387);
+            this.submit.Location = new System.Drawing.Point(476, 410);
             this.submit.Name = "submit";
             this.submit.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
             this.submit.OnHovercolor = System.Drawing.Color.Silver;
@@ -362,12 +366,32 @@
             this.barcode.Size = new System.Drawing.Size(274, 33);
             this.barcode.TabIndex = 47;
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(335, 334);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(66, 21);
+            this.label12.TabIndex = 50;
+            this.label12.Text = "Reorder";
+            // 
+            // reorder
+            // 
+            this.reorder.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reorder.Location = new System.Drawing.Point(339, 359);
+            this.reorder.Name = "reorder";
+            this.reorder.Size = new System.Drawing.Size(274, 33);
+            this.reorder.TabIndex = 49;
+            // 
             // addProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(654, 464);
+            this.ClientSize = new System.Drawing.Size(654, 472);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.reorder);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.barcode);
             this.Controls.Add(this.btnUpdate);
@@ -429,6 +453,8 @@
         public System.Windows.Forms.TextBox Date;
         private System.Windows.Forms.Label label11;
         public System.Windows.Forms.TextBox barcode;
+        private System.Windows.Forms.Label label12;
+        public System.Windows.Forms.TextBox reorder;
 
     }
 }

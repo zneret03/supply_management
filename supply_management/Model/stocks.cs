@@ -35,17 +35,225 @@ namespace supply_management.Model
             return bind;
         }
 
-        protected object count()
+        protected MySqlDataReader display(String query)
         {
             conn = new MySqlConnection(this.connection());
             conn.Open();
-            object countData;
-            using(command = new MySqlCommand("SELECT count(*) FROM stocks", conn))
+            command = new MySqlCommand(query, conn);
+            reader = command.ExecuteReader();
+
+            return reader;
+        }
+
+        protected String count()
+        {
+            conn = new MySqlConnection(this.connection());
+            conn.Open();
+            String countData = "";
+            using(command = new MySqlCommand("SELECT SUM(p.quantity) as qty FROM stocks as s INNER JOIN product as p ON p.products_id = s.products_id", conn))
             {
-                countData = command.ExecuteScalar();
+                countData = command.ExecuteScalar().ToString();
             }
 
             return countData;
+        }
+
+        //Stock Adjustment events
+        protected void insertAdjustment(TextBox[] adjustment, String cmbCommand)
+        {
+            try
+            {
+                String query = "";
+                conn = new MySqlConnection(this.connection());
+                conn.Open();
+                using(command = new MySqlCommand("INSERT INTO stock_adjustment (referenceNo, products_id, quantity, action, remarks, users) VALUES (@reference, @pcode, @qty, @act, @remarks, @user)", conn))
+                {
+                    command.Parameters.AddWithValue("@reference", adjustment[0].Text);
+                    command.Parameters.AddWithValue("@pcode", adjustment[1].Text);
+                    command.Parameters.AddWithValue("@qty", adjustment[2].Text);
+                    command.Parameters.AddWithValue("@act",cmbCommand);
+                    command.Parameters.AddWithValue("@remarks", adjustment[3].Text);
+                    command.Parameters.AddWithValue("@user", adjustment[4].Text);
+
+                    bool checkResult = (int)command.ExecuteNonQuery() > 0;
+
+                    if(checkResult == true)
+                    {
+                        MessageBox.Show("Successfully Save", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
+                    if (cmbCommand == "REMOVE FROM INVENTORY")
+                    {
+                        query = "UPDATE viewproductinventory SET quantity = quantity - '" + adjustment[2].Text + "' WHERE products_id = '" + adjustment[1].Text + "'";
+                        addRemoveEvent(adjustment, query);
+                        return;
+                    }
+
+                        query = "UPDATE viewproductinventory SET quantity = quantity + '" + adjustment[2].Text + "' WHERE products_id = '" + adjustment[1].Text + "'";
+                        addRemoveEvent(adjustment, query);
+                    
+                    alterData();
+
+                  
+                }
+
+                conn.Close();
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void addRemoveEvent(TextBox[] adjustment, String query)
+        {
+            try
+            {
+                conn = new MySqlConnection(this.connection());
+                conn.Open();
+                using (command = new MySqlCommand(query, conn))
+                {
+                    command.ExecuteNonQuery();
+                }
+                conn.Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        //Stock Adjustment events
+        protected void deleteVendor(String id)
+        {
+            try
+            {
+                conn = new MySqlConnection(this.connection());
+                conn.Open();
+                DialogResult result = MessageBox.Show("Delete this data?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if(result == DialogResult.Yes)
+                {
+                    using (command = new MySqlCommand("DELETE FROM vendor WHERE vendor_id = @id", conn))
+                    {
+                        command.Parameters.AddWithValue("@id", id);
+
+                        bool checkResult = (int)command.ExecuteNonQuery() > 0;
+                        if (checkResult == true)
+                        {
+                            MessageBox.Show("Successfully Deleted", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            alterData();
+                        }
+                    }
+                }
+                else
+                {
+                    return;
+                }
+               
+                conn.Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void alterData()
+        {
+            try
+            {
+                conn = new MySqlConnection(this.connection());
+                conn.Open();
+                using(command = new MySqlCommand("ALTER TABLE vendor AUTO_INCREMENT = 1", conn))
+                {
+                    command.ExecuteNonQuery();
+                }
+
+                conn.Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        protected void updateVendor(TextBox[] vendors, String id, addVendor ven)
+        {
+            try
+            {
+                conn = new MySqlConnection(this.connection());
+                conn.Open();
+                using (command = new MySqlCommand("UPDATE vendor SET vendor = @vendor, address = @address, contactPerson = @contactperson, telephoneNo = @telephone, email = @mail, fax = @fax WHERE vendor_id = @id", conn))
+                {
+                    command.Parameters.AddWithValue("@vendor", vendors[0].Text);
+                    command.Parameters.AddWithValue("@address", vendors[1].Text);
+                    command.Parameters.AddWithValue("@contactperson", vendors[2].Text);
+                    command.Parameters.AddWithValue("@telephone", vendors[3].Text);
+                    command.Parameters.AddWithValue("@mail", vendors[4].Text);
+                    command.Parameters.AddWithValue("@fax", vendors[5].Text);
+                    command.Parameters.AddWithValue("@id", id);
+
+                    bool checkResult = (int)command.ExecuteNonQuery() > 0;
+
+                    if (checkResult == true)
+                    {
+                        MessageBox.Show("Successfully Save", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                 
+                    }
+
+                    foreach (TextBox vendor in vendors)
+                    {
+                        vendor.Clear();
+                    }
+
+                    ven.Hide();
+                }
+
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+
+        protected void insertVendor(TextBox[] vendors, frmVendor ven)
+        {
+            try
+            {
+                conn = new MySqlConnection(this.connection());
+                conn.Open();
+                using(command = new MySqlCommand("INSERT INTO vendor (vendor, address, contactPerson, telephoneNo, email, fax) VALUES (@vendor, @address, @contactperson, @telephone, @mail, @fax)", conn))
+                {
+                    command.Parameters.AddWithValue("@vendor", vendors[0].Text);
+                    command.Parameters.AddWithValue("@address", vendors[1].Text);
+                    command.Parameters.AddWithValue("@contactperson", vendors[2].Text);
+                    command.Parameters.AddWithValue("@telephone", vendors[3].Text);
+                    command.Parameters.AddWithValue("@mail", vendors[4].Text);
+                    command.Parameters.AddWithValue("@fax", vendors[5].Text);
+
+                    bool checkResult = (int)command.ExecuteNonQuery() > 0;
+
+                    if(checkResult == true)
+                    {
+                        MessageBox.Show("Successfully Save", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ven.loadDataVendor();
+                    }
+
+                   foreach(TextBox vendor in vendors)
+                   {
+                       vendor.Clear();
+                   }
+
+                }
+
+                conn.Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         protected void notOutofOrder(String id, frmStock load)
@@ -136,6 +344,8 @@ namespace supply_management.Model
                     update.getDataProducts();
                 }
 
+
+
                 conn.Close();
                 command.Dispose();
             }
@@ -176,7 +386,7 @@ namespace supply_management.Model
             return Pcode;
         }
 
-        protected void insert(String pcode, frmStock load, TextBox[] textStocks, DateTime date)
+        protected void insert(String pcode, frmStock load, TextBox[] textStocks, String date, String id)
         {
             try
             {
@@ -185,11 +395,12 @@ namespace supply_management.Model
                 if(result == DialogResult.Yes)
                 {
                     conn.Open();
-                    command = new MySqlCommand("INSERT INTO stocks (referenceNo, products_id, stockDate, stockInBy) VALUES (@referenceNo ,@id, @Date, @stockBy)", conn);
+                    command = new MySqlCommand("INSERT INTO stocks (referenceNo, products_id, stockDate, stockInBy, vendor_id) VALUES (@referenceNo ,@id, @Date, @stockBy, @vendors)", conn);
                     command.Parameters.AddWithValue("@referenceNo", textStocks[0].Text);
                     command.Parameters.AddWithValue("@id", pcode);
                     command.Parameters.AddWithValue("@Date", date);
                     command.Parameters.AddWithValue("@stockBy", textStocks[1].Text);
+                    command.Parameters.AddWithValue("@vendors", id);
 
                     bool checkResult = (int)command.ExecuteNonQuery() > 0;
                     if (checkResult == true)

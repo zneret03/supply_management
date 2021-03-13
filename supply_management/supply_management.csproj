@@ -33,8 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Bunifu_UI_v1.5.3">
-      <HintPath>..\..\..\..\..\Downloads\Bunifu_UI_v1.5.3\Bunifu_UI_v1.5.3.dll</HintPath>
+    <Reference Include="Bunifu_UI_v1.5.3, Version=1.5.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Downloads\Compressed\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
@@ -56,6 +57,10 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="Tulpep.NotificationWindow, Version=1.1.25.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Tulpep.NotificationWindow.1.1.25\lib\net40\Tulpep.NotificationWindow.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="addBrand.cs">
@@ -76,6 +81,18 @@
     <Compile Include="addProducts.Designer.cs">
       <DependentUpon>addProducts.cs</DependentUpon>
     </Compile>
+    <Compile Include="addVendor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addVendor.Designer.cs">
+      <DependentUpon>addVendor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmcancelSales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmcancelSales.Designer.cs">
+      <DependentUpon>frmcancelSales.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controller\ErrorHandler.cs" />
     <Compile Include="Controller\posController.cs" />
     <Compile Include="DataSet1.cs">
@@ -87,17 +104,65 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="frmChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChangePassword.Designer.cs">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmChartSoldItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChartSoldItems.Designer.cs">
+      <DependentUpon>frmChartSoldItems.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmdiscount.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmdiscount.Designer.cs">
       <DependentUpon>frmdiscount.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPrintSoldItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrintSoldItems.Designer.cs">
+      <DependentUpon>frmPrintSoldItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrintCancelSales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrintCancelSales.Designer.cs">
+      <DependentUpon>frmPrintCancelSales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrintInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrintInventory.Designer.cs">
+      <DependentUpon>frmPrintInventory.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPrintSales.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmPrintSales.Designer.cs">
       <DependentUpon>frmPrintSales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrintStockInHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrintStockInHistory.Designer.cs">
+      <DependentUpon>frmPrintStockInHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrintTopSelling.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrintTopSelling.Designer.cs">
+      <DependentUpon>frmPrintTopSelling.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProductImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProductImport.Designer.cs">
+      <DependentUpon>frmProductImport.cs</DependentUpon>
     </Compile>
     <Compile Include="frmReceipt.cs">
       <SubType>Form</SubType>
@@ -117,6 +182,30 @@
     <Compile Include="frmSoldItems.Designer.cs">
       <DependentUpon>frmSoldItems.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmStockAdjustment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStockAdjustment.Designer.cs">
+      <DependentUpon>frmStockAdjustment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTopItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTopItems.Designer.cs">
+      <DependentUpon>frmTopItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVendor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVendor.Designer.cs">
+      <DependentUpon>frmVendor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVoid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVoid.Designer.cs">
+      <DependentUpon>frmVoid.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\POS.cs" />
     <Compile Include="Controller\productController.cs" />
     <Compile Include="Controller\stocksController.cs" />
@@ -135,11 +224,11 @@
     </Compile>
     <Compile Include="Controller\CategoryController.cs" />
     <Compile Include="Controller\userAccount.cs" />
-    <Compile Include="EmployeeReg.cs">
+    <Compile Include="frmEmployeeReg.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EmployeeReg.Designer.cs">
-      <DependentUpon>EmployeeReg.cs</DependentUpon>
+    <Compile Include="frmEmployeeReg.Designer.cs">
+      <DependentUpon>frmEmployeeReg.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -177,6 +266,12 @@
     <Compile Include="Model\product.cs" />
     <Compile Include="Model\stocks.cs" />
     <Compile Include="Model\Users.cs" />
+    <Compile Include="frmprintCriticalStocks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmprintCriticalStocks.Designer.cs">
+      <DependentUpon>frmprintCriticalStocks.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProductLookUp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,12 +280,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Register.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Register.Designer.cs">
-      <DependentUpon>Register.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmPOS.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,6 +295,18 @@
     <EmbeddedResource Include="addProducts.resx">
       <DependentUpon>addProducts.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="addVendor.resx">
+      <DependentUpon>addVendor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmcancelSales.resx">
+      <DependentUpon>frmcancelSales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChangePassword.resx">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChartSoldItems.resx">
+      <DependentUpon>frmChartSoldItems.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmdiscount.resx">
       <DependentUpon>frmdiscount.cs</DependentUpon>
     </EmbeddedResource>
@@ -215,17 +316,35 @@
     <EmbeddedResource Include="frmCategory.resx">
       <DependentUpon>frmCategory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EmployeeReg.resx">
-      <DependentUpon>EmployeeReg.cs</DependentUpon>
+    <EmbeddedResource Include="frmEmployeeReg.resx">
+      <DependentUpon>frmEmployeeReg.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmPrintSoldItems.resx">
+      <DependentUpon>frmPrintSoldItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrintCancelSales.resx">
+      <DependentUpon>frmPrintCancelSales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrintInventory.resx">
+      <DependentUpon>frmPrintInventory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPrintSales.resx">
       <DependentUpon>frmPrintSales.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmPrintStockInHistory.resx">
+      <DependentUpon>frmPrintStockInHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrintTopSelling.resx">
+      <DependentUpon>frmPrintTopSelling.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmProduct.resx">
       <DependentUpon>frmProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProductImport.resx">
+      <DependentUpon>frmProductImport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmQuantity.resx">
       <DependentUpon>frmQuantity.cs</DependentUpon>
@@ -242,11 +361,26 @@
     <EmbeddedResource Include="frmStock.resx">
       <DependentUpon>frmStock.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmStockAdjustment.resx">
+      <DependentUpon>frmStockAdjustment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTopItems.resx">
+      <DependentUpon>frmTopItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVendor.resx">
+      <DependentUpon>frmVendor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVoid.resx">
+      <DependentUpon>frmVoid.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPOS.resx">
       <DependentUpon>frmPOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmprintCriticalStocks.resx">
+      <DependentUpon>frmprintCriticalStocks.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductLookUp.resx">
       <DependentUpon>ProductLookUp.cs</DependentUpon>
@@ -261,11 +395,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Register.resx">
-      <DependentUpon>Register.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Report1.rdlc" />
     <EmbeddedResource Include="Report2.rdlc" />
+    <EmbeddedResource Include="Report3.rdlc" />
+    <EmbeddedResource Include="Report4.rdlc" />
+    <EmbeddedResource Include="Report5.rdlc" />
+    <EmbeddedResource Include="Report6.rdlc" />
+    <EmbeddedResource Include="Report7.rdlc" />
+    <EmbeddedResource Include="Report8.rdlc" />
     <None Include="DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
@@ -291,7 +428,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\icons8-cancel-100.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

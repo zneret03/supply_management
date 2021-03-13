@@ -37,7 +37,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(191)))), ((int)(((byte)(213)))));
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -72,11 +72,6 @@
             this.label1.TabIndex = 37;
             this.label1.Text = "x";
             this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // transactionReceipt
-            // 
-            //this.transactionReceipt.DataSetName = "transactionReceipt";
-            //this.transactionReceipt.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 

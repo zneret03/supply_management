@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -45,21 +44,12 @@
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
-            // 
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Location = new System.Drawing.Point(68, 110);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(328, 268);
-            this.panel1.TabIndex = 0;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(795, 2);
+            this.label1.Location = new System.Drawing.Point(795, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(23, 30);
             this.label1.TabIndex = 1;
@@ -69,19 +59,19 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(164, 44);
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(527, 59);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(143, 30);
+            this.label2.Size = new System.Drawing.Size(194, 37);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Supply  Login";
+            this.label2.Text = "V - APE LOGIN";
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(0, -1);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(825, 37);
+            this.panel2.Size = new System.Drawing.Size(825, 40);
             this.panel2.TabIndex = 3;
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
@@ -90,11 +80,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Gray;
-            this.label3.Location = new System.Drawing.Point(95, 74);
+            this.label3.Location = new System.Drawing.Point(485, 98);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(296, 21);
+            this.label3.Size = new System.Drawing.Size(277, 20);
             this.label3.TabIndex = 4;
             this.label3.Text = "Make sure you remember your password";
             // 
@@ -110,7 +100,7 @@
             this.username.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(234)))), ((int)(((byte)(234)))));
             this.username.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(237)))), ((int)(((byte)(74)))));
             this.username.LineThickness = 4;
-            this.username.Location = new System.Drawing.Point(482, 157);
+            this.username.Location = new System.Drawing.Point(482, 151);
             this.username.Margin = new System.Windows.Forms.Padding(4);
             this.username.Name = "username";
             this.username.Size = new System.Drawing.Size(286, 33);
@@ -129,7 +119,7 @@
             this.password.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(234)))), ((int)(((byte)(234)))));
             this.password.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(237)))), ((int)(((byte)(74)))));
             this.password.LineThickness = 4;
-            this.password.Location = new System.Drawing.Point(482, 219);
+            this.password.Location = new System.Drawing.Point(482, 213);
             this.password.Margin = new System.Windows.Forms.Padding(4);
             this.password.Name = "password";
             this.password.Size = new System.Drawing.Size(286, 33);
@@ -141,7 +131,7 @@
             // 
             this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel3.Location = new System.Drawing.Point(446, 160);
+            this.panel3.Location = new System.Drawing.Point(446, 154);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(30, 30);
             this.panel3.TabIndex = 5;
@@ -150,7 +140,7 @@
             // 
             this.panel4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel4.BackgroundImage")));
             this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel4.Location = new System.Drawing.Point(446, 221);
+            this.panel4.Location = new System.Drawing.Point(446, 215);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(30, 30);
             this.panel4.TabIndex = 6;
@@ -176,7 +166,7 @@
             this.Login.IconVisible = true;
             this.Login.IconZoom = 90D;
             this.Login.IsTab = false;
-            this.Login.Location = new System.Drawing.Point(482, 293);
+            this.Login.Location = new System.Drawing.Point(482, 287);
             this.Login.Name = "Login";
             this.Login.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(61)))), ((int)(((byte)(86)))));
             this.Login.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
@@ -196,7 +186,7 @@
             this.Cancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(90)))), ((int)(((byte)(86)))));
             this.Cancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Cancel.BorderRadius = 7;
-            this.Cancel.ButtonText = "Cancel";
+            this.Cancel.ButtonText = "Exit";
             this.Cancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Cancel.DisabledColor = System.Drawing.Color.Gray;
             this.Cancel.Iconcolor = System.Drawing.Color.Transparent;
@@ -211,7 +201,7 @@
             this.Cancel.IconVisible = true;
             this.Cancel.IconZoom = 90D;
             this.Cancel.IsTab = false;
-            this.Cancel.Location = new System.Drawing.Point(482, 339);
+            this.Cancel.Location = new System.Drawing.Point(482, 333);
             this.Cancel.Name = "Cancel";
             this.Cancel.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(90)))), ((int)(((byte)(86)))));
             this.Cancel.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(99)))), ((int)(((byte)(85)))));
@@ -219,7 +209,7 @@
             this.Cancel.selected = false;
             this.Cancel.Size = new System.Drawing.Size(293, 34);
             this.Cancel.TabIndex = 9;
-            this.Cancel.Text = "Cancel";
+            this.Cancel.Text = "Exit";
             this.Cancel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Cancel.Textcolor = System.Drawing.Color.White;
             this.Cancel.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -232,7 +222,7 @@
             this.showPassword.Checked = false;
             this.showPassword.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
             this.showPassword.ForeColor = System.Drawing.Color.White;
-            this.showPassword.Location = new System.Drawing.Point(775, 228);
+            this.showPassword.Location = new System.Drawing.Point(775, 222);
             this.showPassword.Name = "showPassword";
             this.showPassword.Size = new System.Drawing.Size(20, 20);
             this.showPassword.TabIndex = 10;
@@ -242,9 +232,9 @@
             // 
             this.panel5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel5.BackgroundImage")));
             this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel5.Location = new System.Drawing.Point(440, 54);
+            this.panel5.Location = new System.Drawing.Point(53, 59);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(360, 52);
+            this.panel5.Size = new System.Drawing.Size(338, 313);
             this.panel5.TabIndex = 11;
             // 
             // Form1
@@ -264,11 +254,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel2.ResumeLayout(false);
@@ -280,12 +269,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label3;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox password;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private Bunifu.Framework.UI.BunifuFlatButton Login;
@@ -293,6 +280,7 @@
         private Bunifu.Framework.UI.BunifuCheckbox showPassword;
         private System.Windows.Forms.Panel panel5;
         public Bunifu.Framework.UI.BunifuMaterialTextbox username;
+        public Bunifu.Framework.UI.BunifuMaterialTextbox password;
     }
 }
 

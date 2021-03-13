@@ -162,8 +162,11 @@ namespace supply_management
                     frmReceipt receipt = new frmReceipt(pointOfSale);
                     receipt.loadData(cash.Text, change.Text);
                     receipt.Show();
+                    pos.updTransactionStat(pointOfSale.Transactionlbl.Text);
                     pointOfSale.transactionNo();
                     pointOfSale.clearData();
+                    pointOfSale.settlePayment.Enabled = false;
+                    pointOfSale.addDiscount.Enabled = false;
                     MessageBox.Show("Payment Successfully Saved", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }

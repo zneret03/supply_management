@@ -76,6 +76,7 @@ namespace supply_management
         {
             TextBox[] text = new TextBox[] { txtBrand };
             brand.setData(txtBrand);
+            
             frmBrand.getData();
         }
 

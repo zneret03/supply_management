@@ -52,23 +52,40 @@ namespace supply_management
                 conn.Open();
                 DataSet1 printSale = new DataSet1();
                 MySqlDataAdapter sda = new MySqlDataAdapter();
-                using (sda.SelectCommand = new MySqlCommand("SELECT transaction_id, transactionNo, t.products_id, p.description, p.price, t.quantity, discount, total FROM transaction as t INNER JOIN product as p ON p.products_id = t.products_id WHERE t.date_created BETWEEN '" + sold.dateTimePicker1.Value.ToLongDateString() + "' AND '" + sold.dateTimePicker2.Value.ToLongDateString() + "' AND cashier = '" + sold.username.Text  + "'", conn))
+                if (sold.username.Text == "all cashier sales")
                 {
-                    sda.Fill(printSale.Tables["soldItems"]);
+                    using (sda.SelectCommand = new MySqlCommand("SELECT transaction_id, transactionNo, t.products_id, p.description, p.price, t.quantity, discount, total FROM transaction as t INNER JOIN product as p ON p.products_id = t.products_id WHERE t.date_created BETWEEN '" + sold.dateTimePicker1.Value.ToString("yyyy-MM-dd") + "' AND '" + sold.dateTimePicker2.Value.ToString("yyyy-MM-dd") + "'", conn))
+                    {
+                        sda.Fill(printSale.Tables["soldItems"]);
+                        
+                    }
                 }
+                else
+                {
+                    using (sda.SelectCommand = new MySqlCommand("SELECT transaction_id, transactionNo, t.products_id, p.description, p.price, t.quantity, discount, total FROM transaction as t INNER JOIN product as p ON p.products_id = t.products_id WHERE t.date_created BETWEEN '" + sold.dateTimePicker1.Value.ToString("yyyy-MM-dd") + "' AND '" + sold.dateTimePicker2.Value.ToString("yyyy-MM-dd") + "' AND cashier = '" + sold.username.Text + "'", conn))
+                    {
+                        sda.Fill(printSale.Tables["soldItems"]);
+                    }
+                }
+               
                 conn.Close();
 
                 ReportParameter tstore = new ReportParameter("tStore", store);
                 ReportParameter taddress = new ReportParameter("tAddress", address);
+                ReportParameter tdate = new ReportParameter("tDate", "Date From : " + sold.dateTimePicker1.Value.ToLongDateString() + " To " + sold.dateTimePicker1.Value.ToLongDateString());
+                ReportParameter tcashier = new ReportParameter("tCashier", sold.username.Text);
 
                 this.reportViewer1.LocalReport.SetParameters(tstore);
                 this.reportViewer1.LocalReport.SetParameters(taddress);
+                this.reportViewer1.LocalReport.SetParameters(tdate);
+                this.reportViewer1.LocalReport.SetParameters(tcashier);
 
                 reportViewer = new ReportDataSource("DataSet1", printSale.Tables["soldItems"]);
                 this.reportViewer1.LocalReport.DataSources.Add(reportViewer);
                 this.reportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
                 this.reportViewer1.ZoomMode = ZoomMode.Percent;
                 this.reportViewer1.ZoomPercent = 100;
+                this.reportViewer1.RefreshReport();
             }
             catch(Exception ex)
             {

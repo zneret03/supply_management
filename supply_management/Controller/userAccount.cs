@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using MySql.Data.MySqlClient;
 
 namespace supply_management.Controller
 {
@@ -51,23 +52,23 @@ namespace supply_management.Controller
             return this.loadData();
         }
         
-        public void update(String id, TextBox[] text, ComboBox[] combo, EmployeeReg suspend)
+        public String getPass(String username)
         {
-            bool isNumber = error.checkNum(text[6].Text);
-
-            if(isNumber == true)
-            {
-                this.UpdateData(id, text, combo, suspend);            
-            }
-            else
-            {
-                MessageBox.Show("Age will be a number", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            return this.getPassword(username);
         }
 
-        public DataTable search(String query)
+        public void changePass(String username, String password)
         {
-            return this.searchData(query);
+            this.ChangePassword(username, password);
+        }
+
+        public void DelCashier(String id, frmEmployeeReg clear)
+        {
+            this.DeleteCashier(id, clear);
+        }
+        public MySqlDataReader getuserData(String username)
+        {
+            return this.returnData(username);
         }
 
         public String duplicated(TextBox[] cred)
@@ -75,15 +76,10 @@ namespace supply_management.Controller
             return this.ifExist(cred);
         }
 
-        public void isDelete(String id, EmployeeReg suspend)
+        public void isDelete(String id, Form1 frm, Main main)
         {
-            this.Delete(id, suspend);
+            this.Delete(id, frm, main);
         }
-        
-        public object countRegistered()
-        {
-            return this.countUsers();
-        }
-
+       
     }
 }

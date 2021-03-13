@@ -117,6 +117,7 @@ namespace supply_management
             {
                 DataGridViewRow dt = this.dataLookup.Rows[e.RowIndex];
                 f.product(dt.Cells[0].Value.ToString(), Convert.ToDouble(dt.Cells[7].Value.ToString()));
+                f.productQty(int.Parse(dt.Cells[6].Value.ToString()));
                 frmQuantity quantity = new frmQuantity(f);
                 quantity.Show();
             }

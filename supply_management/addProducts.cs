@@ -105,7 +105,8 @@ namespace supply_management
                 barcode,
                 description,
                 quantity,
-                price
+                price,
+                reorder
             };
 
             String isExist = product.isDuplicate(text);
@@ -151,14 +152,24 @@ namespace supply_management
                 productName,
                 barcode,
                 description,
-                quantity,
-                price
+                price,
+                reorder
             };
 
             product.isUpdate(category_Id, brand_id, text, IdLabel.Text , this);
             categoryName.SelectedIndex = -1;
             brandName.SelectedIndex = -1;
             fmprod.getData();
+        }
+
+        private void categoryName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void brandName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
         }
     }
 }

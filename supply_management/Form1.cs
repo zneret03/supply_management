@@ -96,8 +96,8 @@ namespace supply_management
                 
                 String[] empty = new String[]
                 {
-                    username.Text,
-                    password.Text
+                    username.Text.ToString(),
+                    password.Text.ToString()
                 };
 
                 foreach (String emp in empty)
@@ -109,7 +109,7 @@ namespace supply_management
                     }
                     else
                     {
-                        account.userCred(username.Text.ToString(), password.Text.ToString(), this);
+                        account.userCred(username.Text, password.Text, this);
                         break;
                     }
                 }
@@ -127,8 +127,18 @@ namespace supply_management
 
         private void Cancel_Click(object sender, EventArgs e)
         {
-            username.Text = string.Empty;
-            password.Text = string.Empty;
+           
+            DialogResult result = MessageBox.Show("Exit this application?","Question",MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if(result == DialogResult.Yes)
+            {
+                username.Text = string.Empty;
+                password.Text = string.Empty;
+                Application.Exit();
+            }
+            else
+            {
+                return;
+            }
         }
 
     }

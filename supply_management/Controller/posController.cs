@@ -27,6 +27,13 @@ namespace supply_management.Controller
             return this.display(query);
         }
 
+        public MySqlDataReader displayRecoveryData()
+        {
+            String query = "SELECT transaction_id, transactionNo, product.products_id, description, price, transaction.quantity, discount, total, status FROM transaction INNER JOIN product ON product.products_id = transaction.products_id WHERE status = 'pending'";
+            return this.display(query);
+        }
+        
+
         public DataTable loadProductLookup()
         {
             String query = "SELECT products_id, barcode, product_name, category_name, brand_name, description,quantity, price FROM product INNER JOIN category ON category.category_id = product.category_id INNER JOIN brand ON brand.brand_id = product.brand_id WHERE quantity > 0";
@@ -39,16 +46,138 @@ namespace supply_management.Controller
             return this.barcodeSearcing(query);
         }
 
-        public void insertTransact(String pcode, String transactNo, String qty, double total, String date, String cashier)
+        public MySqlDataReader SearchProductsAdjustment(String search)
         {
-            this.insertTransaction(pcode, transactNo, qty, total, date, cashier);
+            String query = "SELECT products_id, barcode, product_name, category_name, brand_name, description, quantity, price FROM product INNER JOIN category ON category.category_id = product.category_id INNER JOIN brand ON brand.brand_id = product.brand_id WHERE barcode LIKE '%" + search + "%' OR description LIKE '%" + search + "%'";
+            return this.display(query);
+        }
+
+        public MySqlDataReader loadTopSales(String date1, String date2, String sorting)
+        {
+            String query = "";
+            if (sorting == "SORT BY QTY")
+            {
+                query = "SELECT transaction_id, t.products_id, p.description, SUM(t.quantity) as quantity, SUM(total) as total FROM transaction as t INNER JOIN product as p ON p.products_id = t.products_id WHERE t.date_created BETWEEN '" + date1 + "' AND '" + date2 + "' AND t.quantity != 0 GROUP BY products_id, discount ORDER BY quantity DESC LIMIT 10 ";
+            }
+            else
+            {
+                query = "SELECT transaction_id, t.products_id, p.description, SUM(t.quantity) as quantity, SUM(total) as total FROM transaction as t INNER JOIN product as p ON p.products_id = t.products_id WHERE t.date_created BETWEEN '" + date1 + "' AND '" + date2 + "' AND t.quantity != 0 GROUP BY products_id, discount ORDER BY total DESC LIMIT 10 ";
+            }
+            
+            return this.display(query);
+        }
+
+        public MySqlDataAdapter loadChartTopSell(String date1, String date2, String sorting)
+        {
+            String query = "";
+            if (sorting == "SORT BY QTY")
+            {
+                query = "SELECT transaction_id, t.products_id, p.description, SUM(t.quantity) as quantity, SUM(total) as total FROM transaction as t INNER JOIN product as p ON p.products_id = t.products_id WHERE t.date_created BETWEEN '" + date1 + "' AND '" + date2 + "' AND t.quantity != 0 GROUP BY products_id, discount ORDER BY quantity DESC LIMIT 10 ";
+            }
+            else
+            {
+                query = "SELECT transaction_id, t.products_id, p.description, SUM(t.quantity) as quantity, SUM(total) as total FROM transaction as t INNER JOIN product as p ON p.products_id = t.products_id WHERE t.date_created BETWEEN '" + date1 + "' AND '" + date2 + "' AND t.quantity != 0 GROUP BY products_id, discount ORDER BY total DESC LIMIT 10 ";
+            }
+            return this.loadChart(query);
+        }
+        public MySqlDataReader loadCriticalStocks()
+        {
+            String query = "SELECT * FROM viewcriticalitems";
+            return this.display(query);
+        }
+
+
+        public MySqlDataReader loadProductInventory()
+        {
+            String query = "SELECT * FROM viewproductInventory";
+            return this.display(query);
+        }
+
+        public String countCritical()
+        {
+            String query = "SELECT COUNT(*) FROM viewcriticalitems";
+            return this.countData(query);
+        }
+
+        public String dailySales()
+        {
+            String date = DateTime.Now.Date.ToString("yyyy-MM-dd");
+            String query = "SELECT SUM(total) as total FROM transaction WHERE date_created = '" + date + "'";
+            return this.countData(query);
+        }
+
+        public MySqlDataReader loadCancel(String date1, String date2)
+        {
+            String query = "SELECT * FROM viewcance_sales WHERE date_cancel BETWEEN '" + date1 + "' AND '" + date2 + "'";
+            return this.display(query);
+        }
+        public String changePassword(String username)
+        {
+            return this.getPassword(username);
+        }
+
+        public void updPassword(String username, String password, frmChangePassword suspend)
+        {
+            this.updatePassword(username, password, suspend);
+        }
+        public MySqlDataReader loadSoldItems(String date1, String date2)
+        {
+            String query = "SELECT t.products_id, p.description, price, SUM(t.quantity) as qty, SUM(discount) as disc, SUM(total) as total FROM transaction AS t INNER JOIN product as p ON p.products_id = t.products_id WHERE t.date_created BETWEEN '" + date1 + "' AND '" + date2 + "' AND t.quantity != 0 GROUP BY t.products_id";
+            return this.display(query);
+        }
+
+        public MySqlDataAdapter loadChartSoldItems(String date1, String date2)
+        {
+            String query = "SELECT t.products_id, p.description, price, SUM(t.quantity) as qty, SUM(discount) as disc, SUM(total) as total FROM transaction AS t INNER JOIN product as p ON p.products_id = t.products_id WHERE t.date_created BETWEEN '" + date1 + "' AND '" + date2 + "' AND t.quantity != 0 GROUP BY t.products_id";
+            return this.loadChart(query);
+        }
+
+
+        public void addQty(String pcode, String transNo, double discount, int tableqty, int qty , double price)
+        {
+            this.addQuantity(pcode, transNo, discount, tableqty, qty, price);
+        }
+
+        public void removeQty(String pcode, String transNo, double discount, int qty, double price)
+        {
+            this.removeQuantity(pcode, transNo, discount, qty, price);
+        }
+         
+        public void insertTransact(String pcode, String transactNo, String qty, double total,  String cashier)
+        {
+            this.insertTransaction(pcode, transactNo, qty, total,  cashier);
+        }
+
+        public void cancelItems(String user, String password, TextBox[] information, ComboBox[] invetory)
+        {
+            this.CancelConfirmation(user, password, information, invetory);
         }
 
         public MySqlDataReader showSoldItems(String date1, String date2, String user)
         {
-            String query = "SELECT transaction_id, transactionNo, t.products_id, p.description, p.price, t.quantity, discount, total FROM transaction as t INNER JOIN product as p ON p.products_id = t.products_id WHERE t.date_created BETWEEN '" + date1 + "' AND '" + date2 + "' AND cashier = '" + user.ToString() + "'";
+            String query = "";
+            if(user.ToString() == "all cashier sales")
+            {
+                query = "SELECT transaction_id, transactionNo, t.products_id, p.description, p.price, t.quantity, discount, total FROM transaction as t INNER JOIN product as p ON p.products_id = t.products_id WHERE t.date_created BETWEEN '" + date1 + "' AND '" + date2 + "' AND t.quantity != 0  AND status != 'pending'";
+            }
+            else
+            {
+                //MessageBox.Show(date1 + " " + date2 + " " + user);
+                query = "SELECT transaction_id, transactionNo, t.products_id, p.description, p.price, t.quantity, discount, total FROM transaction as t INNER JOIN product as p ON p.products_id = t.products_id WHERE t.date_created BETWEEN '" + date1 + "' AND '" + date2 + "' AND cashier = '" + user.ToString() + "' AND t.quantity != 0 AND status != 'pending'";
+            }
+            
             return this.display(query);
             //MessageBox.Show(user);
+        }
+
+        public bool orderExist(String transactionNo, String pcode)
+        {
+            return this.isExist(transactionNo, pcode);
+        }
+
+        public void updateOrder(String pcode, String qty, double total)
+        {
+            this.updateExistingOrder(pcode, qty, total);
         }
 
         public void loadusername(ComboBox users)
@@ -75,10 +204,14 @@ namespace supply_management.Controller
             this.delete(id, loadData);
         }
 
-        public void discount(String id, String discount, frmdiscount suspend, double totalPrice)
+        public void discount(String id, String discount, String discount_percent, frmdiscount suspend, double totalPrice)
         {
-            this.isDiscount(id, discount, suspend, totalPrice);
+            this.isDiscount(id, discount, discount_percent, suspend, totalPrice);
         }
 
+        public void updTransactionStat(String transactionNo)
+        {
+            this.updTransactionStatus(transactionNo);
+        }
     }
 }

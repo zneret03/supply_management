@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using MySql.Data.MySqlClient;
+using Tulpep.NotificationWindow;
 
 namespace supply_management
 {
@@ -21,6 +22,12 @@ namespace supply_management
 
         public String pcode;
         public double price;
+        public int qty;
+        public int cart_qty;
+
+        public String _pcode;
+        public double _price;
+        public int _qty;
         String idDiscount;
         String priceDiscount;
         String totalPrice;
@@ -28,6 +35,8 @@ namespace supply_management
         Controller.ErrorHandler error = new Controller.ErrorHandler();
         Controller.posController pos = new Controller.posController();
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+
+       
         private static extern IntPtr CreateRoundRectRgn
         (
             int nLeftRect,     // x-coordinate of upper-left corner
@@ -38,13 +47,43 @@ namespace supply_management
             int nHeightEllipse // width of ellipse
         );
         String user;
+        //public String todate = DateTime.Now.ToShortDateString();
         public frmPOS(String username)
         {
             InitializeComponent();
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
             user = username;
+            loadCriticalStocks();
         }
 
+        public void loadCriticalStocks()
+        {
+            try
+            {
+                String critcalVal = "";
+                String count = pos.countCritical();
+                int i = 0;
+                using (MySqlDataReader reader = pos.loadCriticalStocks())
+                {
+                    while (reader.Read())
+                    {
+                        i++;
+                        critcalVal += i + "." + reader["description"].ToString() + Environment.NewLine;
+                    }
+                }
+
+                PopupNotifier pop = new PopupNotifier();
+                pop.Image = Properties.Resources.ekis;
+                pop.TitleText = count + " CRITACAL ITEM(S)";
+                pop.ContentText = critcalVal;
+                pop.Popup();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
         private void Start()
         {
             if (moveStart == 1)
@@ -93,6 +132,8 @@ namespace supply_management
             dataGridTransaction.ColumnHeadersDefaultCellStyle.Padding = new Padding(0, 6, 0, 6);
 
             Time.Text = DateTime.Now.ToLongTimeString();
+            textBox6.SelectionStart = 0;
+            textBox6.SelectionLength = textBox6.Text.Length;
         }
         
 
@@ -130,7 +171,7 @@ namespace supply_management
             moveStartY = e.Y;
         }
 
-
+        //if product occur in table enable settle payment and discount else disable
         public void tableShow()
         {
             try
@@ -144,7 +185,7 @@ namespace supply_management
                 {
                     total += Convert.ToDouble(reader["total"].ToString());
                     isdiscount += Convert.ToDouble(reader["discount"].ToString());
-
+                    cart_qty = int.Parse(reader["quantity"].ToString());
                     dataGridTransaction.Rows.Add(reader["transaction_id"].ToString(),
                         reader["products_id"].ToString(),
                         reader["description"].ToString(),
@@ -155,7 +196,6 @@ namespace supply_management
                     hasEnable = true;
                 }
 
-                
                 total_sales.Text = total.ToString("#,##0.00");
                 txtdiscount.Text = isdiscount.ToString("#,##0.00");
                 getTotal();
@@ -176,8 +216,55 @@ namespace supply_management
             {
                 MessageBox.Show(ex.Message);
             }
-           
         }
+
+        //not final
+        private void recoveryData()
+        {
+            try
+            {
+                bool hasEnable = false;
+                double total = 0;
+                double isdiscount = 0;
+                dataGridTransaction.Rows.Clear();
+                MySqlDataReader reader = pos.displayRecoveryData();
+                while(reader.Read())
+                {
+                        Transactionlbl.Text = reader["transactionNo"].ToString();
+                        total += Convert.ToDouble(reader["total"].ToString());
+                        isdiscount += Convert.ToDouble(reader["discount"].ToString());
+                        cart_qty = int.Parse(reader["quantity"].ToString());
+                        dataGridTransaction.Rows.Add(reader["transaction_id"].ToString(),
+                            reader["products_id"].ToString(),
+                            reader["description"].ToString(),
+                            reader["price"].ToString(),
+                            reader["quantity"].ToString(),
+                            reader["discount"].ToString(),
+                            reader["total"].ToString());
+                        hasEnable = true;
+                }
+
+                total_sales.Text = total.ToString("#,##0.00");
+                txtdiscount.Text = isdiscount.ToString("#,##0.00");
+                getTotal();
+
+                if (hasEnable == true)
+                {
+                    settlePayment.Enabled = true;
+                    addDiscount.Enabled = true;
+                }
+                else
+                {
+                    settlePayment.Enabled = false;
+                    addDiscount.Enabled = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         public void getTotal()
         {
             double discount = Convert.ToDouble(txtdiscount.Text);
@@ -224,15 +311,79 @@ namespace supply_management
                     }
                     else
                     {
+                        /*
                         product(dt.Rows[0][0].ToString(), Convert.ToDouble(dt.Rows[0][7].ToString()));
                         frmQuantity quantity = new frmQuantity(this);
                         quantity.Show();
+                         * */
+                        _pcode = dt.Rows[0][0].ToString();
+                        _price = Double.Parse(dt.Rows[0][7].ToString());
+                        _qty = int.Parse(dt.Rows[0][6].ToString());
+                        addtoCart();
                     }
 
                 }
 
         }
-        
+
+        private void addtoCart()
+        {
+
+          try
+          {
+             
+              //error handler for numeric quantity
+              bool result = error.checkNum(txtQty.Text);
+              //searching through data
+              bool found = pos.orderExist(Transactionlbl.Text, _pcode.ToString());
+              if (_qty < int.Parse(txtQty.Text))
+              {
+                  MessageBox.Show("Unable to proceed", "warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                  return;
+              }
+
+              double total = Convert.ToDouble(txtQty.Text) * _price;
+              //if quantity is numeric execute if not throw an error message
+              if (result == true)
+              {
+                  //Search through the data if product exist during transaction
+                  if (found == true)
+                  {
+                      //if qty is lessthan from input qty show error
+                      if (_qty < (int.Parse(txtQty.Text)) + cart_qty)
+                      {
+                          MessageBox.Show("Unable to proceed!", "warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                          return;
+                      }
+
+                      //adding quantity if already exist
+                      pos.updateOrder(_pcode.ToString(), txtQty.Text, total);
+                      tableShow();
+                      textBox6.SelectionStart = 0;
+                      textBox6.SelectionLength = textBox6.Text.Length;
+                      textBox6.Clear();
+                  }
+                  else
+                  {
+                      //execute if product is not duplicated during transaction
+                      pos.insertTransact(_pcode.ToString(),
+                          Transactionlbl.Text,
+                          txtQty.Text, total, label1.Text);
+
+                      tableShow();
+                      //pointOfSale.transactionNo();
+                      textBox6.SelectionStart = 0;
+                      textBox6.SelectionLength = textBox6.Text.Length;
+                      textBox6.Clear();
+                  }
+
+              }
+          }
+          catch(Exception ex)
+          {
+              MessageBox.Show(ex.Message);
+          }
+        }
 
         public void product(String pcode, double price)
         {
@@ -240,12 +391,33 @@ namespace supply_management
             this.price = price;
         }
 
+        public void productQty(int qty)
+        {
+            this.qty = qty;
+        }
+
 
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
-            Form1 form = new Form1();
-            form.Show();
-            this.Hide();
+
+            DialogResult result = MessageBox.Show("Logout this application?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if(dataGridTransaction.Rows.Count > 0)
+            {
+                MessageBox.Show("Unable to logout appliation! please cancel sales", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                if (result == DialogResult.Yes)
+                {
+                    Form1 form = new Form1();
+                    form.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    return;
+                }
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -274,14 +446,27 @@ namespace supply_management
                 }
             }
 
-        }
+            if (colName == "addqty")
+            {
+                pos.addQty(dataGridTransaction.Rows[e.RowIndex].Cells[1].Value.ToString(), 
+                    Transactionlbl.Text, 
+                    Double.Parse(dataGridTransaction.Rows[e.RowIndex].Cells[5].Value.ToString()),
+                    int.Parse(dataGridTransaction.Rows[e.RowIndex].Cells[4].Value.ToString()),
+                    int.Parse(txtQty.Text),
+                    Double.Parse(dataGridTransaction.Rows[e.RowIndex].Cells[3].Value.ToString()));
+                tableShow();
+            }
 
-        private void back_Click(object sender, EventArgs e)
-        {
-            Form1 form = new Form1();
-            Main main = new Main(form.username.Text);
-            main.Show();
-            this.Hide();
+            if(colName == "removeqty")
+            {
+                pos.removeQty(dataGridTransaction.Rows[e.RowIndex].Cells[1].Value.ToString(), 
+                    Transactionlbl.Text,
+                    Double.Parse(dataGridTransaction.Rows[e.RowIndex].Cells[5].Value.ToString()),
+                    int.Parse(txtQty.Text), 
+                    Double.Parse(dataGridTransaction.Rows[e.RowIndex].Cells[3].Value.ToString()));
+                tableShow();
+            }
+
         }
 
         private void addDiscount_Click(object sender, EventArgs e)
@@ -299,7 +484,7 @@ namespace supply_management
             if (dataGridTransaction.CurrentCell != null)
             {
                 idDiscount = dataGridTransaction.Rows[dataGridTransaction.CurrentRow.Index].Cells[0].Value.ToString();
-                priceDiscount = dataGridTransaction.Rows[dataGridTransaction.CurrentRow.Index].Cells[3].Value.ToString();
+                priceDiscount = dataGridTransaction.Rows[dataGridTransaction.CurrentRow.Index].Cells[6].Value.ToString();
                 totalPrice = dataGridTransaction.Rows[dataGridTransaction.CurrentRow.Index].Cells[6].Value.ToString();
             }
 
@@ -315,7 +500,27 @@ namespace supply_management
         private void dailySales_Click(object sender, EventArgs e)
         {
             frmSoldItems sold = new frmSoldItems();
+            sold.dateTimePicker1.Enabled = false;
+            sold.dateTimePicker2.Enabled = false;
+            sold.username.Enabled = false;
+            sold.username.Text = label1.Text;
             sold.Show();
+        }
+
+        private void bunifuFlatButton1_Click_1(object sender, EventArgs e)
+        {
+            frmChangePassword change = new frmChangePassword(this);
+            change.Show();
+        }
+
+        private void bunifuFlatButton2_Click(object sender, EventArgs e)
+        {
+            clearData();
+        }
+
+        private void btn_recovery_Click(object sender, EventArgs e)
+        {
+            recoveryData();
         }
 
     }

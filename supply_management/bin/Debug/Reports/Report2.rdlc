@@ -6,7 +6,7 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>0.28125in</Width>
+              <Width>0.63542in</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1.58333in</Width>
@@ -21,7 +21,7 @@
               <Width>0.55208in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.79167in</Width>
+              <Width>0.90625in</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>0.875in</Width>
@@ -889,9 +889,9 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>0.01389in</Top>
+        <Top>0.20833in</Top>
         <Height>0.75in</Height>
-        <Width>7.44792in</Width>
+        <Width>7.91667in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -899,13 +899,13 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>0.78695in</Height>
+    <Height>1.9432in</Height>
     <Style />
   </Body>
-  <Width>7.44792in</Width>
+  <Width>7.91667in</Width>
   <Page>
     <PageHeader>
-      <Height>1.32639in</Height>
+      <Height>2.125in</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -929,9 +929,9 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>tStore</rd:DefaultName>
-          <Top>0.54167in</Top>
+          <Top>0.30681in</Top>
           <Height>0.25in</Height>
-          <Width>7.44792in</Width>
+          <Width>7.91667in</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -962,9 +962,9 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>tAddress</rd:DefaultName>
-          <Top>0.82639in</Top>
+          <Top>0.59153in</Top>
           <Height>0.25in</Height>
-          <Width>7.44792in</Width>
+          <Width>7.91667in</Width>
           <ZIndex>1</ZIndex>
           <Style>
             <Border>
@@ -976,32 +976,130 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
-        <Image Name="Image1">
-          <Source>Embedded</Source>
-          <Value>ID1280pxHD_Supply_logosvg</Value>
-          <Sizing>FitProportional</Sizing>
-          <Left>2.22792in</Left>
-          <Height>0.5in</Height>
-          <Width>3.19917in</Width>
-          <ZIndex>2</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-          </Style>
-        </Image>
         <Line Name="Line3">
-          <Top>1.19097in</Top>
-          <Left>0.97917in</Left>
+          <Top>1.99778in</Top>
+          <Left>1.10417in</Left>
           <Height>0in</Height>
           <Width>5.56251in</Width>
-          <ZIndex>3</ZIndex>
+          <ZIndex>2</ZIndex>
           <Style>
             <Border>
               <Style>Solid</Style>
             </Border>
           </Style>
         </Line>
+        <Textbox Name="tCashier">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Cashier : </Value>
+                  <Style>
+                    <FontFamily>Segoe UI Semibold</FontFamily>
+                    <FontSize>8pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value>=Parameters!tCashier.Value</Value>
+                  <Style>
+                    <FontFamily>Segoe UI Semibold</FontFamily>
+                    <FontSize>8pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>tCashier</rd:DefaultName>
+          <Top>1.43875in</Top>
+          <Height>0.25in</Height>
+          <Width>7.91667in</Width>
+          <ZIndex>3</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="tDate">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Parameters!tDate.Value</Value>
+                  <Style>
+                    <FontFamily>Segoe UI</FontFamily>
+                    <FontSize>7pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>tDate</rd:DefaultName>
+          <Top>0.91097in</Top>
+          <Height>0.25in</Height>
+          <Width>7.91667in</Width>
+          <ZIndex>4</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox8">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Sales Report</Value>
+                  <Style>
+                    <FontFamily>Segoe UI</FontFamily>
+                    <FontSize>12pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox6</rd:DefaultName>
+          <Top>1.13319in</Top>
+          <Height>0.25in</Height>
+          <Width>7.91667in</Width>
+          <ZIndex>5</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
       </ReportItems>
       <Style>
         <Border>
@@ -1031,7 +1129,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox31</rd:DefaultName>
-          <Top>0.59375in</Top>
+          <Top>0.35417in</Top>
           <Left>0.13542in</Left>
           <Height>0.25in</Height>
           <Width>4.77083in</Width>
@@ -1123,6 +1221,14 @@
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="tAddress">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="tCashier">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="tDate">
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>

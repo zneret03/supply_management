@@ -21,6 +21,7 @@ namespace supply_management.Model
         DateTime dateNow = DateTime.Now;
 
         //If brand name exist throw error
+
         protected String isExist(TextBox text)
         {
             conn = new MySqlConnection(this.connection());

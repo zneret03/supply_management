@@ -65,15 +65,11 @@ namespace supply_management
 
         public void loadSoldItems()
         {
-
-           
-            
             try
             {
                 double total = 0;
                 dataGridSoldItems.Rows.Clear();
-
-                using (MySqlDataReader reader =  pos.showSoldItems(dateTimePicker1.Value.ToLongDateString(), dateTimePicker2.Value.ToLongDateString(), username.Text))
+                using (MySqlDataReader reader = pos.showSoldItems(dateTimePicker1.Value.ToString("yyyy-MM-dd"), dateTimePicker2.Value.ToString("yyyy-MM-dd"), username.Text))
                 {
                     while (reader.Read())
                     {
@@ -88,7 +84,7 @@ namespace supply_management
                             reader["total"].ToString());
                     }
                 }
-                totalSales.Text = total.ToString();
+                totalSales.Text = total.ToString("#,##0.00");
             }
             catch (Exception ex)
             {
@@ -98,10 +94,10 @@ namespace supply_management
 
         }
 
-
         private void frmSoldItems_Load(object sender, EventArgs e)
         {
             loadSoldItems();
+            username.Items.Add("all cashier sales");
             ComboBox[] items = new ComboBox[] { username };
             pos.loadusername(items[0]);
             dataGridSoldItems.BorderStyle = BorderStyle.None;
@@ -137,6 +133,34 @@ namespace supply_management
         private void username_SelectedValueChanged(object sender, EventArgs e)
         {
             loadSoldItems();
+        }
+
+        private void dataGridSoldItems_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            String colName = dataGridSoldItems.Columns[e.ColumnIndex].Name;
+            
+            if(colName == "Cancel")
+            {
+               
+                frmcancelSales cancel = new frmcancelSales(this);
+                cancel.txtId.Text = dataGridSoldItems.Rows[e.RowIndex].Cells[0].Value.ToString();
+                cancel.txttransactioNo.Text = dataGridSoldItems.Rows[e.RowIndex].Cells[1].Value.ToString();
+                cancel.txtpcode.Text = dataGridSoldItems.Rows[e.RowIndex].Cells[2].Value.ToString();
+                cancel.txtdescription.Text = dataGridSoldItems.Rows[e.RowIndex].Cells[3].Value.ToString();
+                cancel.txtprice.Text = dataGridSoldItems.Rows[e.RowIndex].Cells[4].Value.ToString();
+                cancel.txtqty.Text = dataGridSoldItems.Rows[e.RowIndex].Cells[5].Value.ToString();
+                cancel.txtdiscount.Text = dataGridSoldItems.Rows[e.RowIndex].Cells[6].Value.ToString();
+                cancel.txttotal.Text = dataGridSoldItems.Rows[e.RowIndex].Cells[7].Value.ToString();
+
+                cancel.txtcancelledBy.Text = username.Text;
+
+                cancel.Show();
+            }
+        }
+
+        private void username_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
         }
     }
 }

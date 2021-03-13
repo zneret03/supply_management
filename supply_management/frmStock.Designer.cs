@@ -28,31 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStock));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.dataGridProducts = new System.Windows.Forms.DataGridView();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridStock = new System.Windows.Forms.DataGridView();
-            this.txtSearch = new Bunifu.Framework.UI.BunifuTextbox();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.referenceNo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.StockInBy = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.stockDate = new System.Windows.Forms.DateTimePicker();
-            this.submit = new Bunifu.Framework.UI.BunifuFlatButton();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cmbVendors = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label = new System.Windows.Forms.Label();
+            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtContactPerson = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.TableStockHistory = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.status = new System.Windows.Forms.ComboBox();
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridStock)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -61,74 +73,31 @@
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridProducts
-            // 
-            this.dataGridProducts.AllowUserToAddRows = false;
-            this.dataGridProducts.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridProducts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridProducts.Location = new System.Drawing.Point(15, 73);
-            this.dataGridProducts.Name = "dataGridProducts";
-            this.dataGridProducts.Size = new System.Drawing.Size(515, 217);
-            this.dataGridProducts.TabIndex = 10;
-            this.dataGridProducts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridProducts_CellContentClick);
-            // 
             // dataGridStock
             // 
             this.dataGridStock.AllowUserToAddRows = false;
             this.dataGridStock.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridStock.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridStock.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridStock.Location = new System.Drawing.Point(11, 325);
+            this.dataGridStock.Location = new System.Drawing.Point(11, 183);
             this.dataGridStock.Name = "dataGridStock";
-            this.dataGridStock.Size = new System.Drawing.Size(978, 225);
+            this.dataGridStock.Size = new System.Drawing.Size(978, 367);
             this.dataGridStock.TabIndex = 11;
             this.dataGridStock.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridStock_CellContentClick);
             this.dataGridStock.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridStock_CellValueChanged);
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.BackColor = System.Drawing.Color.White;
-            this.txtSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtSearch.BackgroundImage")));
-            this.txtSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.txtSearch.ForeColor = System.Drawing.Color.SeaGreen;
-            this.txtSearch.Icon = ((System.Drawing.Image)(resources.GetObject("txtSearch.Icon")));
-            this.txtSearch.Location = new System.Drawing.Point(15, 25);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(309, 42);
-            this.txtSearch.TabIndex = 13;
-            this.txtSearch.text = "";
-            this.txtSearch.OnTextChange += new System.EventHandler(this.txtSearch_OnTextChange);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(788, 25);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(201, 31);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "Manage Stocks";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label3.Location = new System.Drawing.Point(564, 72);
+            this.label3.Location = new System.Drawing.Point(14, 31);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(111, 21);
             this.label3.TabIndex = 20;
@@ -137,16 +106,17 @@
             // referenceNo
             // 
             this.referenceNo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.referenceNo.Location = new System.Drawing.Point(568, 96);
+            this.referenceNo.Location = new System.Drawing.Point(131, 24);
             this.referenceNo.Name = "referenceNo";
-            this.referenceNo.Size = new System.Drawing.Size(421, 33);
+            this.referenceNo.ReadOnly = true;
+            this.referenceNo.Size = new System.Drawing.Size(243, 33);
             this.referenceNo.TabIndex = 19;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label2.Location = new System.Drawing.Point(565, 139);
+            this.label2.Location = new System.Drawing.Point(49, 65);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 21);
             this.label2.TabIndex = 18;
@@ -155,16 +125,16 @@
             // StockInBy
             // 
             this.StockInBy.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StockInBy.Location = new System.Drawing.Point(568, 168);
+            this.StockInBy.Location = new System.Drawing.Point(131, 62);
             this.StockInBy.Name = "StockInBy";
-            this.StockInBy.Size = new System.Drawing.Size(421, 33);
+            this.StockInBy.Size = new System.Drawing.Size(329, 33);
             this.StockInBy.TabIndex = 17;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label1.Location = new System.Drawing.Point(565, 207);
+            this.label1.Location = new System.Drawing.Point(35, 102);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(90, 21);
             this.label1.TabIndex = 16;
@@ -173,45 +143,10 @@
             // stockDate
             // 
             this.stockDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stockDate.Location = new System.Drawing.Point(568, 234);
+            this.stockDate.Location = new System.Drawing.Point(131, 102);
             this.stockDate.Name = "stockDate";
-            this.stockDate.Size = new System.Drawing.Size(421, 29);
+            this.stockDate.Size = new System.Drawing.Size(329, 29);
             this.stockDate.TabIndex = 15;
-            // 
-            // submit
-            // 
-            this.submit.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
-            this.submit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
-            this.submit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.submit.BorderRadius = 5;
-            this.submit.ButtonText = "            Clear";
-            this.submit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.submit.DisabledColor = System.Drawing.Color.Gray;
-            this.submit.Iconcolor = System.Drawing.Color.Transparent;
-            this.submit.Iconimage = null;
-            this.submit.Iconimage_right = null;
-            this.submit.Iconimage_right_Selected = null;
-            this.submit.Iconimage_Selected = null;
-            this.submit.IconMarginLeft = 0;
-            this.submit.IconMarginRight = 0;
-            this.submit.IconRightVisible = false;
-            this.submit.IconRightZoom = 0D;
-            this.submit.IconVisible = false;
-            this.submit.IconZoom = 90D;
-            this.submit.IsTab = false;
-            this.submit.Location = new System.Drawing.Point(883, 277);
-            this.submit.Name = "submit";
-            this.submit.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
-            this.submit.OnHovercolor = System.Drawing.Color.Silver;
-            this.submit.OnHoverTextColor = System.Drawing.Color.White;
-            this.submit.selected = false;
-            this.submit.Size = new System.Drawing.Size(106, 37);
-            this.submit.TabIndex = 46;
-            this.submit.Text = "            Clear";
-            this.submit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.submit.Textcolor = System.Drawing.Color.White;
-            this.submit.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.submit.Click += new System.EventHandler(this.submit_Click);
             // 
             // tabControl1
             // 
@@ -225,10 +160,14 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label9);
+            this.tabPage1.Controls.Add(this.cmbVendors);
+            this.tabPage1.Controls.Add(this.label8);
+            this.tabPage1.Controls.Add(this.label);
+            this.tabPage1.Controls.Add(this.txtAddress);
             this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.submit);
-            this.tabPage1.Controls.Add(this.dataGridProducts);
-            this.tabPage1.Controls.Add(this.txtSearch);
+            this.tabPage1.Controls.Add(this.label6);
+            this.tabPage1.Controls.Add(this.txtContactPerson);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.dataGridStock);
             this.tabPage1.Controls.Add(this.referenceNo);
@@ -243,7 +182,88 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Stocks Entry";
             this.tabPage1.UseVisualStyleBackColor = true;
-            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label9.ForeColor = System.Drawing.Color.Fuchsia;
+            this.label9.Location = new System.Drawing.Point(377, 30);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(83, 21);
+            this.label9.TabIndex = 29;
+            this.label9.Text = "[Generate]";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
+            // 
+            // cmbVendors
+            // 
+            this.cmbVendors.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.cmbVendors.FormattingEnabled = true;
+            this.cmbVendors.Location = new System.Drawing.Point(618, 26);
+            this.cmbVendors.Name = "cmbVendors";
+            this.cmbVendors.Size = new System.Drawing.Size(349, 33);
+            this.cmbVendors.TabIndex = 28;
+            this.cmbVendors.SelectedValueChanged += new System.EventHandler(this.cmbVendors_SelectedValueChanged);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label8.ForeColor = System.Drawing.Color.Fuchsia;
+            this.label8.Location = new System.Drawing.Point(127, 147);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(226, 21);
+            this.label8.TabIndex = 27;
+            this.label8.Text = "[Click here to browse products]";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
+            // 
+            // label
+            // 
+            this.label.AutoSize = true;
+            this.label.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label.Location = new System.Drawing.Point(538, 110);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(73, 21);
+            this.label.TabIndex = 26;
+            this.label.Text = "Address :";
+            // 
+            // txtAddress
+            // 
+            this.txtAddress.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAddress.Location = new System.Drawing.Point(618, 104);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(349, 33);
+            this.txtAddress.TabIndex = 25;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label4.Location = new System.Drawing.Point(545, 33);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(67, 21);
+            this.label4.TabIndex = 24;
+            this.label4.Text = "Vendor :";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label6.Location = new System.Drawing.Point(490, 71);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(121, 21);
+            this.label6.TabIndex = 22;
+            this.label6.Text = "Contact Person :";
+            // 
+            // txtContactPerson
+            // 
+            this.txtContactPerson.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContactPerson.Location = new System.Drawing.Point(618, 65);
+            this.txtContactPerson.Name = "txtContactPerson";
+            this.txtContactPerson.Size = new System.Drawing.Size(349, 33);
+            this.txtContactPerson.TabIndex = 21;
             // 
             // tabPage2
             // 
@@ -261,22 +281,88 @@
             // 
             this.TableStockHistory.AllowUserToAddRows = false;
             this.TableStockHistory.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.TableStockHistory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.TableStockHistory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.TableStockHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TableStockHistory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column7,
+            this.Column6,
+            this.Column5,
+            this.Column8,
+            this.Column9});
             this.TableStockHistory.Location = new System.Drawing.Point(0, 109);
             this.TableStockHistory.Name = "TableStockHistory";
             this.TableStockHistory.Size = new System.Drawing.Size(1022, 446);
             this.TableStockHistory.TabIndex = 12;
+            this.TableStockHistory.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TableStockHistory_CellContentClick);
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "#";
+            this.Id.Name = "Id";
+            this.Id.Width = 50;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "REF #";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "PCODE";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "PNAME";
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 130;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "DESCRIPTION";
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 190;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "STOCK IN BY";
+            this.Column7.Name = "Column7";
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "STOCK DATE";
+            this.Column6.Name = "Column6";
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "QTY";
+            this.Column5.Name = "Column5";
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "STATUS";
+            this.Column8.Name = "Column8";
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "VENDOR";
+            this.Column9.Name = "Column9";
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.status);
             this.panel1.Controls.Add(this.bunifuFlatButton1);
             this.panel1.Controls.Add(this.dateTimePicker2);
             this.panel1.Controls.Add(this.dateTimePicker1);
@@ -287,13 +373,25 @@
             this.panel1.Size = new System.Drawing.Size(1016, 100);
             this.panel1.TabIndex = 0;
             // 
+            // status
+            // 
+            this.status.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.status.FormattingEnabled = true;
+            this.status.Items.AddRange(new object[] {
+            "Out of order",
+            "Functioning"});
+            this.status.Location = new System.Drawing.Point(576, 32);
+            this.status.Name = "status";
+            this.status.Size = new System.Drawing.Size(183, 29);
+            this.status.TabIndex = 48;
+            // 
             // bunifuFlatButton1
             // 
             this.bunifuFlatButton1.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
             this.bunifuFlatButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
             this.bunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuFlatButton1.BorderRadius = 5;
-            this.bunifuFlatButton1.ButtonText = "         Load Data";
+            this.bunifuFlatButton1.ButtonText = "Load Data";
             this.bunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuFlatButton1.DisabledColor = System.Drawing.Color.Gray;
             this.bunifuFlatButton1.Iconcolor = System.Drawing.Color.Transparent;
@@ -308,16 +406,16 @@
             this.bunifuFlatButton1.IconVisible = false;
             this.bunifuFlatButton1.IconZoom = 90D;
             this.bunifuFlatButton1.IsTab = false;
-            this.bunifuFlatButton1.Location = new System.Drawing.Point(789, 27);
+            this.bunifuFlatButton1.Location = new System.Drawing.Point(765, 28);
             this.bunifuFlatButton1.Name = "bunifuFlatButton1";
             this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
             this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.Silver;
             this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.White;
             this.bunifuFlatButton1.selected = false;
-            this.bunifuFlatButton1.Size = new System.Drawing.Size(111, 37);
+            this.bunifuFlatButton1.Size = new System.Drawing.Size(130, 37);
             this.bunifuFlatButton1.TabIndex = 47;
-            this.bunifuFlatButton1.Text = "         Load Data";
-            this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bunifuFlatButton1.Text = "Load Data";
+            this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuFlatButton1.Textcolor = System.Drawing.Color.White;
             this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuFlatButton1.Click += new System.EventHandler(this.bunifuFlatButton1_Click);
@@ -325,17 +423,19 @@
             // dateTimePicker2
             // 
             this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Location = new System.Drawing.Point(460, 32);
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker2.Location = new System.Drawing.Point(361, 33);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(308, 29);
+            this.dateTimePicker2.Size = new System.Drawing.Size(209, 29);
             this.dateTimePicker2.TabIndex = 23;
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(146, 33);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(308, 29);
+            this.dateTimePicker1.Size = new System.Drawing.Size(209, 29);
             this.dateTimePicker1.TabIndex = 22;
             // 
             // label5
@@ -359,7 +459,6 @@
             this.Name = "frmStock";
             this.Text = "frmStock";
             this.Load += new System.EventHandler(this.frmStock_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridProducts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridStock)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -374,17 +473,10 @@
 
         #endregion
 
-        public System.Windows.Forms.DataGridView dataGridProducts;
         public System.Windows.Forms.DataGridView dataGridStock;
-        private Bunifu.Framework.UI.BunifuTextbox txtSearch;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox referenceNo;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox StockInBy;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker stockDate;
-        public Bunifu.Framework.UI.BunifuFlatButton submit;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
@@ -394,5 +486,27 @@
         public Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
         public System.Windows.Forms.DateTimePicker dateTimePicker1;
         public System.Windows.Forms.DateTimePicker dateTimePicker2;
+        public System.Windows.Forms.ComboBox status;
+        public System.Windows.Forms.TextBox referenceNo;
+        public System.Windows.Forms.TextBox StockInBy;
+        public System.Windows.Forms.DateTimePicker stockDate;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label6;
+        public System.Windows.Forms.TextBox txtContactPerson;
+        private System.Windows.Forms.Label label;
+        public System.Windows.Forms.TextBox txtAddress;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox cmbVendors;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
     }
 }

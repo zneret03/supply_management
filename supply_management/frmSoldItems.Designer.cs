@@ -34,11 +34,6 @@
             this.totalSales = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridSoldItems = new System.Windows.Forms.DataGridView();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.label5 = new System.Windows.Forms.Label();
-            this.submit = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.username = new System.Windows.Forms.ComboBox();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,20 +42,26 @@
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cancel = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.label5 = new System.Windows.Forms.Label();
+            this.submit = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.username = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridSoldItems)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(191)))), ((int)(((byte)(213)))));
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.totalSales);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1133, 44);
+            this.panel1.Size = new System.Drawing.Size(1193, 44);
             this.panel1.TabIndex = 0;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
@@ -81,11 +82,11 @@
             // totalSales
             // 
             this.totalSales.AutoSize = true;
-            this.totalSales.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalSales.Font = new System.Drawing.Font("Consolas", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totalSales.ForeColor = System.Drawing.Color.White;
-            this.totalSales.Location = new System.Drawing.Point(172, 3);
+            this.totalSales.Location = new System.Drawing.Point(172, 5);
             this.totalSales.Name = "totalSales";
-            this.totalSales.Size = new System.Drawing.Size(76, 40);
+            this.totalSales.Size = new System.Drawing.Size(79, 34);
             this.totalSales.TabIndex = 39;
             this.totalSales.Text = "0.00";
             // 
@@ -95,7 +96,7 @@
             this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(1108, 2);
+            this.label1.Location = new System.Drawing.Point(1165, 3);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(23, 30);
             this.label1.TabIndex = 37;
@@ -115,84 +116,13 @@
             this.Column5,
             this.Column6,
             this.Column7,
-            this.Column8});
+            this.Column8,
+            this.Cancel});
             this.dataGridSoldItems.Location = new System.Drawing.Point(16, 107);
             this.dataGridSoldItems.Name = "dataGridSoldItems";
-            this.dataGridSoldItems.Size = new System.Drawing.Size(1105, 561);
+            this.dataGridSoldItems.Size = new System.Drawing.Size(1165, 561);
             this.dataGridSoldItems.TabIndex = 1;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(215, 61);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(277, 29);
-            this.dateTimePicker1.TabIndex = 10;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Location = new System.Drawing.Point(500, 61);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(277, 29);
-            this.dateTimePicker2.TabIndex = 11;
-            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label5.Location = new System.Drawing.Point(17, 63);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(192, 21);
-            this.label5.TabIndex = 22;
-            this.label5.Text = "Filter By Date (From - to) : ";
-            // 
-            // submit
-            // 
-            this.submit.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
-            this.submit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
-            this.submit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.submit.BorderRadius = 5;
-            this.submit.ButtonText = "   Print Preview";
-            this.submit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.submit.DisabledColor = System.Drawing.Color.Gray;
-            this.submit.Iconcolor = System.Drawing.Color.Transparent;
-            this.submit.Iconimage = ((System.Drawing.Image)(resources.GetObject("submit.Iconimage")));
-            this.submit.Iconimage_right = null;
-            this.submit.Iconimage_right_Selected = null;
-            this.submit.Iconimage_Selected = null;
-            this.submit.IconMarginLeft = 0;
-            this.submit.IconMarginRight = 0;
-            this.submit.IconRightVisible = true;
-            this.submit.IconRightZoom = 0D;
-            this.submit.IconVisible = true;
-            this.submit.IconZoom = 50D;
-            this.submit.IsTab = false;
-            this.submit.Location = new System.Drawing.Point(976, 59);
-            this.submit.Name = "submit";
-            this.submit.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
-            this.submit.OnHovercolor = System.Drawing.Color.Silver;
-            this.submit.OnHoverTextColor = System.Drawing.Color.White;
-            this.submit.selected = false;
-            this.submit.Size = new System.Drawing.Size(145, 32);
-            this.submit.TabIndex = 46;
-            this.submit.Text = "   Print Preview";
-            this.submit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.submit.Textcolor = System.Drawing.Color.White;
-            this.submit.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.submit.Click += new System.EventHandler(this.submit_Click);
-            // 
-            // username
-            // 
-            this.username.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.username.FormattingEnabled = true;
-            this.username.Location = new System.Drawing.Point(784, 61);
-            this.username.Name = "username";
-            this.username.Size = new System.Drawing.Size(183, 29);
-            this.username.TabIndex = 47;
-            this.username.SelectedValueChanged += new System.EventHandler(this.username_SelectedValueChanged);
+            this.dataGridSoldItems.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridSoldItems_CellClick);
             // 
             // Column1
             // 
@@ -214,7 +144,7 @@
             // 
             this.Column4.HeaderText = "DESCRIPTION";
             this.Column4.Name = "Column4";
-            this.Column4.Width = 517;
+            this.Column4.Width = 540;
             // 
             // Column5
             // 
@@ -240,12 +170,96 @@
             this.Column8.Name = "Column8";
             this.Column8.Width = 80;
             // 
+            // Cancel
+            // 
+            this.Cancel.HeaderText = "";
+            this.Cancel.Image = ((System.Drawing.Image)(resources.GetObject("Cancel.Image")));
+            this.Cancel.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.Cancel.Name = "Cancel";
+            this.Cancel.Width = 20;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(215, 61);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(202, 29);
+            this.dateTimePicker1.TabIndex = 10;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker2.Location = new System.Drawing.Point(423, 61);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(188, 29);
+            this.dateTimePicker2.TabIndex = 11;
+            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label5.Location = new System.Drawing.Point(17, 63);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(192, 21);
+            this.label5.TabIndex = 22;
+            this.label5.Text = "Filter By Date (From - to) : ";
+            // 
+            // submit
+            // 
+            this.submit.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            this.submit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(191)))), ((int)(((byte)(213)))));
+            this.submit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.submit.BorderRadius = 5;
+            this.submit.ButtonText = "   Print Preview";
+            this.submit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.submit.DisabledColor = System.Drawing.Color.Gray;
+            this.submit.Iconcolor = System.Drawing.Color.Transparent;
+            this.submit.Iconimage = ((System.Drawing.Image)(resources.GetObject("submit.Iconimage")));
+            this.submit.Iconimage_right = null;
+            this.submit.Iconimage_right_Selected = null;
+            this.submit.Iconimage_Selected = null;
+            this.submit.IconMarginLeft = 0;
+            this.submit.IconMarginRight = 0;
+            this.submit.IconRightVisible = true;
+            this.submit.IconRightZoom = 0D;
+            this.submit.IconVisible = true;
+            this.submit.IconZoom = 50D;
+            this.submit.IsTab = false;
+            this.submit.Location = new System.Drawing.Point(812, 59);
+            this.submit.Name = "submit";
+            this.submit.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(191)))), ((int)(((byte)(213)))));
+            this.submit.OnHovercolor = System.Drawing.Color.Silver;
+            this.submit.OnHoverTextColor = System.Drawing.Color.White;
+            this.submit.selected = false;
+            this.submit.Size = new System.Drawing.Size(145, 32);
+            this.submit.TabIndex = 46;
+            this.submit.Text = "   Print Preview";
+            this.submit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.submit.Textcolor = System.Drawing.Color.White;
+            this.submit.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.submit.Click += new System.EventHandler(this.submit_Click);
+            // 
+            // username
+            // 
+            this.username.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.username.FormattingEnabled = true;
+            this.username.Location = new System.Drawing.Point(620, 61);
+            this.username.Name = "username";
+            this.username.Size = new System.Drawing.Size(183, 29);
+            this.username.TabIndex = 47;
+            this.username.SelectedValueChanged += new System.EventHandler(this.username_SelectedValueChanged);
+            this.username.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.username_KeyPress);
+            // 
             // frmSoldItems
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1133, 680);
+            this.ClientSize = new System.Drawing.Size(1193, 680);
             this.Controls.Add(this.username);
             this.Controls.Add(this.submit);
             this.Controls.Add(this.label5);
@@ -267,7 +281,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridSoldItems;
         private System.Windows.Forms.Label totalSales;
@@ -276,6 +289,7 @@
         public Bunifu.Framework.UI.BunifuFlatButton submit;
         public System.Windows.Forms.DateTimePicker dateTimePicker1;
         public System.Windows.Forms.DateTimePicker dateTimePicker2;
+        public System.Windows.Forms.ComboBox username;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -284,6 +298,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        public System.Windows.Forms.ComboBox username;
+        private System.Windows.Forms.DataGridViewImageColumn Cancel;
+        public System.Windows.Forms.Panel panel1;
     }
 }

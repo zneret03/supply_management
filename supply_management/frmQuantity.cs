@@ -15,6 +15,7 @@ namespace supply_management
         int moveStart;
         int moveStartX;
         int moveStartY;
+
         Controller.posController pos = new Controller.posController();
         Controller.ErrorHandler error = new Controller.ErrorHandler();
         frmPOS pointOfSale;
@@ -51,33 +52,61 @@ namespace supply_management
 
         private void frmQuantity_Load(object sender, EventArgs e)
         {
-            quantity.Text = "0";
+            quantity.Text = "1";
         }
 
         private void quantity_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            bool result = error.checkNum(quantity.Text);
-
+        {       
+                //error handler for numeric quantity
+                bool result = error.checkNum(quantity.Text);
+                //searching through data
+                bool found = pos.orderExist(pointOfSale.Transactionlbl.Text, pointOfSale.pcode.ToString());
                 if ((e.KeyChar == 13) && (quantity.Text != string.Empty))
                 {
-                    if (result == true)
+                    if (pointOfSale.qty < int.Parse(quantity.Text))
                     {
+                        MessageBox.Show("Unable to proceed", "warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
                         double total = Convert.ToDouble(quantity.Text) * pointOfSale.price;
+                        //if quantity is numeric execute if not throw an error message
+                        if (result == true)
+                        {
+                            //Search through the data if product exist during transaction
+                            if (found == true)
+                            {
+                                //if qty is lessthan from input qty show error
+                                if (pointOfSale.qty < (int.Parse(quantity.Text)) + pointOfSale.cart_qty)
+                                {
+                                    MessageBox.Show("Unable to proceed!", "warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    return;
+                                }
 
-                        pos.insertTransact(pointOfSale.pcode.ToString(),
-                            pointOfSale.Transactionlbl.Text,
-                            quantity.Text, total,
-                            pointOfSale.date.Text, pointOfSale.label1.Text);
+                                //adding quantity if already exist
+                                pos.updateOrder(pointOfSale.pcode.ToString(), quantity.Text, total);
+                                this.Hide();
+                                pointOfSale.tableShow();
+                                pointOfSale.textBox6.Clear();
+                            }
+                            else
+                            {
+                                //execute if product is not duplicated during transaction
+                                pos.insertTransact(pointOfSale.pcode.ToString(),
+                                    pointOfSale.Transactionlbl.Text,
+                                    quantity.Text, total, pointOfSale.label1.Text);
 
-                        this.Hide();
-                        pointOfSale.tableShow();
-                        //pointOfSale.transactionNo();
-                        pointOfSale.textBox6.Clear();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Quantity should be numeric!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
+                                this.Hide();
+                                pointOfSale.tableShow();
+                                //pointOfSale.transactionNo();
+                                pointOfSale.textBox6.Clear();
+                            }
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Quantity should be numeric!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
                 }
         }
 

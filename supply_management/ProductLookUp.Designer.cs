@@ -45,6 +45,7 @@
             this.dataLookup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataLookup.Location = new System.Drawing.Point(12, 100);
             this.dataLookup.Name = "dataLookup";
+            this.dataLookup.ReadOnly = true;
             this.dataLookup.Size = new System.Drawing.Size(903, 406);
             this.dataLookup.TabIndex = 0;
             this.dataLookup.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataLookup_CellContentClick);
@@ -65,7 +66,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(191)))), ((int)(((byte)(213)))));
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;

@@ -52,17 +52,19 @@ namespace supply_management
             dataGridProducts.Columns[7].Width = 100;
             dataGridProducts.Columns[8].Width = 150;
             dataGridProducts.Columns[9].Width = 150;
+            dataGridProducts.Columns[10].Width = 150;
 
             dataGridProducts.Columns[0].HeaderText = "#";
-            dataGridProducts.Columns[1].HeaderText = "Barcode";
-            dataGridProducts.Columns[2].HeaderText = "Product Name";
-            dataGridProducts.Columns[3].HeaderText = "Category Name";
-            dataGridProducts.Columns[4].HeaderText = "Brand Name";
-            dataGridProducts.Columns[5].HeaderText = "Description";
-            dataGridProducts.Columns[6].HeaderText = "Quantity";
-            dataGridProducts.Columns[7].HeaderText = "Price";
-            dataGridProducts.Columns[8].HeaderText = "Date Created";
-            dataGridProducts.Columns[9].HeaderText = "Date Updated";
+            dataGridProducts.Columns[1].HeaderText = "BARCODE";
+            dataGridProducts.Columns[2].HeaderText = "PRODUCT NAME";
+            dataGridProducts.Columns[3].HeaderText = "CATEGORY NAME";
+            dataGridProducts.Columns[4].HeaderText = "BRAND NAME";
+            dataGridProducts.Columns[5].HeaderText = "DESCRIPTION";
+            dataGridProducts.Columns[6].HeaderText = "QUANTITY";
+            dataGridProducts.Columns[7].HeaderText = "PRICE";
+            dataGridProducts.Columns[8].HeaderText = "REORDER";
+            dataGridProducts.Columns[9].HeaderText = "DATE CREATED";
+            dataGridProducts.Columns[10].HeaderText = "DATE UPDATED";
         }
 
         private void txtSearch_OnTextChange(object sender, EventArgs e)
@@ -99,6 +101,7 @@ namespace supply_management
                 add.description.Text = dt.Cells[5].Value.ToString();
                 add.quantity.Text = dt.Cells[6].Value.ToString();
                 add.price.Text = dt.Cells[7].Value.ToString();
+                add.reorder.Text = dt.Cells[8].Value.ToString();
 
                 add.submit.Enabled = false;
                 add.checkDelete.Show();

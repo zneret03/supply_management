@@ -30,7 +30,7 @@ namespace supply_management.Model
         /// <returns>bind</returns>
         protected BindingSource loadTable()
         {
-            String query = "SELECT products_id,barcode, product_name, category_name, brand_name, description, quantity, price, product.date_created, product.date_updated " +
+            String query = "SELECT products_id,barcode, product_name, category_name, brand_name, description, quantity, price, reorder , product.date_created, product.date_updated " +
             "FROM product INNER JOIN category ON category.category_id = product.category_id INNER JOIN brand ON brand.brand_id = product.brand_id";
             conn = new MySqlConnection(this.connection());
             conn.Open();
@@ -193,9 +193,9 @@ namespace supply_management.Model
                 conn = new MySqlConnection(this.connection());
                 conn.Open();
                 //MessageBox.Show(brand_id);
-                
-                command = new MySqlCommand("INSERT INTO product (products_id,barcode, product_name, category_id, brand_id, description, quantity, price, date_created)" + 
-                    "VALUES (@id,@bar, @names, @categoryid, @brandid, @description, @quantity, @price, @date_created)", conn);
+
+                command = new MySqlCommand("INSERT INTO product (products_id,barcode, product_name, category_id, brand_id, description, quantity, price, reorder, date_created)" + 
+                    "VALUES (@id,@bar, @names, @categoryid, @brandid, @description, @quantity, @price, @reorder, @date_created)", conn);
                     
                     command.Parameters.AddWithValue("@id", id);
                     command.Parameters.AddWithValue("@names", product[0].Text);
@@ -205,6 +205,7 @@ namespace supply_management.Model
                     command.Parameters.AddWithValue("@description", product[2].Text);
                     command.Parameters.AddWithValue("@quantity", product[3].Text);
                     command.Parameters.AddWithValue("@price", product[4].Text);
+                    command.Parameters.AddWithValue("@reorder", product[5].Text);
                     command.Parameters.AddWithValue("@date_created", dateNow);
                     
                     bool result = (int)command.ExecuteNonQuery() > 0;
@@ -271,14 +272,14 @@ namespace supply_management.Model
             {
                 conn = new MySqlConnection(this.connection());
                 conn.Open();
-                command = new MySqlCommand("UPDATE product SET barcode = @bar, product_name = @name , category_id = @categoryid, brand_id = @brandid, description = @desc, quantity = @quanty, price = @price, date_updated = @date_updated WHERE products_id = @id", conn);
+                command = new MySqlCommand("UPDATE product SET barcode = @bar, product_name = @name , category_id = @categoryid, brand_id = @brandid, description = @desc, price = @price, reorder=@reorder ,date_updated = @date_updated WHERE products_id = @id", conn);
                 command.Parameters.AddWithValue("@name", product[0].Text);
                 command.Parameters.AddWithValue("@bar", product[1].Text);
                 command.Parameters.AddWithValue("@categoryid", int.Parse(category_id));
                 command.Parameters.AddWithValue("@brandid", int.Parse(brand_id));
                 command.Parameters.AddWithValue("@desc", product[2].Text);
-                command.Parameters.AddWithValue("@quanty", product[3].Text);
-                command.Parameters.AddWithValue("@price", product[4].Text);
+                command.Parameters.AddWithValue("@price", product[3].Text);
+                command.Parameters.AddWithValue("@reorder", product[4].Text);
                 command.Parameters.AddWithValue("@date_updated", dateNow);
                 command.Parameters.AddWithValue("@id", id);
 

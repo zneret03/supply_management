@@ -45,7 +45,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(191)))), ((int)(((byte)(213)))));
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -93,7 +93,7 @@
             // txtDiscount
             // 
             this.txtDiscount.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDiscount.Location = new System.Drawing.Point(161, 114);
+            this.txtDiscount.Location = new System.Drawing.Point(161, 104);
             this.txtDiscount.Name = "txtDiscount";
             this.txtDiscount.Size = new System.Drawing.Size(334, 33);
             this.txtDiscount.TabIndex = 2;
@@ -102,7 +102,7 @@
             // discountAmount
             // 
             this.discountAmount.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.discountAmount.Location = new System.Drawing.Point(161, 164);
+            this.discountAmount.Location = new System.Drawing.Point(161, 143);
             this.discountAmount.Name = "discountAmount";
             this.discountAmount.ReadOnly = true;
             this.discountAmount.Size = new System.Drawing.Size(334, 33);
@@ -112,17 +112,17 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(100, 72);
+            this.label3.Location = new System.Drawing.Point(62, 72);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 21);
+            this.label3.Size = new System.Drawing.Size(91, 21);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Price : ";
+            this.label3.Text = "Total Price : ";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(48, 120);
+            this.label4.Location = new System.Drawing.Point(48, 110);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(105, 21);
             this.label4.TabIndex = 5;
@@ -132,7 +132,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(17, 164);
+            this.label5.Location = new System.Drawing.Point(17, 143);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(138, 21);
             this.label5.TabIndex = 6;
@@ -141,7 +141,7 @@
             // submit
             // 
             this.submit.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
-            this.submit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            this.submit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(191)))), ((int)(((byte)(213)))));
             this.submit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.submit.BorderRadius = 5;
             this.submit.ButtonText = "Submit";
@@ -159,9 +159,9 @@
             this.submit.IconVisible = true;
             this.submit.IconZoom = 90D;
             this.submit.IsTab = false;
-            this.submit.Location = new System.Drawing.Point(161, 214);
+            this.submit.Location = new System.Drawing.Point(161, 192);
             this.submit.Name = "submit";
-            this.submit.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            this.submit.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(191)))), ((int)(((byte)(213)))));
             this.submit.OnHovercolor = System.Drawing.Color.Silver;
             this.submit.OnHoverTextColor = System.Drawing.Color.White;
             this.submit.selected = false;
@@ -196,7 +196,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(595, 292);
+            this.ClientSize = new System.Drawing.Size(595, 262);
             this.Controls.Add(this.lbltotalPrice);
             this.Controls.Add(this.id);
             this.Controls.Add(this.submit);

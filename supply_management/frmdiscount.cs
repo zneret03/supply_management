@@ -68,6 +68,7 @@ namespace supply_management
         {
             id.Hide();
             lbltotalPrice.Hide();
+            
         }
 
         private void txtDiscount_TextChanged(object sender, EventArgs e)
@@ -87,7 +88,7 @@ namespace supply_management
         private void submit_Click(object sender, EventArgs e)
         {
                 //MessageBox.Show(totalPrice.ToString());
-                pos.discount(id.Text, discountAmount.Text, this, totalPrice);
+                pos.discount(id.Text, discountAmount.Text, txtDiscount.Text, this, totalPrice);
                 pointOfSale.tableShow();
         }
     }
