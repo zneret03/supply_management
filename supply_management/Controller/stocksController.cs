@@ -23,7 +23,7 @@ namespace supply_management.Controller
         
         public BindingSource loadStocks()
         {
-            String query = "SELECT stock_id, referenceNo, product.products_id, product_name, description, quantity, stockDate, stockInBy, status, vendor FROM stocks INNER JOIN product ON product.products_id = stocks.products_id INNER JOIN vendor ON vendor.vendor_id = stocks.vendor_id";
+            String query = "SELECT stock_id, referenceNo, product.products_id, product_name, description, quantity, product.capital, product.gain, stockDate, stockInBy, status, vendor FROM stocks INNER JOIN product ON product.products_id = stocks.products_id INNER JOIN vendor ON vendor.vendor_id = stocks.vendor_id";
             return this.loadData(query);
         }
 

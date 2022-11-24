@@ -50,7 +50,7 @@ namespace supply_management
             Date.Text = DateTime.Now.ToString("dd/MM/yyyy");
             product.loadCombo(items[0]);
             product.loadBra(items[1]);
-           
+
             barcode.ReadOnly = true;
             quantity.Text = "0";
         }
@@ -98,6 +98,18 @@ namespace supply_management
             
             String category_Id = product.seletedId(categoryName.Text);
             String brand_id = product.seletedIdBrand(brandName.Text);
+
+            double percentage = Convert.ToDouble(txtPercentage.Text);
+            int txtPrice = Convert.ToInt32(price.Text);
+            int txtCapital = Convert.ToInt32(capital.Text);
+
+            int txtGain = txtPrice - txtCapital;
+
+            if (percentage < 2.5)
+            {
+                MessageBox.Show("your percentage should be greater than 2.5", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
            
             TextBox[] text = new TextBox[]
             {
@@ -106,7 +118,9 @@ namespace supply_management
                 description,
                 quantity,
                 price,
-                reorder
+                reorder,
+                capital,
+                txtPercentage
             };
 
             String isExist = product.isDuplicate(text);
@@ -123,7 +137,7 @@ namespace supply_management
                 }
                 else
                 {
-                    product.insertProduct(category_Id, brand_id, text, this);
+                    product.insertProduct(category_Id, brand_id, text, txtGain, this);
                     categoryName.SelectedIndex = -1;
                     brandName.SelectedIndex = -1;
                     fmprod.getData();
@@ -147,16 +161,23 @@ namespace supply_management
             String category_Id = product.seletedId(categoryName.Text);
             String brand_id = product.seletedIdBrand(brandName.Text);
 
+            int txtPrice = Convert.ToInt32(price.Text);
+            int txtCapital = Convert.ToInt32(capital.Text);
+
+            int txtGain = txtPrice - txtCapital;
+
             TextBox[] text = new TextBox[]
             {
                 productName,
                 barcode,
                 description,
                 price,
-                reorder
+                reorder,
+                capital,
+                txtPercentage
             };
 
-            product.isUpdate(category_Id, brand_id, text, IdLabel.Text , this);
+            product.isUpdate(category_Id, brand_id, text, IdLabel.Text, txtGain, this);
             categoryName.SelectedIndex = -1;
             brandName.SelectedIndex = -1;
             fmprod.getData();
@@ -170,6 +191,27 @@ namespace supply_management
         private void brandName_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
+        }
+
+        private void txtOnChange ()
+        {
+            int txtPrice = 0;
+            int txtCapital = 0;
+            double percentageResult = 0;
+
+            if (int.TryParse(price.Text, out txtPrice))
+            if (int.TryParse(capital.Text, out txtCapital))
+
+            if (txtPrice != 0 && txtCapital != 0)
+            {
+                percentageResult = (double)txtPrice / txtCapital;
+                txtPercentage.Text = percentageResult.ToString("N");
+            }
+        }
+
+        private void capital_TextChanged(object sender, EventArgs e)
+        {
+            txtOnChange();
         }
     }
 }

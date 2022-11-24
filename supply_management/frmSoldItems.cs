@@ -68,12 +68,15 @@ namespace supply_management
             try
             {
                 double total = 0;
+                double gain = 0;
                 dataGridSoldItems.Rows.Clear();
                 using (MySqlDataReader reader = pos.showSoldItems(dateTimePicker1.Value.ToString("yyyy-MM-dd"), dateTimePicker2.Value.ToString("yyyy-MM-dd"), username.Text))
                 {
                     while (reader.Read())
                     {
                         total += Convert.ToDouble(reader["total"].ToString());
+                        gain += Convert.ToDouble(reader["gain"].ToString());
+
                         dataGridSoldItems.Rows.Add(reader["transaction_id"].ToString(),
                             reader["transactionNo"].ToString(),
                             reader["products_id"].ToString(),
@@ -81,10 +84,12 @@ namespace supply_management
                             reader["price"].ToString(),
                             reader["quantity"].ToString(),
                             reader["discount"].ToString(),
+                            reader["gain"].ToString(),
                             reader["total"].ToString());
                     }
                 }
                 totalSales.Text = total.ToString("#,##0.00");
+                totalGain.Text = gain.ToString("#,##0.00");
             }
             catch (Exception ex)
             {
@@ -108,7 +113,7 @@ namespace supply_management
 
             dataGridSoldItems.EnableHeadersVisualStyles = false;
             dataGridSoldItems.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridSoldItems.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(54, 54, 54);
+            dataGridSoldItems.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(67, 44, 122);
             dataGridSoldItems.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dataGridSoldItems.ColumnHeadersDefaultCellStyle.Padding = new Padding(0, 6, 0, 6);
         }

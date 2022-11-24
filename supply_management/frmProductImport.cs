@@ -72,7 +72,7 @@ namespace supply_management
 
             dataGridProducts.EnableHeadersVisualStyles = false;
             dataGridProducts.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridProducts.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(54, 54, 54);
+            dataGridProducts.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(67, 44, 122);
             dataGridProducts.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dataGridProducts.ColumnHeadersDefaultCellStyle.Padding = new Padding(0, 7, 0, 7);
 

@@ -42,7 +42,7 @@ namespace supply_management
 
         public void generateReferenceNo()
         {
-            String generate = error.GenerateNumber(8);
+            String generate = error.GenerateNumber(3);
             txtReferenceNo.Text = generate + DateTime.Now.Date.ToString("yyyy");
         }
         public void loadProductInventory()
@@ -152,7 +152,7 @@ namespace supply_management
 
             dataGridStockAdjustment.EnableHeadersVisualStyles = false;
             dataGridStockAdjustment.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridStockAdjustment.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(54, 54, 54);
+            dataGridStockAdjustment.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(67, 44, 122);
             dataGridStockAdjustment.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dataGridStockAdjustment.ColumnHeadersDefaultCellStyle.Padding = new Padding(0, 7, 0, 7);
             txtUsers.Text = min.user.Text;

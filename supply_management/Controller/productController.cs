@@ -50,7 +50,7 @@ namespace supply_management.Controller
         }
 
 
-        public void insertProduct(String category_id, String brand_id, TextBox[] productCred, addProducts suspend)
+        public void insertProduct(String category_id, String brand_id, TextBox[] productCred, int textGain, addProducts suspend)
         {
             bool isNumeric = error.checkNum(productCred[3].Text);
             bool isDecimal = error.isDecimal(productCred[4].Text);
@@ -69,7 +69,7 @@ namespace supply_management.Controller
                             else
                             {
 
-                                this.insert(category_id, brand_id, productCred, suspend);
+                                this.insert(category_id, brand_id, productCred, textGain, suspend);
                                 break;
                             }
                         }
@@ -93,9 +93,9 @@ namespace supply_management.Controller
             this.Delete(id, suspend);
         }
 
-        public void isUpdate(String category_id, String brand_id, TextBox[] productCred, String id, addProducts suspend)
+        public void isUpdate(String category_id, String brand_id, TextBox[] productCred, String id, int txtGain, addProducts suspend)
         {
-            this.Update(category_id, brand_id, productCred, id, suspend);
+            this.Update(category_id, brand_id, productCred, id, txtGain, suspend);
         }
 
         public object count()

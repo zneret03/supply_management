@@ -158,12 +158,12 @@ namespace supply_management.Controller
             String query = "";
             if(user.ToString() == "all cashier sales")
             {
-                query = "SELECT transaction_id, transactionNo, t.products_id, p.description, p.price, t.quantity, discount, total FROM transaction as t INNER JOIN product as p ON p.products_id = t.products_id WHERE t.date_created BETWEEN '" + date1 + "' AND '" + date2 + "' AND t.quantity != 0  AND status != 'pending'";
+                query = "SELECT transaction_id, transactionNo, t.products_id, p.description, p.price, t.quantity, discount, p.gain, total FROM transaction as t INNER JOIN product as p ON p.products_id = t.products_id WHERE t.date_created BETWEEN '" + date1 + "' AND '" + date2 + "' AND t.quantity != 0  AND status != 'pending'";
             }
             else
             {
                 //MessageBox.Show(date1 + " " + date2 + " " + user);
-                query = "SELECT transaction_id, transactionNo, t.products_id, p.description, p.price, t.quantity, discount, total FROM transaction as t INNER JOIN product as p ON p.products_id = t.products_id WHERE t.date_created BETWEEN '" + date1 + "' AND '" + date2 + "' AND cashier = '" + user.ToString() + "' AND t.quantity != 0 AND status != 'pending'";
+                query = "SELECT transaction_id, transactionNo, t.products_id, p.description, p.price, t.quantity, discount, p.gain, total FROM transaction as t INNER JOIN product as p ON p.products_id = t.products_id WHERE t.date_created BETWEEN '" + date1 + "' AND '" + date2 + "' AND cashier = '" + user.ToString() + "' AND t.quantity != 0 AND status != 'pending'";
             }
             
             return this.display(query);

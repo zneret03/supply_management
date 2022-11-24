@@ -171,49 +171,59 @@
             this.Column3,
             this.Column4,
             this.Column27});
-            this.dataTopSelling.Location = new System.Drawing.Point(21, 112);
+            this.dataTopSelling.Location = new System.Drawing.Point(28, 138);
+            this.dataTopSelling.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataTopSelling.Name = "dataTopSelling";
-            this.dataTopSelling.Size = new System.Drawing.Size(512, 449);
+            this.dataTopSelling.RowHeadersWidth = 51;
+            this.dataTopSelling.Size = new System.Drawing.Size(683, 553);
             this.dataTopSelling.TabIndex = 0;
             // 
             // Column1
             // 
             this.Column1.HeaderText = "#";
+            this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
             this.Column1.Width = 40;
             // 
             // Column5
             // 
             this.Column5.HeaderText = "ID";
+            this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
+            this.Column5.Width = 125;
             // 
             // Column2
             // 
             this.Column2.HeaderText = "PRODUCTS #";
+            this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
             this.Column2.Width = 110;
             // 
             // Column3
             // 
             this.Column3.HeaderText = "DESCRIPTION";
+            this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
             this.Column3.Width = 300;
             // 
             // Column4
             // 
             this.Column4.HeaderText = "QTY";
+            this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
+            this.Column4.Width = 125;
             // 
             // Column27
             // 
             this.Column27.HeaderText = "TOTAL SALES";
+            this.Column27.MinimumWidth = 6;
             this.Column27.Name = "Column27";
             this.Column27.Width = 130;
             // 
             // bunifuFlatButton1
             // 
-            this.bunifuFlatButton1.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
-            this.bunifuFlatButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            this.bunifuFlatButton1.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(44)))), ((int)(((byte)(122)))));
+            this.bunifuFlatButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(44)))), ((int)(((byte)(122)))));
             this.bunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuFlatButton1.BorderRadius = 5;
             this.bunifuFlatButton1.ButtonText = "Load Data";
@@ -231,13 +241,14 @@
             this.bunifuFlatButton1.IconVisible = false;
             this.bunifuFlatButton1.IconZoom = 90D;
             this.bunifuFlatButton1.IsTab = false;
-            this.bunifuFlatButton1.Location = new System.Drawing.Point(746, 62);
+            this.bunifuFlatButton1.Location = new System.Drawing.Point(995, 76);
+            this.bunifuFlatButton1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.bunifuFlatButton1.Name = "bunifuFlatButton1";
-            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(44)))), ((int)(((byte)(122)))));
             this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.Silver;
             this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.White;
             this.bunifuFlatButton1.selected = false;
-            this.bunifuFlatButton1.Size = new System.Drawing.Size(130, 37);
+            this.bunifuFlatButton1.Size = new System.Drawing.Size(173, 46);
             this.bunifuFlatButton1.TabIndex = 51;
             this.bunifuFlatButton1.Text = "Load Data";
             this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -249,27 +260,30 @@
             // 
             this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(346, 65);
+            this.dateTimePicker2.Location = new System.Drawing.Point(461, 80);
+            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(210, 29);
+            this.dateTimePicker2.Size = new System.Drawing.Size(279, 34);
             this.dateTimePicker2.TabIndex = 50;
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(141, 65);
+            this.dateTimePicker1.Location = new System.Drawing.Point(188, 80);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 29);
+            this.dateTimePicker1.Size = new System.Drawing.Size(265, 34);
             this.dateTimePicker1.TabIndex = 49;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label5.Location = new System.Drawing.Point(27, 67);
+            this.label5.Location = new System.Drawing.Point(36, 82);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(109, 21);
+            this.label5.Size = new System.Drawing.Size(137, 28);
             this.label5.TabIndex = 48;
             this.label5.Text = "Filter By Date :";
             // 
@@ -278,9 +292,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label1.Location = new System.Drawing.Point(27, 24);
+            this.label1.Location = new System.Drawing.Point(36, 30);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 21);
+            this.label1.Size = new System.Drawing.Size(130, 28);
             this.label1.TabIndex = 52;
             this.label1.Text = "TOP SELLING ";
             // 
@@ -292,10 +307,11 @@
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage6);
-            this.tabControl1.Location = new System.Drawing.Point(1, 12);
+            this.tabControl1.Location = new System.Drawing.Point(1, 15);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1044, 600);
+            this.tabControl1.Size = new System.Drawing.Size(1392, 738);
             this.tabControl1.TabIndex = 53;
             // 
             // tabPage1
@@ -309,10 +325,11 @@
             this.tabPage1.Controls.Add(this.label5);
             this.tabPage1.Controls.Add(this.dateTimePicker2);
             this.tabPage1.Controls.Add(this.dateTimePicker1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1036, 574);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Size = new System.Drawing.Size(1384, 709);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "TOP SELLING";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -322,9 +339,10 @@
             this.bunifuImageButton7.BackColor = System.Drawing.Color.Transparent;
             this.bunifuImageButton7.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton7.Image")));
             this.bunifuImageButton7.ImageActive = null;
-            this.bunifuImageButton7.Location = new System.Drawing.Point(889, 62);
+            this.bunifuImageButton7.Location = new System.Drawing.Point(1185, 76);
+            this.bunifuImageButton7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bunifuImageButton7.Name = "bunifuImageButton7";
-            this.bunifuImageButton7.Size = new System.Drawing.Size(40, 37);
+            this.bunifuImageButton7.Size = new System.Drawing.Size(53, 46);
             this.bunifuImageButton7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bunifuImageButton7.TabIndex = 81;
             this.bunifuImageButton7.TabStop = false;
@@ -338,9 +356,10 @@
             this.topSalesSorting.Items.AddRange(new object[] {
             "SORT BY QTY",
             "SORT BY TOTAL SALES"});
-            this.topSalesSorting.Location = new System.Drawing.Point(564, 65);
+            this.topSalesSorting.Location = new System.Drawing.Point(752, 80);
+            this.topSalesSorting.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.topSalesSorting.Name = "topSalesSorting";
-            this.topSalesSorting.Size = new System.Drawing.Size(172, 29);
+            this.topSalesSorting.Size = new System.Drawing.Size(228, 36);
             this.topSalesSorting.TabIndex = 76;
             // 
             // chart1
@@ -352,13 +371,14 @@
             this.chart1.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
             this.chart1.Legends.Add(legend2);
-            this.chart1.Location = new System.Drawing.Point(539, 112);
+            this.chart1.Location = new System.Drawing.Point(719, 138);
+            this.chart1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.chart1.Name = "chart1";
             series2.ChartArea = "ChartArea1";
             series2.Legend = "Legend1";
             series2.Name = "Series1";
             this.chart1.Series.Add(series2);
-            this.chart1.Size = new System.Drawing.Size(488, 449);
+            this.chart1.Size = new System.Drawing.Size(651, 553);
             this.chart1.TabIndex = 75;
             this.chart1.Text = "chart1";
             // 
@@ -374,10 +394,11 @@
             this.tabPage2.Controls.Add(this.label3);
             this.tabPage2.Controls.Add(this.dateTimePicker3);
             this.tabPage2.Controls.Add(this.dateTimePicker4);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1036, 574);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Size = new System.Drawing.Size(1384, 709);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "SOLD ITEMS";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -387,9 +408,10 @@
             this.bunifuImageButton2.BackColor = System.Drawing.Color.Transparent;
             this.bunifuImageButton2.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton2.Image")));
             this.bunifuImageButton2.ImageActive = null;
-            this.bunifuImageButton2.Location = new System.Drawing.Point(786, 44);
+            this.bunifuImageButton2.Location = new System.Drawing.Point(1048, 54);
+            this.bunifuImageButton2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bunifuImageButton2.Name = "bunifuImageButton2";
-            this.bunifuImageButton2.Size = new System.Drawing.Size(40, 37);
+            this.bunifuImageButton2.Size = new System.Drawing.Size(53, 46);
             this.bunifuImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bunifuImageButton2.TabIndex = 76;
             this.bunifuImageButton2.TabStop = false;
@@ -401,9 +423,10 @@
             this.bunifuImageButton1.BackColor = System.Drawing.Color.Transparent;
             this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
             this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(740, 44);
+            this.bunifuImageButton1.Location = new System.Drawing.Point(987, 54);
+            this.bunifuImageButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bunifuImageButton1.Name = "bunifuImageButton1";
-            this.bunifuImageButton1.Size = new System.Drawing.Size(40, 37);
+            this.bunifuImageButton1.Size = new System.Drawing.Size(53, 46);
             this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bunifuImageButton1.TabIndex = 75;
             this.bunifuImageButton1.TabStop = false;
@@ -415,17 +438,18 @@
             this.total.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.total.Font = new System.Drawing.Font("Consolas", 18F);
             this.total.ForeColor = System.Drawing.Color.Red;
-            this.total.Location = new System.Drawing.Point(851, 46);
+            this.total.Location = new System.Drawing.Point(1135, 57);
+            this.total.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.total.Name = "total";
-            this.total.Size = new System.Drawing.Size(167, 29);
+            this.total.Size = new System.Drawing.Size(223, 36);
             this.total.TabIndex = 61;
             this.total.Text = "0.00";
             this.total.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // bunifuFlatButton3
             // 
-            this.bunifuFlatButton3.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
-            this.bunifuFlatButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            this.bunifuFlatButton3.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(44)))), ((int)(((byte)(122)))));
+            this.bunifuFlatButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(44)))), ((int)(((byte)(122)))));
             this.bunifuFlatButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuFlatButton3.BorderRadius = 5;
             this.bunifuFlatButton3.ButtonText = "Load Data";
@@ -443,13 +467,14 @@
             this.bunifuFlatButton3.IconVisible = false;
             this.bunifuFlatButton3.IconZoom = 90D;
             this.bunifuFlatButton3.IsTab = false;
-            this.bunifuFlatButton3.Location = new System.Drawing.Point(604, 45);
+            this.bunifuFlatButton3.Location = new System.Drawing.Point(805, 55);
+            this.bunifuFlatButton3.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.bunifuFlatButton3.Name = "bunifuFlatButton3";
-            this.bunifuFlatButton3.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            this.bunifuFlatButton3.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(44)))), ((int)(((byte)(122)))));
             this.bunifuFlatButton3.OnHovercolor = System.Drawing.Color.Silver;
             this.bunifuFlatButton3.OnHoverTextColor = System.Drawing.Color.White;
             this.bunifuFlatButton3.selected = false;
-            this.bunifuFlatButton3.Size = new System.Drawing.Size(130, 37);
+            this.bunifuFlatButton3.Size = new System.Drawing.Size(173, 46);
             this.bunifuFlatButton3.TabIndex = 60;
             this.bunifuFlatButton3.Text = "Load Data";
             this.bunifuFlatButton3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -470,55 +495,71 @@
             this.dataGridViewTextBoxColumn5,
             this.Column7,
             this.Column8});
-            this.dataGridView1.Location = new System.Drawing.Point(18, 96);
+            this.dataGridView1.Location = new System.Drawing.Point(24, 118);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1000, 448);
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.Size = new System.Drawing.Size(1333, 551);
             this.dataGridView1.TabIndex = 53;
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.HeaderText = "#";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 125;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.HeaderText = "PRODUCTS #";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 125;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.HeaderText = "DESCRIPTION";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.Width = 350;
             // 
             // Column6
             // 
             this.Column6.HeaderText = "PRICE";
+            this.Column6.MinimumWidth = 6;
             this.Column6.Name = "Column6";
+            this.Column6.Width = 125;
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.HeaderText = "QTY";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Width = 125;
             // 
             // Column7
             // 
             this.Column7.HeaderText = "DISCOUNT";
+            this.Column7.MinimumWidth = 6;
             this.Column7.Name = "Column7";
+            this.Column7.Width = 125;
             // 
             // Column8
             // 
             this.Column8.HeaderText = "TOTAL";
+            this.Column8.MinimumWidth = 6;
             this.Column8.Name = "Column8";
+            this.Column8.Width = 125;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.label2.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label2.Location = new System.Drawing.Point(14, 16);
+            this.label2.Location = new System.Drawing.Point(19, 20);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(97, 21);
+            this.label2.Size = new System.Drawing.Size(120, 28);
             this.label2.TabIndex = 58;
             this.label2.Text = "SOLD ITEMS";
             // 
@@ -543,14 +584,14 @@
             this.bunifuFlatButton2.IconVisible = false;
             this.bunifuFlatButton2.IconZoom = 90D;
             this.bunifuFlatButton2.IsTab = false;
-            this.bunifuFlatButton2.Location = new System.Drawing.Point(1588, 108);
-            this.bunifuFlatButton2.Margin = new System.Windows.Forms.Padding(6);
+            this.bunifuFlatButton2.Location = new System.Drawing.Point(2117, 133);
+            this.bunifuFlatButton2.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.bunifuFlatButton2.Name = "bunifuFlatButton2";
             this.bunifuFlatButton2.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
             this.bunifuFlatButton2.OnHovercolor = System.Drawing.Color.Silver;
             this.bunifuFlatButton2.OnHoverTextColor = System.Drawing.Color.White;
             this.bunifuFlatButton2.selected = false;
-            this.bunifuFlatButton2.Size = new System.Drawing.Size(238, 71);
+            this.bunifuFlatButton2.Size = new System.Drawing.Size(317, 87);
             this.bunifuFlatButton2.TabIndex = 57;
             this.bunifuFlatButton2.Text = "Load Data";
             this.bunifuFlatButton2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -561,9 +602,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label3.Location = new System.Drawing.Point(55, 54);
+            this.label3.Location = new System.Drawing.Point(73, 66);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(109, 21);
+            this.label3.Size = new System.Drawing.Size(137, 28);
             this.label3.TabIndex = 54;
             this.label3.Text = "Filter By Date :";
             // 
@@ -571,18 +613,20 @@
             // 
             this.dateTimePicker3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker3.Location = new System.Drawing.Point(385, 48);
+            this.dateTimePicker3.Location = new System.Drawing.Point(513, 59);
+            this.dateTimePicker3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(210, 29);
+            this.dateTimePicker3.Size = new System.Drawing.Size(279, 34);
             this.dateTimePicker3.TabIndex = 56;
             // 
             // dateTimePicker4
             // 
             this.dateTimePicker4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker4.Location = new System.Drawing.Point(170, 48);
+            this.dateTimePicker4.Location = new System.Drawing.Point(227, 59);
+            this.dateTimePicker4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(205, 29);
+            this.dateTimePicker4.Size = new System.Drawing.Size(272, 34);
             this.dateTimePicker4.TabIndex = 55;
             // 
             // tabPage3
@@ -590,9 +634,10 @@
             this.tabPage3.Controls.Add(this.bunifuImageButton3);
             this.tabPage3.Controls.Add(this.dataGridCritical);
             this.tabPage3.Controls.Add(this.label4);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1036, 574);
+            this.tabPage3.Size = new System.Drawing.Size(1384, 709);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "CRITICAL STOCKS";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -603,9 +648,10 @@
             this.bunifuImageButton3.BackColor = System.Drawing.Color.Transparent;
             this.bunifuImageButton3.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton3.Image")));
             this.bunifuImageButton3.ImageActive = null;
-            this.bunifuImageButton3.Location = new System.Drawing.Point(983, 34);
+            this.bunifuImageButton3.Location = new System.Drawing.Point(1311, 42);
+            this.bunifuImageButton3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bunifuImageButton3.Name = "bunifuImageButton3";
-            this.bunifuImageButton3.Size = new System.Drawing.Size(40, 37);
+            this.bunifuImageButton3.Size = new System.Drawing.Size(53, 46);
             this.bunifuImageButton3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bunifuImageButton3.TabIndex = 77;
             this.bunifuImageButton3.TabStop = false;
@@ -628,62 +674,80 @@
             this.Column16,
             this.Column17,
             this.Column18});
-            this.dataGridCritical.Location = new System.Drawing.Point(14, 75);
+            this.dataGridCritical.Location = new System.Drawing.Point(19, 92);
+            this.dataGridCritical.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridCritical.Name = "dataGridCritical";
-            this.dataGridCritical.Size = new System.Drawing.Size(1009, 486);
+            this.dataGridCritical.RowHeadersWidth = 51;
+            this.dataGridCritical.Size = new System.Drawing.Size(1345, 598);
             this.dataGridCritical.TabIndex = 62;
             // 
             // Column9
             // 
             this.Column9.HeaderText = "#";
+            this.Column9.MinimumWidth = 6;
             this.Column9.Name = "Column9";
             this.Column9.Width = 20;
             // 
             // Column10
             // 
             this.Column10.HeaderText = "PCODE";
+            this.Column10.MinimumWidth = 6;
             this.Column10.Name = "Column10";
+            this.Column10.Width = 125;
             // 
             // Column11
             // 
             this.Column11.HeaderText = "BARCODE";
+            this.Column11.MinimumWidth = 6;
             this.Column11.Name = "Column11";
+            this.Column11.Width = 125;
             // 
             // Column12
             // 
             this.Column12.HeaderText = "PNAME";
+            this.Column12.MinimumWidth = 6;
             this.Column12.Name = "Column12";
+            this.Column12.Width = 125;
             // 
             // Column13
             // 
             this.Column13.HeaderText = "CNAME";
+            this.Column13.MinimumWidth = 6;
             this.Column13.Name = "Column13";
+            this.Column13.Width = 125;
             // 
             // Column14
             // 
             this.Column14.HeaderText = "BNAME";
+            this.Column14.MinimumWidth = 6;
             this.Column14.Name = "Column14";
+            this.Column14.Width = 125;
             // 
             // Column15
             // 
             this.Column15.HeaderText = "DESCRIPTION";
+            this.Column15.MinimumWidth = 6;
             this.Column15.Name = "Column15";
             this.Column15.Width = 180;
             // 
             // Column16
             // 
             this.Column16.HeaderText = "PRICE";
+            this.Column16.MinimumWidth = 6;
             this.Column16.Name = "Column16";
+            this.Column16.Width = 125;
             // 
             // Column17
             // 
             this.Column17.HeaderText = "REORDER";
+            this.Column17.MinimumWidth = 6;
             this.Column17.Name = "Column17";
             this.Column17.Width = 80;
             // 
             // Column18
             // 
             this.Column18.HeaderText = "ON HAND";
+            this.Column18.MinimumWidth = 6;
             this.Column18.Name = "Column18";
             this.Column18.Width = 80;
             // 
@@ -692,9 +756,10 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.label4.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label4.Location = new System.Drawing.Point(17, 37);
+            this.label4.Location = new System.Drawing.Point(23, 46);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(134, 21);
+            this.label4.Size = new System.Drawing.Size(165, 28);
             this.label4.TabIndex = 59;
             this.label4.Text = "CRITICAL STOCKS";
             // 
@@ -705,9 +770,10 @@
             this.tabPage4.Controls.Add(this.txtTotalQty);
             this.tabPage4.Controls.Add(this.dataProductInventory);
             this.tabPage4.Controls.Add(this.label6);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Location = new System.Drawing.Point(4, 25);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1036, 574);
+            this.tabPage4.Size = new System.Drawing.Size(1384, 709);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "INVENTORY";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -717,9 +783,10 @@
             this.bunifuImageButton4.BackColor = System.Drawing.Color.Transparent;
             this.bunifuImageButton4.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton4.Image")));
             this.bunifuImageButton4.ImageActive = null;
-            this.bunifuImageButton4.Location = new System.Drawing.Point(985, 26);
+            this.bunifuImageButton4.Location = new System.Drawing.Point(1313, 32);
+            this.bunifuImageButton4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bunifuImageButton4.Name = "bunifuImageButton4";
-            this.bunifuImageButton4.Size = new System.Drawing.Size(40, 37);
+            this.bunifuImageButton4.Size = new System.Drawing.Size(53, 46);
             this.bunifuImageButton4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bunifuImageButton4.TabIndex = 78;
             this.bunifuImageButton4.TabStop = false;
@@ -731,9 +798,10 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(116, 37);
+            this.label7.Location = new System.Drawing.Point(155, 46);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(90, 21);
+            this.label7.Size = new System.Drawing.Size(114, 28);
             this.label7.TabIndex = 68;
             this.label7.Text = "Qunatity # :";
             // 
@@ -742,9 +810,10 @@
             this.txtTotalQty.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTotalQty.Font = new System.Drawing.Font("Consolas", 18F);
             this.txtTotalQty.ForeColor = System.Drawing.Color.Red;
-            this.txtTotalQty.Location = new System.Drawing.Point(212, 34);
+            this.txtTotalQty.Location = new System.Drawing.Point(283, 42);
+            this.txtTotalQty.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTotalQty.Name = "txtTotalQty";
-            this.txtTotalQty.Size = new System.Drawing.Size(90, 29);
+            this.txtTotalQty.Size = new System.Drawing.Size(120, 36);
             this.txtTotalQty.TabIndex = 67;
             this.txtTotalQty.Text = "0.00";
             // 
@@ -764,62 +833,80 @@
             this.dataGridViewTextBoxColumn12,
             this.dataGridViewTextBoxColumn13,
             this.dataGridViewTextBoxColumn14});
-            this.dataProductInventory.Location = new System.Drawing.Point(16, 72);
+            this.dataProductInventory.Location = new System.Drawing.Point(21, 89);
+            this.dataProductInventory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataProductInventory.Name = "dataProductInventory";
-            this.dataProductInventory.Size = new System.Drawing.Size(1009, 486);
+            this.dataProductInventory.RowHeadersWidth = 51;
+            this.dataProductInventory.Size = new System.Drawing.Size(1345, 598);
             this.dataProductInventory.TabIndex = 65;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.HeaderText = "#";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.Width = 20;
             // 
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.HeaderText = "PCODE";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.Width = 125;
             // 
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.HeaderText = "BARCODE";
+            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.Width = 125;
             // 
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.HeaderText = "PNAME";
+            this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.Width = 125;
             // 
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.HeaderText = "CNAME";
+            this.dataGridViewTextBoxColumn9.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.Width = 125;
             // 
             // dataGridViewTextBoxColumn10
             // 
             this.dataGridViewTextBoxColumn10.HeaderText = "BNAME";
+            this.dataGridViewTextBoxColumn10.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.Width = 125;
             // 
             // dataGridViewTextBoxColumn11
             // 
             this.dataGridViewTextBoxColumn11.HeaderText = "DESCRIPTION";
+            this.dataGridViewTextBoxColumn11.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
             this.dataGridViewTextBoxColumn11.Width = 180;
             // 
             // dataGridViewTextBoxColumn12
             // 
             this.dataGridViewTextBoxColumn12.HeaderText = "PRICE";
+            this.dataGridViewTextBoxColumn12.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.Width = 125;
             // 
             // dataGridViewTextBoxColumn13
             // 
             this.dataGridViewTextBoxColumn13.HeaderText = "REORDER";
+            this.dataGridViewTextBoxColumn13.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
             this.dataGridViewTextBoxColumn13.Width = 80;
             // 
             // dataGridViewTextBoxColumn14
             // 
             this.dataGridViewTextBoxColumn14.HeaderText = "ON HAND";
+            this.dataGridViewTextBoxColumn14.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
             this.dataGridViewTextBoxColumn14.Width = 80;
             // 
@@ -828,9 +915,10 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.label6.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label6.Location = new System.Drawing.Point(12, 37);
+            this.label6.Location = new System.Drawing.Point(16, 46);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(94, 21);
+            this.label6.Size = new System.Drawing.Size(116, 28);
             this.label6.TabIndex = 64;
             this.label6.Text = "INVENTORY";
             // 
@@ -843,9 +931,10 @@
             this.tabPage5.Controls.Add(this.label9);
             this.tabPage5.Controls.Add(this.dateCancel2);
             this.tabPage5.Controls.Add(this.dateCancel1);
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Location = new System.Drawing.Point(4, 25);
+            this.tabPage5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1036, 574);
+            this.tabPage5.Size = new System.Drawing.Size(1384, 709);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "CANCEL SALES";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -855,9 +944,10 @@
             this.bunifuImageButton5.BackColor = System.Drawing.Color.Transparent;
             this.bunifuImageButton5.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton5.Image")));
             this.bunifuImageButton5.ImageActive = null;
-            this.bunifuImageButton5.Location = new System.Drawing.Point(810, 59);
+            this.bunifuImageButton5.Location = new System.Drawing.Point(1080, 73);
+            this.bunifuImageButton5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bunifuImageButton5.Name = "bunifuImageButton5";
-            this.bunifuImageButton5.Size = new System.Drawing.Size(40, 37);
+            this.bunifuImageButton5.Size = new System.Drawing.Size(53, 46);
             this.bunifuImageButton5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bunifuImageButton5.TabIndex = 79;
             this.bunifuImageButton5.TabStop = false;
@@ -882,87 +972,113 @@
             this.Column24,
             this.Column25,
             this.Column26});
-            this.dataCancelSales.Location = new System.Drawing.Point(18, 128);
+            this.dataCancelSales.Location = new System.Drawing.Point(24, 158);
+            this.dataCancelSales.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataCancelSales.Name = "dataCancelSales";
-            this.dataCancelSales.Size = new System.Drawing.Size(1000, 421);
+            this.dataCancelSales.RowHeadersWidth = 51;
+            this.dataCancelSales.Size = new System.Drawing.Size(1333, 518);
             this.dataCancelSales.TabIndex = 53;
             // 
             // dataGridViewTextBoxColumn15
             // 
             this.dataGridViewTextBoxColumn15.HeaderText = "#";
+            this.dataGridViewTextBoxColumn15.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            this.dataGridViewTextBoxColumn15.Width = 125;
             // 
             // Column19
             // 
             this.Column19.HeaderText = "TRANSID";
+            this.Column19.MinimumWidth = 6;
             this.Column19.Name = "Column19";
+            this.Column19.Width = 125;
             // 
             // dataGridViewTextBoxColumn17
             // 
             this.dataGridViewTextBoxColumn17.HeaderText = "PRODUCTS #";
+            this.dataGridViewTextBoxColumn17.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            this.dataGridViewTextBoxColumn17.Width = 125;
             // 
             // dataGridViewTextBoxColumn18
             // 
             this.dataGridViewTextBoxColumn18.HeaderText = "DESCRIPTION";
+            this.dataGridViewTextBoxColumn18.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
             this.dataGridViewTextBoxColumn18.Width = 300;
             // 
             // Column20
             // 
             this.Column20.HeaderText = "PRICE";
+            this.Column20.MinimumWidth = 6;
             this.Column20.Name = "Column20";
+            this.Column20.Width = 125;
             // 
             // dataGridViewTextBoxColumn19
             // 
             this.dataGridViewTextBoxColumn19.HeaderText = "QTY";
+            this.dataGridViewTextBoxColumn19.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
+            this.dataGridViewTextBoxColumn19.Width = 125;
             // 
             // Column21
             // 
             this.Column21.HeaderText = "TOTAL";
+            this.Column21.MinimumWidth = 6;
             this.Column21.Name = "Column21";
+            this.Column21.Width = 125;
             // 
             // Column22
             // 
             this.Column22.HeaderText = "DATE";
+            this.Column22.MinimumWidth = 6;
             this.Column22.Name = "Column22";
+            this.Column22.Width = 125;
             // 
             // Column23
             // 
             this.Column23.HeaderText = "VOID";
+            this.Column23.MinimumWidth = 6;
             this.Column23.Name = "Column23";
+            this.Column23.Width = 125;
             // 
             // Column24
             // 
             this.Column24.HeaderText = "CANCEL BY";
+            this.Column24.MinimumWidth = 6;
             this.Column24.Name = "Column24";
+            this.Column24.Width = 125;
             // 
             // Column25
             // 
             this.Column25.HeaderText = "REASON";
+            this.Column25.MinimumWidth = 6;
             this.Column25.Name = "Column25";
+            this.Column25.Width = 125;
             // 
             // Column26
             // 
             this.Column26.HeaderText = "ACTION";
+            this.Column26.MinimumWidth = 6;
             this.Column26.Name = "Column26";
+            this.Column26.Width = 125;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.label8.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label8.Location = new System.Drawing.Point(29, 25);
+            this.label8.Location = new System.Drawing.Point(39, 31);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(116, 21);
+            this.label8.Size = new System.Drawing.Size(142, 28);
             this.label8.TabIndex = 58;
             this.label8.Text = "CANCEL SALES";
             // 
             // bunifuFlatButton5
             // 
-            this.bunifuFlatButton5.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
-            this.bunifuFlatButton5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            this.bunifuFlatButton5.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(44)))), ((int)(((byte)(122)))));
+            this.bunifuFlatButton5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(44)))), ((int)(((byte)(122)))));
             this.bunifuFlatButton5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuFlatButton5.BorderRadius = 5;
             this.bunifuFlatButton5.ButtonText = "Load Data";
@@ -980,13 +1096,14 @@
             this.bunifuFlatButton5.IconVisible = false;
             this.bunifuFlatButton5.IconZoom = 90D;
             this.bunifuFlatButton5.IsTab = false;
-            this.bunifuFlatButton5.Location = new System.Drawing.Point(662, 61);
+            this.bunifuFlatButton5.Location = new System.Drawing.Point(883, 75);
+            this.bunifuFlatButton5.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.bunifuFlatButton5.Name = "bunifuFlatButton5";
-            this.bunifuFlatButton5.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            this.bunifuFlatButton5.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(44)))), ((int)(((byte)(122)))));
             this.bunifuFlatButton5.OnHovercolor = System.Drawing.Color.Silver;
             this.bunifuFlatButton5.OnHoverTextColor = System.Drawing.Color.White;
             this.bunifuFlatButton5.selected = false;
-            this.bunifuFlatButton5.Size = new System.Drawing.Size(130, 37);
+            this.bunifuFlatButton5.Size = new System.Drawing.Size(173, 46);
             this.bunifuFlatButton5.TabIndex = 57;
             this.bunifuFlatButton5.Text = "Load Data";
             this.bunifuFlatButton5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -998,9 +1115,10 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label9.Location = new System.Drawing.Point(29, 68);
+            this.label9.Location = new System.Drawing.Point(39, 84);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(194, 21);
+            this.label9.Size = new System.Drawing.Size(244, 28);
             this.label9.TabIndex = 54;
             this.label9.Text = "Filter By Date (From : To ) : ";
             // 
@@ -1008,18 +1126,20 @@
             // 
             this.dateCancel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateCancel2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateCancel2.Location = new System.Drawing.Point(439, 66);
+            this.dateCancel2.Location = new System.Drawing.Point(585, 81);
+            this.dateCancel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateCancel2.Name = "dateCancel2";
-            this.dateCancel2.Size = new System.Drawing.Size(210, 29);
+            this.dateCancel2.Size = new System.Drawing.Size(279, 34);
             this.dateCancel2.TabIndex = 56;
             // 
             // dateCancel1
             // 
             this.dateCancel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateCancel1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateCancel1.Location = new System.Drawing.Point(223, 66);
+            this.dateCancel1.Location = new System.Drawing.Point(297, 81);
+            this.dateCancel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateCancel1.Name = "dateCancel1";
-            this.dateCancel1.Size = new System.Drawing.Size(200, 29);
+            this.dateCancel1.Size = new System.Drawing.Size(265, 34);
             this.dateCancel1.TabIndex = 55;
             // 
             // tabPage6
@@ -1032,9 +1152,10 @@
             this.tabPage6.Controls.Add(this.dateTimePicker6);
             this.tabPage6.Controls.Add(this.label10);
             this.tabPage6.Controls.Add(this.TableStockHistory);
-            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Location = new System.Drawing.Point(4, 25);
+            this.tabPage6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(1036, 574);
+            this.tabPage6.Size = new System.Drawing.Size(1384, 709);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "STOCK HISTORY";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -1044,9 +1165,10 @@
             this.bunifuImageButton6.BackColor = System.Drawing.Color.Transparent;
             this.bunifuImageButton6.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton6.Image")));
             this.bunifuImageButton6.ImageActive = null;
-            this.bunifuImageButton6.Location = new System.Drawing.Point(884, 47);
+            this.bunifuImageButton6.Location = new System.Drawing.Point(1179, 58);
+            this.bunifuImageButton6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bunifuImageButton6.Name = "bunifuImageButton6";
-            this.bunifuImageButton6.Size = new System.Drawing.Size(40, 37);
+            this.bunifuImageButton6.Size = new System.Drawing.Size(53, 46);
             this.bunifuImageButton6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bunifuImageButton6.TabIndex = 80;
             this.bunifuImageButton6.TabStop = false;
@@ -1058,9 +1180,10 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.label11.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label11.Location = new System.Drawing.Point(33, 11);
+            this.label11.Location = new System.Drawing.Point(44, 14);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(123, 21);
+            this.label11.Size = new System.Drawing.Size(153, 28);
             this.label11.TabIndex = 59;
             this.label11.Text = "STOCK HISTORY";
             // 
@@ -1071,15 +1194,16 @@
             this.status.Items.AddRange(new object[] {
             "Out of order",
             "Functioning"});
-            this.status.Location = new System.Drawing.Point(559, 52);
+            this.status.Location = new System.Drawing.Point(745, 64);
+            this.status.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.status.Name = "status";
-            this.status.Size = new System.Drawing.Size(183, 29);
+            this.status.Size = new System.Drawing.Size(243, 36);
             this.status.TabIndex = 54;
             // 
             // loadData
             // 
-            this.loadData.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
-            this.loadData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            this.loadData.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(44)))), ((int)(((byte)(122)))));
+            this.loadData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(44)))), ((int)(((byte)(122)))));
             this.loadData.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.loadData.BorderRadius = 5;
             this.loadData.ButtonText = "Load Data";
@@ -1097,13 +1221,14 @@
             this.loadData.IconVisible = false;
             this.loadData.IconZoom = 90D;
             this.loadData.IsTab = false;
-            this.loadData.Location = new System.Drawing.Point(748, 48);
+            this.loadData.Location = new System.Drawing.Point(997, 59);
+            this.loadData.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.loadData.Name = "loadData";
-            this.loadData.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            this.loadData.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(44)))), ((int)(((byte)(122)))));
             this.loadData.OnHovercolor = System.Drawing.Color.Silver;
             this.loadData.OnHoverTextColor = System.Drawing.Color.White;
             this.loadData.selected = false;
-            this.loadData.Size = new System.Drawing.Size(130, 37);
+            this.loadData.Size = new System.Drawing.Size(173, 46);
             this.loadData.TabIndex = 53;
             this.loadData.Text = "Load Data";
             this.loadData.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1115,27 +1240,30 @@
             // 
             this.dateTimePicker5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker5.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker5.Location = new System.Drawing.Point(344, 53);
+            this.dateTimePicker5.Location = new System.Drawing.Point(459, 65);
+            this.dateTimePicker5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateTimePicker5.Name = "dateTimePicker5";
-            this.dateTimePicker5.Size = new System.Drawing.Size(209, 29);
+            this.dateTimePicker5.Size = new System.Drawing.Size(277, 34);
             this.dateTimePicker5.TabIndex = 52;
             // 
             // dateTimePicker6
             // 
             this.dateTimePicker6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker6.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker6.Location = new System.Drawing.Point(129, 53);
+            this.dateTimePicker6.Location = new System.Drawing.Point(172, 65);
+            this.dateTimePicker6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateTimePicker6.Name = "dateTimePicker6";
-            this.dateTimePicker6.Size = new System.Drawing.Size(209, 29);
+            this.dateTimePicker6.Size = new System.Drawing.Size(277, 34);
             this.dateTimePicker6.TabIndex = 51;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label10.Location = new System.Drawing.Point(10, 57);
+            this.label10.Location = new System.Drawing.Point(13, 70);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(113, 21);
+            this.label10.Size = new System.Drawing.Size(142, 28);
             this.label10.TabIndex = 50;
             this.label10.Text = "Filter By Date : ";
             // 
@@ -1162,67 +1290,85 @@
             this.dataGridViewTextBoxColumn24,
             this.dataGridViewTextBoxColumn23,
             this.dataGridViewTextBoxColumn26});
-            this.TableStockHistory.Location = new System.Drawing.Point(7, 105);
+            this.TableStockHistory.Location = new System.Drawing.Point(9, 129);
+            this.TableStockHistory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TableStockHistory.Name = "TableStockHistory";
-            this.TableStockHistory.Size = new System.Drawing.Size(1022, 446);
+            this.TableStockHistory.RowHeadersWidth = 51;
+            this.TableStockHistory.Size = new System.Drawing.Size(1363, 549);
             this.TableStockHistory.TabIndex = 49;
             // 
             // Id
             // 
             this.Id.HeaderText = "#";
+            this.Id.MinimumWidth = 6;
             this.Id.Name = "Id";
             this.Id.Width = 50;
             // 
             // dataGridViewTextBoxColumn16
             // 
             this.dataGridViewTextBoxColumn16.HeaderText = "REF #";
+            this.dataGridViewTextBoxColumn16.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            this.dataGridViewTextBoxColumn16.Width = 125;
             // 
             // dataGridViewTextBoxColumn20
             // 
             this.dataGridViewTextBoxColumn20.HeaderText = "PCODE";
+            this.dataGridViewTextBoxColumn20.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
+            this.dataGridViewTextBoxColumn20.Width = 125;
             // 
             // dataGridViewTextBoxColumn21
             // 
             this.dataGridViewTextBoxColumn21.HeaderText = "PNAME";
+            this.dataGridViewTextBoxColumn21.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
             this.dataGridViewTextBoxColumn21.Width = 130;
             // 
             // dataGridViewTextBoxColumn22
             // 
             this.dataGridViewTextBoxColumn22.HeaderText = "DESCRIPTION";
+            this.dataGridViewTextBoxColumn22.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
             this.dataGridViewTextBoxColumn22.Width = 190;
             // 
             // dataGridViewTextBoxColumn25
             // 
             this.dataGridViewTextBoxColumn25.HeaderText = "QTY";
+            this.dataGridViewTextBoxColumn25.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
+            this.dataGridViewTextBoxColumn25.Width = 125;
             // 
             // dataGridViewTextBoxColumn24
             // 
             this.dataGridViewTextBoxColumn24.HeaderText = "STOCK DATE";
+            this.dataGridViewTextBoxColumn24.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
+            this.dataGridViewTextBoxColumn24.Width = 125;
             // 
             // dataGridViewTextBoxColumn23
             // 
             this.dataGridViewTextBoxColumn23.HeaderText = "STOCK IN BY";
+            this.dataGridViewTextBoxColumn23.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
+            this.dataGridViewTextBoxColumn23.Width = 125;
             // 
             // dataGridViewTextBoxColumn26
             // 
             this.dataGridViewTextBoxColumn26.HeaderText = "STATUS";
+            this.dataGridViewTextBoxColumn26.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn26.Name = "dataGridViewTextBoxColumn26";
+            this.dataGridViewTextBoxColumn26.Width = 125;
             // 
             // frmTopItems
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1044, 607);
+            this.ClientSize = new System.Drawing.Size(1392, 747);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmTopItems";
             this.Text = "1044, 607";
             this.Load += new System.EventHandler(this.frmTopItems_Load);

@@ -417,9 +417,13 @@ namespace supply_management.Model
                 conn.Close();
                 
             }
-            catch(Exception ex)
+            catch(MySqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                int errorCode = ex.Number;
+                if (errorCode == 1366)
+                {
+                    MessageBox.Show("Stock fields are empty please try again!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }   
             }
         }
     }

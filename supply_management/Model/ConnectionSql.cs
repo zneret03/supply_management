@@ -17,7 +17,7 @@ namespace supply_management.Model
 
         public String connection()
         {
-            String constring = "datasource=localhost;port=3306;username=root;password=;database=supply";
+            String constring = "datasource=localhost;port=3306;username=root;password=;database=supply;SslMode=None";
             return constring;
         }
 

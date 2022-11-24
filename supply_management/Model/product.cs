@@ -30,7 +30,7 @@ namespace supply_management.Model
         /// <returns>bind</returns>
         protected BindingSource loadTable()
         {
-            String query = "SELECT products_id,barcode, product_name, category_name, brand_name, description, quantity, price, reorder , product.date_created, product.date_updated " +
+            String query = "SELECT products_id,barcode, product_name, category_name, brand_name, description, quantity, price, reorder, capital, gain, percentage, product.date_created, product.date_updated " +
             "FROM product INNER JOIN category ON category.category_id = product.category_id INNER JOIN brand ON brand.brand_id = product.brand_id";
             conn = new MySqlConnection(this.connection());
             conn.Open();
@@ -86,7 +86,7 @@ namespace supply_management.Model
         {
             conn = new MySqlConnection(this.connection());
             conn.Open();
-            sda = new MySqlDataAdapter("SELECT products_id,barcode, product_name, category_name, brand_name, description, quantity, price, product.date_created, product.date_updated FROM product INNER JOIN category ON category.category_id = product.category_id INNER JOIN brand ON brand.brand_id = product.brand_id WHERE product_name LIKE '%" + search + "%' OR products_id LIKE '%" + search +"%'", conn);
+            sda = new MySqlDataAdapter("SELECT products_id,barcode, product_name, category_name, brand_name, description, quantity, price, capital, gain, product.date_created, product.date_updated FROM product INNER JOIN category ON category.category_id = product.category_id INNER JOIN brand ON brand.brand_id = product.brand_id WHERE product_name LIKE '%" + search + "%' OR products_id LIKE '%" + search +"%'", conn);
             dt = new DataTable();
             sda.Fill(dt);
 
@@ -181,7 +181,7 @@ namespace supply_management.Model
         }
 
 
-        protected void insert(String category_id, String brand_id, TextBox[] product, addProducts suspend)
+        protected void insert(String category_id, String brand_id, TextBox[] product, int txtGain, addProducts suspend)
         {
             try
             {
@@ -194,8 +194,8 @@ namespace supply_management.Model
                 conn.Open();
                 //MessageBox.Show(brand_id);
 
-                command = new MySqlCommand("INSERT INTO product (products_id,barcode, product_name, category_id, brand_id, description, quantity, price, reorder, date_created)" + 
-                    "VALUES (@id,@bar, @names, @categoryid, @brandid, @description, @quantity, @price, @reorder, @date_created)", conn);
+                command = new MySqlCommand("INSERT INTO product (products_id,barcode, product_name, category_id, brand_id, description, quantity, price, reorder, date_created, capital, gain, percentage)" +
+                    "VALUES (@id,@bar, @names, @categoryid, @brandid, @description, @quantity, @price, @reorder, @date_created, @capital, @gain, @percentage)", conn);
                     
                     command.Parameters.AddWithValue("@id", id);
                     command.Parameters.AddWithValue("@names", product[0].Text);
@@ -207,8 +207,11 @@ namespace supply_management.Model
                     command.Parameters.AddWithValue("@price", product[4].Text);
                     command.Parameters.AddWithValue("@reorder", product[5].Text);
                     command.Parameters.AddWithValue("@date_created", dateNow);
-                    
-                    bool result = (int)command.ExecuteNonQuery() > 0;
+                    command.Parameters.AddWithValue("@capital", product[6].Text);
+                    command.Parameters.AddWithValue("@gain", txtGain);
+                    command.Parameters.AddWithValue("@percentage", product[7].Text);
+
+                bool result = (int)command.ExecuteNonQuery() > 0;
                     
                     if (result == true)
                     {
@@ -266,13 +269,13 @@ namespace supply_management.Model
             }
         }
 
-        protected void Update(String category_id, String brand_id, TextBox[] product,String id, addProducts suspend)
+        protected void Update(String category_id, String brand_id, TextBox[] product,String id, int txtGain, addProducts suspend)
         {
             try
             {
                 conn = new MySqlConnection(this.connection());
                 conn.Open();
-                command = new MySqlCommand("UPDATE product SET barcode = @bar, product_name = @name , category_id = @categoryid, brand_id = @brandid, description = @desc, price = @price, reorder=@reorder ,date_updated = @date_updated WHERE products_id = @id", conn);
+                command = new MySqlCommand("UPDATE product SET barcode = @bar, product_name = @name , category_id = @categoryid, brand_id = @brandid, description = @desc, price = @price, reorder=@reorder, capital = @capital, gain = @gain, percentage = @percentage, date_updated = @date_updated WHERE products_id = @id", conn);
                 command.Parameters.AddWithValue("@name", product[0].Text);
                 command.Parameters.AddWithValue("@bar", product[1].Text);
                 command.Parameters.AddWithValue("@categoryid", int.Parse(category_id));
@@ -280,6 +283,9 @@ namespace supply_management.Model
                 command.Parameters.AddWithValue("@desc", product[2].Text);
                 command.Parameters.AddWithValue("@price", product[3].Text);
                 command.Parameters.AddWithValue("@reorder", product[4].Text);
+                command.Parameters.AddWithValue("@capital", product[5].Text);
+                command.Parameters.AddWithValue("@gain", txtGain);
+                command.Parameters.AddWithValue("@percentage", product[6].Text);
                 command.Parameters.AddWithValue("@date_updated", dateNow);
                 command.Parameters.AddWithValue("@id", id);
 

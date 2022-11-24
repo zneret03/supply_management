@@ -33,7 +33,7 @@ namespace supply_management
 
             data.EnableHeadersVisualStyles = false;
             data.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            data.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(54, 54, 54);
+            data.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(67, 44, 122);
             data.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             data.ColumnHeadersDefaultCellStyle.Padding = new Padding(0, 7, 0, 7);
         }
@@ -121,7 +121,6 @@ namespace supply_management
         public void loadStocks()
         {
             dataGridStock.DataSource = stocks.loadStocks();
-
             dataGridStock.Columns[0].Width = 100;
             dataGridStock.Columns[1].Width = 120;
             dataGridStock.Columns[2].Width = 100;
@@ -132,6 +131,8 @@ namespace supply_management
             dataGridStock.Columns[7].Width = 150;
             dataGridStock.Columns[8].Width = 150;
             dataGridStock.Columns[9].Width = 150;
+            dataGridStock.Columns[10].Width = 150;
+            dataGridStock.Columns[11].Width = 150;
 
             dataGridStock.Columns[0].HeaderText = "#";
             dataGridStock.Columns[0].Name = "Id";
@@ -140,10 +141,12 @@ namespace supply_management
             dataGridStock.Columns[3].HeaderText = "PRODUCT NAME";
             dataGridStock.Columns[4].HeaderText = "DESCRIPTION";
             dataGridStock.Columns[5].HeaderText = "QTY";
-            dataGridStock.Columns[6].HeaderText = "STOCK DATE";
-            dataGridStock.Columns[7].HeaderText = "STOCK IN BY";
-            dataGridStock.Columns[8].HeaderText = "STATUS";
-            dataGridStock.Columns[9].HeaderText = "VENDOR";
+            dataGridStock.Columns[6].HeaderText = "CAPITAL";
+            dataGridStock.Columns[7].HeaderText = "GAIN";
+            dataGridStock.Columns[8].HeaderText = "STOCK DATE";
+            dataGridStock.Columns[9].HeaderText = "STOCK IN BY";
+            dataGridStock.Columns[10].HeaderText = "STATUS";
+            dataGridStock.Columns[11].HeaderText = "VENDOR";
 
             dataGridStock.Columns[0].ReadOnly = true;
             dataGridStock.Columns[1].Name = "REF";
@@ -234,7 +237,7 @@ namespace supply_management
 
         private void label8_Click(object sender, EventArgs e)
         {
-             frmproduct = new frmProductImport(this);
+            frmproduct = new frmProductImport(this);
             frmproduct.Show();
             
         }

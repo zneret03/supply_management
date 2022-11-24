@@ -31,7 +31,7 @@ namespace supply_management
 
             dataGridProducts.EnableHeadersVisualStyles = false;
             dataGridProducts.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridProducts.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(54, 54, 54);
+            dataGridProducts.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(67, 44, 122);
             dataGridProducts.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dataGridProducts.ColumnHeadersDefaultCellStyle.Padding = new Padding(0, 7, 0, 7);
 
@@ -53,9 +53,12 @@ namespace supply_management
             dataGridProducts.Columns[8].Width = 150;
             dataGridProducts.Columns[9].Width = 150;
             dataGridProducts.Columns[10].Width = 150;
+            dataGridProducts.Columns[11].Width = 150;
+            dataGridProducts.Columns[12].Width = 150;
+            dataGridProducts.Columns[13].Width = 150;
 
             dataGridProducts.Columns[0].HeaderText = "#";
-            dataGridProducts.Columns[1].HeaderText = "BARCODE";
+            dataGridProducts.Columns[1].HeaderText = "IDENTIFICATION";
             dataGridProducts.Columns[2].HeaderText = "PRODUCT NAME";
             dataGridProducts.Columns[3].HeaderText = "CATEGORY NAME";
             dataGridProducts.Columns[4].HeaderText = "BRAND NAME";
@@ -63,8 +66,11 @@ namespace supply_management
             dataGridProducts.Columns[6].HeaderText = "QUANTITY";
             dataGridProducts.Columns[7].HeaderText = "PRICE";
             dataGridProducts.Columns[8].HeaderText = "REORDER";
-            dataGridProducts.Columns[9].HeaderText = "DATE CREATED";
-            dataGridProducts.Columns[10].HeaderText = "DATE UPDATED";
+            dataGridProducts.Columns[9].HeaderText = "CAPITAL";
+            dataGridProducts.Columns[10].HeaderText = "GAIN";
+            dataGridProducts.Columns[11].HeaderText = "PERCENTAGE";
+            dataGridProducts.Columns[12].HeaderText = "DATE CREATED";
+            dataGridProducts.Columns[13].HeaderText = "DATE UPDATED";
         }
 
         private void txtSearch_OnTextChange(object sender, EventArgs e)
@@ -102,6 +108,8 @@ namespace supply_management
                 add.quantity.Text = dt.Cells[6].Value.ToString();
                 add.price.Text = dt.Cells[7].Value.ToString();
                 add.reorder.Text = dt.Cells[8].Value.ToString();
+                add.capital.Text = dt.Cells[9].Value.ToString();
+                add.txtPercentage.Text = dt.Cells[10].Value.ToString();
 
                 add.submit.Enabled = false;
                 add.checkDelete.Show();

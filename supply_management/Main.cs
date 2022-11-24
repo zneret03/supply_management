@@ -290,8 +290,8 @@ namespace supply_management
             sales.username.Enabled = true;
             sales.dateTimePicker1.Enabled = true;
             sales.dateTimePicker2.Enabled = true;
-            sales.submit.Normalcolor = Color.FromArgb(54, 54, 54);
-            sales.panel1.BackColor = Color.FromArgb(54, 54, 54);
+            sales.submit.Normalcolor = Color.FromArgb(67, 44, 122);
+            sales.panel1.BackColor = Color.FromArgb(67, 44, 122);
             sales.Show();
         }
 
@@ -324,6 +324,11 @@ namespace supply_management
         {
             frmStockAdjustment adjustment = new frmStockAdjustment(this);
             adjustment.Show();
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
