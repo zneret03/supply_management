@@ -33,15 +33,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridStockAdjustment = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.import = new System.Windows.Forms.DataGridViewImageColumn();
             this.txtSearch = new Bunifu.Framework.UI.BunifuTextbox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtReferenceNo = new System.Windows.Forms.TextBox();
@@ -58,6 +49,15 @@
             this.label10 = new System.Windows.Forms.Label();
             this.cmbCommands = new System.Windows.Forms.ComboBox();
             this.submit = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.import = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridStockAdjustment)).BeginInit();
             this.SuspendLayout();
@@ -125,71 +125,6 @@
             this.dataGridStockAdjustment.Size = new System.Drawing.Size(1439, 425);
             this.dataGridStockAdjustment.TabIndex = 1;
             this.dataGridStockAdjustment.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridStockAdjustment_CellContentClick);
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "#";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 50;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "PCODE";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 125;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "BARCODE";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 125;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "BRAND";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 125;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "CATEGORY";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 125;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "DESCRIPTION";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 330;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "PRICE";
-            this.Column7.MinimumWidth = 6;
-            this.Column7.Name = "Column7";
-            this.Column7.Width = 125;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "STOCK ON HAND";
-            this.Column8.MinimumWidth = 6;
-            this.Column8.Name = "Column8";
-            this.Column8.Width = 120;
-            // 
-            // import
-            // 
-            this.import.HeaderText = "";
-            this.import.Image = ((System.Drawing.Image)(resources.GetObject("import.Image")));
-            this.import.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.import.MinimumWidth = 6;
-            this.import.Name = "import";
-            this.import.Width = 20;
             // 
             // txtSearch
             // 
@@ -394,6 +329,71 @@
             this.submit.Textcolor = System.Drawing.Color.White;
             this.submit.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.submit.Click += new System.EventHandler(this.submit_Click);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "#";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 50;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "PCODE";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 125;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "BARCODE";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 125;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "PRODUCT NAME";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 125;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "CATEGORY";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            this.Column6.Width = 125;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "DESCRIPTION";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 330;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "PRICE";
+            this.Column7.MinimumWidth = 6;
+            this.Column7.Name = "Column7";
+            this.Column7.Width = 125;
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "STOCK ON HAND";
+            this.Column8.MinimumWidth = 6;
+            this.Column8.Name = "Column8";
+            this.Column8.Width = 120;
+            // 
+            // import
+            // 
+            this.import.HeaderText = "";
+            this.import.Image = ((System.Drawing.Image)(resources.GetObject("import.Image")));
+            this.import.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.import.MinimumWidth = 6;
+            this.import.Name = "import";
+            this.import.Width = 20;
             // 
             // frmStockAdjustment
             // 

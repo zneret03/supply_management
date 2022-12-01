@@ -58,7 +58,7 @@ namespace supply_management
                         i++;
                         dataGridStockAdjustment.Rows.Add(i, reader["products_id"].ToString(),
                             reader["barcode"].ToString(),
-                            reader["brand_name"].ToString(),
+                            reader["product_name"].ToString(),
                             reader["category_name"].ToString(),
                             reader["description"].ToString(),
                             reader["price"].ToString(),
