@@ -50,7 +50,7 @@ namespace supply_management
             Date.Text = DateTime.Now.ToString("dd/MM/yyyy");
             product.loadCombo(items[0]);
             product.loadBra(items[1]);
-
+            compute.Visible = false;
             barcode.ReadOnly = true;
             quantity.Text = "0";
         }
@@ -99,18 +99,17 @@ namespace supply_management
             String category_Id = product.seletedId(categoryName.Text);
             String brand_id = product.seletedIdBrand(brandName.Text);
 
-            double percentage = Convert.ToDouble(txtPercentage.Text);
             int txtPrice = Convert.ToInt32(price.Text);
             int txtCapital = Convert.ToInt32(capital.Text);
 
             int txtGain = txtPrice - txtCapital;
 
-            if (percentage < 2.5)
+            /*if (percentage < 2.5)
             {
                 MessageBox.Show("your percentage should be greater than 2.5", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
-            }
-           
+            }*/
+
             TextBox[] text = new TextBox[]
             {
                 productName,
@@ -118,7 +117,7 @@ namespace supply_management
                 description,
                 quantity,
                 price,
-                reorder,
+                this.gain,
                 capital,
                 txtPercentage
             };
@@ -172,7 +171,7 @@ namespace supply_management
                 barcode,
                 description,
                 price,
-                reorder,
+                this.gain,
                 capital,
                 txtPercentage
             };
@@ -193,25 +192,64 @@ namespace supply_management
             e.Handled = true;
         }
 
-        private void txtOnChange ()
+        private void TxtGainOnChange ()
         {
             int txtPrice = 0;
             int txtCapital = 0;
-            double percentageResult = 0;
+            double gainTotal = 0;
 
             if (int.TryParse(price.Text, out txtPrice))
             if (int.TryParse(capital.Text, out txtCapital))
 
             if (txtPrice != 0 && txtCapital != 0)
             {
-                percentageResult = (double)txtPrice / txtCapital;
-                txtPercentage.Text = percentageResult.ToString("N");
+                gainTotal = (double)txtPrice - txtCapital;
+                gain.Text = gainTotal.ToString("N");
             }
+        }
+
+        private void TxtPercentageOnChange ()
+        {
+            int txtGain = 0;
+            int txtCapital = 0;
+            double percentageTotal = 0;
+
+            if (int.TryParse(gain.Text, out txtGain))
+            if (int.TryParse(capital.Text, out txtCapital))
+
+             if (txtGain != 0 && txtCapital != 0)
+             {
+                percentageTotal = (double)txtGain / txtCapital;
+                txtPercentage.Text = percentageTotal.ToString("N");
+             }
         }
 
         private void capital_TextChanged(object sender, EventArgs e)
         {
-            txtOnChange();
+            TxtGainOnChange();
+            compute.Visible = true;
+        }
+
+        private void bunifuFlatButton1_Click(object sender, EventArgs e)
+        {
+            double total = 0;
+            int txtPrice = Convert.ToInt32(price.Text);
+            int txtCapital = Convert.ToInt32(capital.Text);
+
+            int txtGain = txtPrice - txtCapital;
+
+            total = (double)txtGain / txtCapital;
+
+            if (txtCapital != 0)
+            {
+                txtPercentage.Text = total.ToString("N");
+            }
+           /* if (TxtGain != 0 && TxtCapital != 0)
+            {
+                total = (double)TxtGain / TxtCapital;
+                MessageBox.Show(total.ToString());
+            }*/
+
         }
     }
 }

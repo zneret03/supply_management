@@ -54,11 +54,12 @@
             this.label11 = new System.Windows.Forms.Label();
             this.barcode = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.reorder = new System.Windows.Forms.TextBox();
+            this.gain = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.capital = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.txtPercentage = new System.Windows.Forms.TextBox();
+            this.compute = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -225,7 +226,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(56, 247);
+            this.label8.Location = new System.Drawing.Point(54, 246);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(120, 28);
@@ -302,7 +303,7 @@
             this.btnUpdate.IconVisible = true;
             this.btnUpdate.IconZoom = 90D;
             this.btnUpdate.IsTab = false;
-            this.btnUpdate.Location = new System.Drawing.Point(843, 263);
+            this.btnUpdate.Location = new System.Drawing.Point(842, 357);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(5);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Normalcolor = System.Drawing.Color.Silver;
@@ -338,7 +339,7 @@
             this.submit.IconVisible = true;
             this.submit.IconZoom = 90D;
             this.submit.IsTab = false;
-            this.submit.Location = new System.Drawing.Point(1029, 263);
+            this.submit.Location = new System.Drawing.Point(1028, 357);
             this.submit.Margin = new System.Windows.Forms.Padding(5);
             this.submit.Name = "submit";
             this.submit.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(44)))), ((int)(((byte)(122)))));
@@ -399,21 +400,22 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(447, 411);
+            this.label12.Location = new System.Drawing.Point(839, 243);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(81, 28);
+            this.label12.Size = new System.Drawing.Size(52, 28);
             this.label12.TabIndex = 50;
-            this.label12.Text = "Reorder";
+            this.label12.Text = "Gain";
             // 
-            // reorder
+            // gain
             // 
-            this.reorder.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reorder.Location = new System.Drawing.Point(452, 442);
-            this.reorder.Margin = new System.Windows.Forms.Padding(4);
-            this.reorder.Name = "reorder";
-            this.reorder.Size = new System.Drawing.Size(364, 39);
-            this.reorder.TabIndex = 49;
+            this.gain.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gain.Location = new System.Drawing.Point(844, 274);
+            this.gain.Margin = new System.Windows.Forms.Padding(4);
+            this.gain.Name = "gain";
+            this.gain.ReadOnly = true;
+            this.gain.Size = new System.Drawing.Size(364, 39);
+            this.gain.TabIndex = 49;
             // 
             // label13
             // 
@@ -443,7 +445,7 @@
             this.label14.Location = new System.Drawing.Point(839, 161);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(135, 35);
+            this.label14.Size = new System.Drawing.Size(108, 28);
             this.label14.TabIndex = 54;
             this.label14.Text = "Percentage";
             // 
@@ -454,8 +456,45 @@
             this.txtPercentage.Location = new System.Drawing.Point(844, 192);
             this.txtPercentage.Margin = new System.Windows.Forms.Padding(4);
             this.txtPercentage.Name = "txtPercentage";
+            this.txtPercentage.ReadOnly = true;
             this.txtPercentage.Size = new System.Drawing.Size(364, 39);
             this.txtPercentage.TabIndex = 53;
+            // 
+            // compute
+            // 
+            this.compute.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(44)))), ((int)(((byte)(122)))));
+            this.compute.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(44)))), ((int)(((byte)(122)))));
+            this.compute.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.compute.BorderRadius = 5;
+            this.compute.ButtonText = "Compute percentage";
+            this.compute.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.compute.DisabledColor = System.Drawing.Color.Gray;
+            this.compute.Iconcolor = System.Drawing.Color.Transparent;
+            this.compute.Iconimage = null;
+            this.compute.Iconimage_right = null;
+            this.compute.Iconimage_right_Selected = null;
+            this.compute.Iconimage_Selected = null;
+            this.compute.IconMarginLeft = 0;
+            this.compute.IconMarginRight = 0;
+            this.compute.IconRightVisible = true;
+            this.compute.IconRightZoom = 0D;
+            this.compute.IconVisible = true;
+            this.compute.IconZoom = 90D;
+            this.compute.IsTab = false;
+            this.compute.Location = new System.Drawing.Point(844, 417);
+            this.compute.Margin = new System.Windows.Forms.Padding(5);
+            this.compute.Name = "compute";
+            this.compute.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(44)))), ((int)(((byte)(122)))));
+            this.compute.OnHovercolor = System.Drawing.Color.Silver;
+            this.compute.OnHoverTextColor = System.Drawing.Color.White;
+            this.compute.selected = false;
+            this.compute.Size = new System.Drawing.Size(361, 50);
+            this.compute.TabIndex = 55;
+            this.compute.Text = "Compute percentage";
+            this.compute.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.compute.Textcolor = System.Drawing.Color.White;
+            this.compute.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.compute.Click += new System.EventHandler(this.bunifuFlatButton1_Click);
             // 
             // addProducts
             // 
@@ -463,12 +502,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1219, 581);
+            this.Controls.Add(this.compute);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.txtPercentage);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.capital);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.reorder);
+            this.Controls.Add(this.gain);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.barcode);
             this.Controls.Add(this.btnUpdate);
@@ -532,10 +572,11 @@
         private System.Windows.Forms.Label label11;
         public System.Windows.Forms.TextBox barcode;
         private System.Windows.Forms.Label label12;
-        public System.Windows.Forms.TextBox reorder;
+        public System.Windows.Forms.TextBox gain;
         private System.Windows.Forms.Label label13;
         public System.Windows.Forms.TextBox capital;
         private System.Windows.Forms.Label label14;
         public System.Windows.Forms.TextBox txtPercentage;
+        public Bunifu.Framework.UI.BunifuFlatButton compute;
     }
 }

@@ -66,6 +66,7 @@ namespace supply_management
             dataGridProducts.Columns[6].HeaderText = "QUANTITY";
             dataGridProducts.Columns[7].HeaderText = "PRICE";
             dataGridProducts.Columns[8].HeaderText = "REORDER";
+            dataGridProducts.Columns[8].Visible = false;
             dataGridProducts.Columns[9].HeaderText = "CAPITAL";
             dataGridProducts.Columns[10].HeaderText = "GAIN";
             dataGridProducts.Columns[11].HeaderText = "PERCENTAGE";
@@ -107,9 +108,9 @@ namespace supply_management
                 add.description.Text = dt.Cells[5].Value.ToString();
                 add.quantity.Text = dt.Cells[6].Value.ToString();
                 add.price.Text = dt.Cells[7].Value.ToString();
-                add.reorder.Text = dt.Cells[8].Value.ToString();
-                add.capital.Text = dt.Cells[9].Value.ToString();
-                add.txtPercentage.Text = dt.Cells[10].Value.ToString();
+                add.capital.Text = dt.Cells[8].Value.ToString();
+                add.gain.Text = dt.Cells[9].Value.ToString();
+                add.txtPercentage.Text = dt.Cells[11].Value.ToString();
 
                 add.submit.Enabled = false;
                 add.checkDelete.Show();

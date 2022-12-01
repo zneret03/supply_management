@@ -137,6 +137,7 @@ namespace supply_management
             dataGridStock.Columns[0].HeaderText = "#";
             dataGridStock.Columns[0].Name = "Id";
             dataGridStock.Columns[1].HeaderText = "REF #";
+            dataGridStock.Columns[1].Visible = false;
             dataGridStock.Columns[2].HeaderText = "PCODE";
             dataGridStock.Columns[3].HeaderText = "PRODUCT NAME";
             dataGridStock.Columns[4].HeaderText = "DESCRIPTION";
@@ -252,5 +253,9 @@ namespace supply_management
             extractVendorsData();
         }
 
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

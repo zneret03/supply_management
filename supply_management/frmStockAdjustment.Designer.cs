@@ -210,27 +210,30 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(15, 567);
+            this.label3.Location = new System.Drawing.Point(15, 699);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(122, 28);
             this.label3.TabIndex = 16;
             this.label3.Text = "Reference # :";
+            this.label3.Visible = false;
             // 
             // txtReferenceNo
             // 
             this.txtReferenceNo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReferenceNo.Location = new System.Drawing.Point(145, 564);
+            this.txtReferenceNo.HideSelection = false;
+            this.txtReferenceNo.Location = new System.Drawing.Point(145, 693);
             this.txtReferenceNo.Margin = new System.Windows.Forms.Padding(4);
             this.txtReferenceNo.Name = "txtReferenceNo";
             this.txtReferenceNo.ReadOnly = true;
-            this.txtReferenceNo.Size = new System.Drawing.Size(565, 34);
+            this.txtReferenceNo.Size = new System.Drawing.Size(399, 34);
             this.txtReferenceNo.TabIndex = 17;
+            this.txtReferenceNo.Visible = false;
             // 
             // txtPcode
             // 
             this.txtPcode.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPcode.Location = new System.Drawing.Point(145, 607);
+            this.txtPcode.Location = new System.Drawing.Point(145, 558);
             this.txtPcode.Margin = new System.Windows.Forms.Padding(4);
             this.txtPcode.Name = "txtPcode";
             this.txtPcode.ReadOnly = true;
@@ -241,7 +244,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(65, 610);
+            this.label4.Location = new System.Drawing.Point(65, 561);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(74, 28);
@@ -251,7 +254,7 @@
             // txtDescription
             // 
             this.txtDescription.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescription.Location = new System.Drawing.Point(145, 650);
+            this.txtDescription.Location = new System.Drawing.Point(145, 601);
             this.txtDescription.Margin = new System.Windows.Forms.Padding(4);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.ReadOnly = true;
@@ -262,7 +265,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(15, 654);
+            this.label5.Location = new System.Drawing.Point(15, 605);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(121, 28);
@@ -272,7 +275,7 @@
             // txtQty
             // 
             this.txtQty.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQty.Location = new System.Drawing.Point(145, 693);
+            this.txtQty.Location = new System.Drawing.Point(145, 648);
             this.txtQty.Margin = new System.Windows.Forms.Padding(4);
             this.txtQty.Name = "txtQty";
             this.txtQty.Size = new System.Drawing.Size(565, 34);
@@ -282,7 +285,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(36, 697);
+            this.label6.Location = new System.Drawing.Point(36, 648);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(97, 28);
