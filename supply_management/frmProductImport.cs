@@ -86,12 +86,13 @@ namespace supply_management
 
         private void dataGridProducts_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            String pcode = " ";
+            String pcode = "";
             TextBox[] text = new TextBox[]
             {
                 stock.referenceNo,
                 stock.StockInBy,
-                
+                stock.txtContactPerson,
+                stock.txtAddress
             };
 
 

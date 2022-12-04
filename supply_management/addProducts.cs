@@ -117,7 +117,6 @@ namespace supply_management
                 description,
                 quantity,
                 price,
-                this.gain,
                 capital,
                 txtPercentage
             };
@@ -156,14 +155,17 @@ namespace supply_management
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-
+            int txtGain;
             String category_Id = product.seletedId(categoryName.Text);
             String brand_id = product.seletedIdBrand(brandName.Text);
 
-            int txtPrice = Convert.ToInt32(price.Text);
-            int txtCapital = Convert.ToInt32(capital.Text);
+            bool result = int.TryParse(gain.Text, out txtGain);
 
-            int txtGain = txtPrice - txtCapital;
+            if (!result)
+            {
+                MessageBox.Show($"incorrect format {txtGain} {gain.Text}");
+                return;
+            }
 
             TextBox[] text = new TextBox[]
             {
@@ -171,7 +173,6 @@ namespace supply_management
                 barcode,
                 description,
                 price,
-                this.gain,
                 capital,
                 txtPercentage
             };
@@ -204,24 +205,8 @@ namespace supply_management
             if (txtPrice != 0 && txtCapital != 0)
             {
                 gainTotal = (double)txtPrice - txtCapital;
-                gain.Text = gainTotal.ToString("N");
+                gain.Text = gainTotal.ToString();
             }
-        }
-
-        private void TxtPercentageOnChange ()
-        {
-            int txtGain = 0;
-            int txtCapital = 0;
-            double percentageTotal = 0;
-
-            if (int.TryParse(gain.Text, out txtGain))
-            if (int.TryParse(capital.Text, out txtCapital))
-
-             if (txtGain != 0 && txtCapital != 0)
-             {
-                percentageTotal = (double)txtGain / txtCapital;
-                txtPercentage.Text = percentageTotal.ToString("N");
-             }
         }
 
         private void capital_TextChanged(object sender, EventArgs e)

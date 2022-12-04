@@ -54,12 +54,12 @@
             this.label11 = new System.Windows.Forms.Label();
             this.barcode = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.gain = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.capital = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.txtPercentage = new System.Windows.Forms.TextBox();
             this.compute = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.gain = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -407,16 +407,6 @@
             this.label12.TabIndex = 50;
             this.label12.Text = "Gain";
             // 
-            // gain
-            // 
-            this.gain.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gain.Location = new System.Drawing.Point(844, 274);
-            this.gain.Margin = new System.Windows.Forms.Padding(4);
-            this.gain.Name = "gain";
-            this.gain.ReadOnly = true;
-            this.gain.Size = new System.Drawing.Size(364, 39);
-            this.gain.TabIndex = 49;
-            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -496,19 +486,28 @@
             this.compute.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.compute.Click += new System.EventHandler(this.bunifuFlatButton1_Click);
             // 
+            // gain
+            // 
+            this.gain.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gain.Location = new System.Drawing.Point(843, 278);
+            this.gain.Margin = new System.Windows.Forms.Padding(4);
+            this.gain.Name = "gain";
+            this.gain.Size = new System.Drawing.Size(364, 39);
+            this.gain.TabIndex = 56;
+            // 
             // addProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1219, 581);
+            this.Controls.Add(this.gain);
             this.Controls.Add(this.compute);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.txtPercentage);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.capital);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.gain);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.barcode);
             this.Controls.Add(this.btnUpdate);
@@ -572,11 +571,11 @@
         private System.Windows.Forms.Label label11;
         public System.Windows.Forms.TextBox barcode;
         private System.Windows.Forms.Label label12;
-        public System.Windows.Forms.TextBox gain;
         private System.Windows.Forms.Label label13;
         public System.Windows.Forms.TextBox capital;
         private System.Windows.Forms.Label label14;
         public System.Windows.Forms.TextBox txtPercentage;
         public Bunifu.Framework.UI.BunifuFlatButton compute;
+        public System.Windows.Forms.TextBox gain;
     }
 }

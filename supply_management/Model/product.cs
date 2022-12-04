@@ -269,23 +269,22 @@ namespace supply_management.Model
             }
         }
 
-        protected void Update(String category_id, String brand_id, TextBox[] product,String id, int txtGain, addProducts suspend)
+        protected void Update(String category_id, String brand_id, TextBox[] product, String id, int txtGain, addProducts suspend)
         {
             try
             {
                 conn = new MySqlConnection(this.connection());
                 conn.Open();
-                command = new MySqlCommand("UPDATE product SET barcode = @bar, product_name = @name , category_id = @categoryid, brand_id = @brandid, description = @desc, price = @price, reorder=@reorder, capital = @capital, gain = @gain, percentage = @percentage, date_updated = @date_updated WHERE products_id = @id", conn);
+                command = new MySqlCommand("UPDATE product SET barcode = @bar, product_name = @name , category_id = @categoryid, brand_id = @brandid, description = @desc, price = @price, capital = @capital, gain = @gain, percentage = @percentage, date_updated = @date_updated WHERE products_id = @id", conn);
                 command.Parameters.AddWithValue("@name", product[0].Text);
                 command.Parameters.AddWithValue("@bar", product[1].Text);
                 command.Parameters.AddWithValue("@categoryid", int.Parse(category_id));
                 command.Parameters.AddWithValue("@brandid", int.Parse(brand_id));
                 command.Parameters.AddWithValue("@desc", product[2].Text);
                 command.Parameters.AddWithValue("@price", product[3].Text);
-                command.Parameters.AddWithValue("@reorder", product[4].Text);
-                command.Parameters.AddWithValue("@capital", product[5].Text);
+                command.Parameters.AddWithValue("@capital", product[4].Text);
+                command.Parameters.AddWithValue("@percentage", product[5].Text);
                 command.Parameters.AddWithValue("@gain", txtGain);
-                command.Parameters.AddWithValue("@percentage", product[6].Text);
                 command.Parameters.AddWithValue("@date_updated", dateNow);
                 command.Parameters.AddWithValue("@id", id);
 

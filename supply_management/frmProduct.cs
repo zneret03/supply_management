@@ -108,8 +108,8 @@ namespace supply_management
                 add.description.Text = dt.Cells[5].Value.ToString();
                 add.quantity.Text = dt.Cells[6].Value.ToString();
                 add.price.Text = dt.Cells[7].Value.ToString();
-                add.capital.Text = dt.Cells[8].Value.ToString();
-                add.gain.Text = dt.Cells[9].Value.ToString();
+                add.capital.Text = dt.Cells[9].Value.ToString();
+                add.gain.Text = dt.Cells[10].Value.ToString();
                 add.txtPercentage.Text = dt.Cells[11].Value.ToString();
 
                 add.submit.Enabled = false;
