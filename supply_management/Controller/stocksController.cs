@@ -41,7 +41,7 @@ namespace supply_management.Controller
 
         public void stockadjustment(TextBox[] adjustment, String cmbCommand)
         {
-            if(adjustment[1].Text == string.Empty || adjustment[2].Text == string.Empty || adjustment[3].Text == string.Empty)
+            if(adjustment[1].Text == string.Empty || adjustment[2].Text == string.Empty)
             {
                 MessageBox.Show("Please fill all the empty fields", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
