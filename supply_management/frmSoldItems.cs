@@ -81,11 +81,11 @@ namespace supply_management
                             reader["transactionNo"].ToString(),
                             reader["products_id"].ToString(),
                             reader["description"].ToString(),
-                            reader["price"].ToString(),
                             reader["quantity"].ToString(),
+                            reader["price"].ToString(),
+                            reader["total"].ToString(),
                             reader["discount"].ToString(),
-                            reader["gain"].ToString(),
-                            reader["total"].ToString());
+                            reader["gain"].ToString());
                     }
                 }
                 totalSales.Text = total.ToString("#,##0.00");

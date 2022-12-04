@@ -169,7 +169,6 @@ namespace supply_management
                     while (reader.Read())
                     {
                         TableStockHistory.Rows.Add(reader["stock_id"].ToString(),
-                            reader["referenceNo"].ToString(),
                             reader["products_id"].ToString(),
                             reader["product_name"].ToString(),
                             reader["description"].ToString(),

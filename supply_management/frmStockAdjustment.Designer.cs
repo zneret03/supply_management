@@ -51,7 +51,6 @@
             this.submit = new Bunifu.Framework.UI.BunifuFlatButton();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -111,7 +110,6 @@
             this.dataGridStockAdjustment.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
-            this.Column3,
             this.Column5,
             this.Column6,
             this.Column4,
@@ -344,13 +342,6 @@
             this.Column2.Name = "Column2";
             this.Column2.Width = 125;
             // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "BARCODE";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 125;
-            // 
             // Column5
             // 
             this.Column5.HeaderText = "PRODUCT NAME";
@@ -457,7 +448,6 @@
         public Bunifu.Framework.UI.BunifuFlatButton submit;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;

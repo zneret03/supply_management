@@ -185,7 +185,8 @@ namespace supply_management.Model
         {
             try
             {
-                
+
+                int reorder = 0;
                 Random math = new Random();
                 int rand = math.Next(1, 1000);
                 String id = "P-00" + rand.ToString();
@@ -205,11 +206,11 @@ namespace supply_management.Model
                     command.Parameters.AddWithValue("@description", product[2].Text);
                     command.Parameters.AddWithValue("@quantity", product[3].Text);
                     command.Parameters.AddWithValue("@price", product[4].Text);
-                    command.Parameters.AddWithValue("@reorder", product[5].Text);
+                    command.Parameters.AddWithValue("@reorder", reorder);
                     command.Parameters.AddWithValue("@date_created", dateNow);
-                    command.Parameters.AddWithValue("@capital", product[6].Text);
+                    command.Parameters.AddWithValue("@capital", product[5].Text);
                     command.Parameters.AddWithValue("@gain", txtGain);
-                    command.Parameters.AddWithValue("@percentage", product[7].Text);
+                    command.Parameters.AddWithValue("@percentage", product[6].Text);
 
                 bool result = (int)command.ExecuteNonQuery() > 0;
                     

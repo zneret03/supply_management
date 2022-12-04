@@ -29,7 +29,7 @@ namespace supply_management.Controller
 
         public MySqlDataReader loadStockHistory(String date1, String date2, String status)
         {
-            String query = "SELECT stock_id, referenceNo, product.products_id, product_name, description, quantity, stockDate, stockInBy, status, vendor FROM stocks INNER JOIN product ON product.products_id = stocks.products_id INNER JOIN vendor ON vendor.vendor_id = stocks.vendor_id WHERE stockDate BETWEEN '" +date1+ "' AND '" +date2+ "' AND status LIKE '" + status + "'";
+            String query = "SELECT stock_id, referenceNo, product.products_id, product_name, description, quantity, stockDate, stockInBy, status, vendor FROM stocks INNER JOIN product ON product.products_id = stocks.products_id INNER JOIN vendor ON vendor.vendor_id = stocks.vendor_id WHERE stockDate BETWEEN '" +date1+ "' AND '" +date2+ "'";
             return this.display(query);                                                    
         }
 

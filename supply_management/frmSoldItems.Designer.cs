@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSoldItems));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.totalGain = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.totalSales = new System.Windows.Forms.Label();
@@ -40,16 +41,15 @@
             this.label5 = new System.Windows.Forms.Label();
             this.submit = new Bunifu.Framework.UI.BunifuFlatButton();
             this.username = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cancel = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridSoldItems)).BeginInit();
@@ -72,6 +72,17 @@
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(409, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(123, 51);
+            this.label4.TabIndex = 48;
+            this.label4.Text = "Gain :";
             // 
             // totalGain
             // 
@@ -134,11 +145,11 @@
             this.Column2,
             this.Column3,
             this.Column4,
-            this.Column5,
             this.Column6,
+            this.Column5,
+            this.Column8,
             this.Column7,
             this.Column9,
-            this.Column8,
             this.Cancel});
             this.dataGridSoldItems.Location = new System.Drawing.Point(21, 132);
             this.dataGridSoldItems.Margin = new System.Windows.Forms.Padding(4);
@@ -229,17 +240,6 @@
             this.username.SelectedValueChanged += new System.EventHandler(this.username_SelectedValueChanged);
             this.username.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.username_KeyPress);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(409, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(123, 51);
-            this.label4.TabIndex = 48;
-            this.label4.Text = "Gain :";
-            // 
             // Column1
             // 
             this.Column1.HeaderText = "#";
@@ -268,6 +268,13 @@
             this.Column4.Name = "Column4";
             this.Column4.Width = 540;
             // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "QTY";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            this.Column6.Width = 80;
+            // 
             // Column5
             // 
             this.Column5.HeaderText = "PRICE";
@@ -275,12 +282,12 @@
             this.Column5.Name = "Column5";
             this.Column5.Width = 80;
             // 
-            // Column6
+            // Column8
             // 
-            this.Column6.HeaderText = "QTY";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 80;
+            this.Column8.HeaderText = "TOTAL";
+            this.Column8.MinimumWidth = 6;
+            this.Column8.Name = "Column8";
+            this.Column8.Width = 80;
             // 
             // Column7
             // 
@@ -295,13 +302,6 @@
             this.Column9.MinimumWidth = 6;
             this.Column9.Name = "Column9";
             this.Column9.Width = 125;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "TOTAL";
-            this.Column8.MinimumWidth = 6;
-            this.Column8.Name = "Column8";
-            this.Column8.Width = 80;
             // 
             // Cancel
             // 
@@ -356,11 +356,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewImageColumn Cancel;
     }
 }

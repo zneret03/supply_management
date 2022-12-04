@@ -161,11 +161,9 @@ namespace supply_management
 
             bool result = int.TryParse(gain.Text, out txtGain);
 
-            if (!result)
-            {
-                MessageBox.Show($"incorrect format {txtGain} {gain.Text}");
-                return;
-            }
+            MessageBox.Show($"new gain {txtGain}");
+
+            if (!result) return;
 
             TextBox[] text = new TextBox[]
             {
