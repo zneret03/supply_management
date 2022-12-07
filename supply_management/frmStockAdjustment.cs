@@ -172,7 +172,7 @@ namespace supply_management
             loadProductInventory();
 
             txtPcode.Clear();
-            txtDescription.Clear();
+            txtProductName.Clear();
             txtQty.Clear();
             txtRemarks.Clear();
         }
@@ -189,7 +189,9 @@ namespace supply_management
             if(colName == "import")
             {
                 txtPcode.Text = dataGridStockAdjustment.Rows[e.RowIndex].Cells[1].Value.ToString();
-                txtDescription.Text = dataGridStockAdjustment.Rows[e.RowIndex].Cells[3].Value.ToString() + " " + dataGridStockAdjustment.Rows[e.RowIndex].Cells[4].Value.ToString() + " " + dataGridStockAdjustment.Rows[e.RowIndex].Cells[5].Value.ToString();
+                txtProductName.Text = dataGridStockAdjustment.Rows[e.RowIndex].Cells[2].Value.ToString();
+
+                // + " " + dataGridStockAdjustment.Rows[e.RowIndex].Cells[4].Value.ToString() + " " + dataGridStockAdjustment.Rows[e.RowIndex].Cells[5].Value.ToString()
             }
         }
     }

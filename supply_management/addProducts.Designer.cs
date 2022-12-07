@@ -107,7 +107,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(444, 242);
+            this.label6.Location = new System.Drawing.Point(445, 158);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(63, 28);
@@ -117,7 +117,7 @@
             // price
             // 
             this.price.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.price.Location = new System.Drawing.Point(449, 274);
+            this.price.Location = new System.Drawing.Point(450, 190);
             this.price.Margin = new System.Windows.Forms.Padding(4);
             this.price.Name = "price";
             this.price.Size = new System.Drawing.Size(364, 39);
@@ -126,7 +126,7 @@
             // quantity
             // 
             this.quantity.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quantity.Location = new System.Drawing.Point(449, 195);
+            this.quantity.Location = new System.Drawing.Point(450, 111);
             this.quantity.Margin = new System.Windows.Forms.Padding(4);
             this.quantity.Name = "quantity";
             this.quantity.ReadOnly = true;
@@ -215,7 +215,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(445, 162);
+            this.label10.Location = new System.Drawing.Point(446, 78);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(97, 28);
@@ -358,7 +358,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(444, 330);
+            this.label7.Location = new System.Drawing.Point(445, 246);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(62, 28);
@@ -368,7 +368,7 @@
             // Date
             // 
             this.Date.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Date.Location = new System.Drawing.Point(449, 361);
+            this.Date.Location = new System.Drawing.Point(450, 277);
             this.Date.Margin = new System.Windows.Forms.Padding(4);
             this.Date.Name = "Date";
             this.Date.ReadOnly = true;
@@ -380,21 +380,23 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(449, 80);
+            this.label11.Location = new System.Drawing.Point(448, 337);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(92, 28);
             this.label11.TabIndex = 48;
             this.label11.Text = "Barcode :";
+            this.label11.Visible = false;
             // 
             // barcode
             // 
             this.barcode.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.barcode.Location = new System.Drawing.Point(451, 111);
+            this.barcode.Location = new System.Drawing.Point(450, 368);
             this.barcode.Margin = new System.Windows.Forms.Padding(4);
             this.barcode.Name = "barcode";
             this.barcode.Size = new System.Drawing.Size(364, 39);
             this.barcode.TabIndex = 47;
+            this.barcode.Visible = false;
             // 
             // label12
             // 

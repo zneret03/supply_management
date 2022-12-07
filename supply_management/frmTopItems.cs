@@ -68,7 +68,7 @@ namespace supply_management
                         i++;
                         dataTopSelling.Rows.Add(i,reader["transaction_id"].ToString(),
                             reader["products_id"].ToString(),
-                            reader["description"].ToString(),
+                            reader["product_name"].ToString(),
                             reader["quantity"].ToString(),
                             reader["total"].ToString());
                     }
@@ -96,7 +96,7 @@ namespace supply_management
                         i++;
                         totalSold += Convert.ToDouble(reader["total"].ToString());
                         dataGridView1.Rows.Add(i, reader["products_id"].ToString(),
-                            reader["description"].ToString(),
+                            reader["product_name"].ToString(),
                             Double.Parse(reader["price"].ToString()).ToString("#,##0.00"),
                             reader["qty"].ToString(),
                             reader["disc"].ToString(),

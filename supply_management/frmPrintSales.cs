@@ -42,8 +42,8 @@ namespace supply_management
         {
             try
             {
-                String store = "HD Supply";
-                String address = "Sta. Barbara, Iloilo City";
+                String store = "Gebs Bikehub";
+                String address = "Brgy. Maya, Balasan, Iloilo City";
                 ReportDataSource reportViewer;
                 this.reportViewer1.LocalReport.ReportPath = Application.StartupPath +  @"\Reports\Report2.rdlc";
                 this.reportViewer1.LocalReport.DataSources.Clear();

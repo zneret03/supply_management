@@ -856,6 +856,7 @@
             this.txtQty.TabIndex = 14;
             this.txtQty.Text = "1";
             this.txtQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtQty.Visible = false;
             // 
             // textBox6
             // 
@@ -866,6 +867,7 @@
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(577, 39);
             this.textBox6.TabIndex = 13;
+            this.textBox6.Visible = false;
             this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // label9
@@ -878,6 +880,7 @@
             this.label9.Size = new System.Drawing.Size(129, 28);
             this.label9.TabIndex = 12;
             this.label9.Text = "Identification :";
+            this.label9.Visible = false;
             // 
             // date
             // 

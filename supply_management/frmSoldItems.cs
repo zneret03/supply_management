@@ -80,7 +80,7 @@ namespace supply_management
                         dataGridSoldItems.Rows.Add(reader["transaction_id"].ToString(),
                             reader["transactionNo"].ToString(),
                             reader["products_id"].ToString(),
-                            reader["description"].ToString(),
+                            reader["product_name"].ToString(),
                             reader["quantity"].ToString(),
                             reader["price"].ToString(),
                             reader["total"].ToString(),

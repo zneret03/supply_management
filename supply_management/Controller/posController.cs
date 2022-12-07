@@ -57,11 +57,11 @@ namespace supply_management.Controller
             String query = "";
             if (sorting == "SORT BY QTY")
             {
-                query = "SELECT transaction_id, t.products_id, p.description, SUM(t.quantity) as quantity, SUM(total) as total FROM transaction as t INNER JOIN product as p ON p.products_id = t.products_id WHERE t.date_created BETWEEN '" + date1 + "' AND '" + date2 + "' AND t.quantity != 0 GROUP BY products_id, discount ORDER BY quantity DESC LIMIT 10 ";
+                query = "SELECT transaction_id, t.products_id, p.description, p.product_name, SUM(t.quantity) as quantity, SUM(total) as total FROM transaction as t INNER JOIN product as p ON p.products_id = t.products_id WHERE t.date_created BETWEEN '" + date1 + "' AND '" + date2 + "' AND t.quantity != 0 GROUP BY products_id, discount ORDER BY quantity DESC LIMIT 10 ";
             }
             else
             {
-                query = "SELECT transaction_id, t.products_id, p.description, SUM(t.quantity) as quantity, SUM(total) as total FROM transaction as t INNER JOIN product as p ON p.products_id = t.products_id WHERE t.date_created BETWEEN '" + date1 + "' AND '" + date2 + "' AND t.quantity != 0 GROUP BY products_id, discount ORDER BY total DESC LIMIT 10 ";
+                query = "SELECT transaction_id, t.products_id, p.description, p.product_name, SUM(t.quantity) as quantity, SUM(total) as total FROM transaction as t INNER JOIN product as p ON p.products_id = t.products_id WHERE t.date_created BETWEEN '" + date1 + "' AND '" + date2 + "' AND t.quantity != 0 GROUP BY products_id, discount ORDER BY total DESC LIMIT 10 ";
             }
             
             return this.display(query);
@@ -122,13 +122,13 @@ namespace supply_management.Controller
         }
         public MySqlDataReader loadSoldItems(String date1, String date2)
         {
-            String query = "SELECT t.products_id, p.description, price, SUM(t.quantity) as qty, SUM(discount) as disc, SUM(total) as total FROM transaction AS t INNER JOIN product as p ON p.products_id = t.products_id WHERE t.date_created BETWEEN '" + date1 + "' AND '" + date2 + "' AND t.quantity != 0 GROUP BY t.products_id";
+            String query = "SELECT t.products_id, p.description, p.product_name, price, SUM(t.quantity) as qty, SUM(discount) as disc, SUM(total) as total FROM transaction AS t INNER JOIN product as p ON p.products_id = t.products_id WHERE t.date_created BETWEEN '" + date1 + "' AND '" + date2 + "' AND t.quantity != 0 GROUP BY t.products_id";
             return this.display(query);
         }
 
         public MySqlDataAdapter loadChartSoldItems(String date1, String date2)
         {
-            String query = "SELECT t.products_id, p.description, price, SUM(t.quantity) as qty, SUM(discount) as disc, SUM(total) as total FROM transaction AS t INNER JOIN product as p ON p.products_id = t.products_id WHERE t.date_created BETWEEN '" + date1 + "' AND '" + date2 + "' AND t.quantity != 0 GROUP BY t.products_id";
+            String query = "SELECT t.products_id, p.description, p.product_name, price, SUM(t.quantity) as qty, SUM(discount) as disc, SUM(total) as total FROM transaction AS t INNER JOIN product as p ON p.products_id = t.products_id WHERE t.date_created BETWEEN '" + date1 + "' AND '" + date2 + "' AND t.quantity != 0 GROUP BY t.products_id";
             return this.loadChart(query);
         }
 
@@ -158,12 +158,12 @@ namespace supply_management.Controller
             String query = "";
             if(user.ToString() == "all cashier sales")
             {
-                query = "SELECT transaction_id, transactionNo, t.products_id, p.description, p.price, t.quantity, discount, p.gain, total FROM transaction as t INNER JOIN product as p ON p.products_id = t.products_id WHERE t.date_created BETWEEN '" + date1 + "' AND '" + date2 + "' AND t.quantity != 0  AND status != 'pending'";
+                query = "SELECT transaction_id, transactionNo, t.products_id, p.description, p.product_name, p.price, t.quantity, discount, p.gain, total FROM transaction as t INNER JOIN product as p ON p.products_id = t.products_id WHERE t.date_created BETWEEN '" + date1 + "' AND '" + date2 + "' AND t.quantity != 0  AND status != 'pending'";
             }
             else
             {
                 //MessageBox.Show(date1 + " " + date2 + " " + user);
-                query = "SELECT transaction_id, transactionNo, t.products_id, p.description, p.price, t.quantity, discount, p.gain, total FROM transaction as t INNER JOIN product as p ON p.products_id = t.products_id WHERE t.date_created BETWEEN '" + date1 + "' AND '" + date2 + "' AND cashier = '" + user.ToString() + "' AND t.quantity != 0 AND status != 'pending'";
+                query = "SELECT transaction_id, transactionNo, t.products_id, p.description, p.product_name, p.price, t.quantity, discount, p.gain, total FROM transaction as t INNER JOIN product as p ON p.products_id = t.products_id WHERE t.date_created BETWEEN '" + date1 + "' AND '" + date2 + "' AND cashier = '" + user.ToString() + "' AND t.quantity != 0 AND status != 'pending'";
             }
             
             return this.display(query);

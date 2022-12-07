@@ -95,5 +95,15 @@ namespace supply_management
         {
 
         }
+
+        private void reportViewer1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmPrintStockInHistory_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

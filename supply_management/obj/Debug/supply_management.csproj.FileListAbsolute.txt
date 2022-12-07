@@ -97,3 +97,5 @@ C:\Users\Acer\Documents\Personal Projects\supply_management\supply_management\bi
 C:\Users\Acer\Documents\Personal Projects\supply_management\supply_management\bin\Debug\MySql.Data.dll
 C:\Users\Acer\Documents\Personal Projects\supply_management\supply_management\bin\Debug\Tulpep.NotificationWindow.dll
 C:\Users\Acer\Documents\Personal Projects\supply_management\supply_management\obj\Debug\supply_management.csproj.CopyComplete
+C:\Users\Acer\Documents\Personal Projects\supply_management\supply_management\obj\Debug\RdlCompile.cache
+C:\Users\Acer\Documents\Personal Projects\supply_management\supply_management\obj\Debug\RdlCompile.compiled
