@@ -186,9 +186,10 @@ namespace supply_management
                     total += Convert.ToDouble(reader["total"].ToString());
                     isdiscount += Convert.ToDouble(reader["discount"].ToString());
                     cart_qty = int.Parse(reader["quantity"].ToString());
-                    dataGridTransaction.Rows.Add(reader["transaction_id"].ToString(),
+                    dataGridTransaction.Rows.Add(
+                        reader["transaction_id"].ToString(),
                         reader["products_id"].ToString(),
-                        reader["description"].ToString(),
+                        reader["product_name"].ToString(),
                         reader["price"].ToString(),
                         reader["quantity"].ToString(),
                         reader["discount"].ToString(),
@@ -234,9 +235,10 @@ namespace supply_management
                         total += Convert.ToDouble(reader["total"].ToString());
                         isdiscount += Convert.ToDouble(reader["discount"].ToString());
                         cart_qty = int.Parse(reader["quantity"].ToString());
-                        dataGridTransaction.Rows.Add(reader["transaction_id"].ToString(),
+                        dataGridTransaction.Rows.Add(
+                            reader["transaction_id"].ToString(),
                             reader["products_id"].ToString(),
-                            reader["description"].ToString(),
+                            reader["product_name"].ToString(),
                             reader["price"].ToString(),
                             reader["quantity"].ToString(),
                             reader["discount"].ToString(),
@@ -523,5 +525,9 @@ namespace supply_management
             recoveryData();
         }
 
+        private void MainPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

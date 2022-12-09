@@ -23,13 +23,13 @@ namespace supply_management.Controller
 
         public MySqlDataReader displayRecord(String transNo)
         {
-            String query = "SELECT transaction_id, transactionNo, product.products_id, description, price, transaction.quantity, discount, total FROM transaction INNER JOIN product ON product.products_id = transaction.products_id WHERE transactionNo LIKE '" + transNo +"'";
+            String query = "SELECT transaction_id, transactionNo, product.products_id, description, product.product_name, price, transaction.quantity, discount, total FROM transaction INNER JOIN product ON product.products_id = transaction.products_id WHERE transactionNo LIKE '" + transNo +"'";
             return this.display(query);
         }
 
         public MySqlDataReader displayRecoveryData()
         {
-            String query = "SELECT transaction_id, transactionNo, product.products_id, description, price, transaction.quantity, discount, total, status FROM transaction INNER JOIN product ON product.products_id = transaction.products_id WHERE status = 'pending'";
+            String query = "SELECT transaction_id, transactionNo, product.products_id, description, product.product_name, price, transaction.quantity, discount, total, status FROM transaction INNER JOIN product ON product.products_id = transaction.products_id WHERE status = 'pending'";
             return this.display(query);
         }
         

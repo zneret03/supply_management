@@ -759,7 +759,7 @@
             // 
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             this.Column2.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Column2.HeaderText = "DESCRIPTION";
+            this.Column2.HeaderText = "PRODUCT NAME";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
             this.Column2.Width = 310;
@@ -939,6 +939,7 @@
             this.MainPanel.Name = "MainPanel";
             this.MainPanel.Size = new System.Drawing.Size(1728, 756);
             this.MainPanel.TabIndex = 31;
+            this.MainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.MainPanel_Paint);
             // 
             // frmPOS
             // 
@@ -1001,16 +1002,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton searchProduct;
         private Bunifu.Framework.UI.BunifuFlatButton newTransaction;
         public System.Windows.Forms.DataGridView dataGridTransaction;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewImageColumn removeqty;
-        private System.Windows.Forms.DataGridViewImageColumn addqty;
-        private System.Windows.Forms.DataGridViewImageColumn Delete;
         private System.Windows.Forms.Panel panel4;
         public System.Windows.Forms.TextBox txtQty;
         public System.Windows.Forms.TextBox textBox6;
@@ -1023,7 +1014,15 @@
         private Bunifu.Framework.UI.BunifuFlatButton btn_recovery;
         public Bunifu.Framework.UI.BunifuFlatButton settlePayment;
         public Bunifu.Framework.UI.BunifuFlatButton addDiscount;
-
-
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewImageColumn removeqty;
+        private System.Windows.Forms.DataGridViewImageColumn addqty;
+        private System.Windows.Forms.DataGridViewImageColumn Delete;
     }
 }
