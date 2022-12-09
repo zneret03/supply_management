@@ -40,6 +40,9 @@
             this.submit = new Bunifu.Framework.UI.BunifuFlatButton();
             this.id = new System.Windows.Forms.Label();
             this.lbltotalPrice = new System.Windows.Forms.Label();
+            this.gain = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblTotalGain = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,8 +53,9 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(595, 45);
+            this.panel1.Size = new System.Drawing.Size(793, 55);
             this.panel1.TabIndex = 0;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
@@ -62,9 +66,10 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(12, 11);
+            this.label2.Location = new System.Drawing.Point(16, 14);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 21);
+            this.label2.Size = new System.Drawing.Size(89, 28);
             this.label2.TabIndex = 40;
             this.label2.Text = "Discount";
             // 
@@ -74,9 +79,10 @@
             this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(569, 0);
+            this.label1.Location = new System.Drawing.Point(759, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(23, 30);
+            this.label1.Size = new System.Drawing.Size(29, 37);
             this.label1.TabIndex = 39;
             this.label1.Text = "x";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -84,37 +90,41 @@
             // price
             // 
             this.price.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.price.Location = new System.Drawing.Point(161, 66);
+            this.price.Location = new System.Drawing.Point(215, 81);
+            this.price.Margin = new System.Windows.Forms.Padding(4);
             this.price.Name = "price";
             this.price.ReadOnly = true;
-            this.price.Size = new System.Drawing.Size(334, 33);
+            this.price.Size = new System.Drawing.Size(444, 39);
             this.price.TabIndex = 1;
             // 
             // txtDiscount
             // 
             this.txtDiscount.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDiscount.Location = new System.Drawing.Point(161, 104);
+            this.txtDiscount.Location = new System.Drawing.Point(215, 180);
+            this.txtDiscount.Margin = new System.Windows.Forms.Padding(4);
             this.txtDiscount.Name = "txtDiscount";
-            this.txtDiscount.Size = new System.Drawing.Size(334, 33);
+            this.txtDiscount.Size = new System.Drawing.Size(444, 39);
             this.txtDiscount.TabIndex = 2;
             this.txtDiscount.TextChanged += new System.EventHandler(this.txtDiscount_TextChanged);
             // 
             // discountAmount
             // 
             this.discountAmount.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.discountAmount.Location = new System.Drawing.Point(161, 143);
+            this.discountAmount.Location = new System.Drawing.Point(215, 228);
+            this.discountAmount.Margin = new System.Windows.Forms.Padding(4);
             this.discountAmount.Name = "discountAmount";
             this.discountAmount.ReadOnly = true;
-            this.discountAmount.Size = new System.Drawing.Size(334, 33);
+            this.discountAmount.Size = new System.Drawing.Size(444, 39);
             this.discountAmount.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(62, 72);
+            this.label3.Location = new System.Drawing.Point(83, 89);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(91, 21);
+            this.label3.Size = new System.Drawing.Size(115, 28);
             this.label3.TabIndex = 4;
             this.label3.Text = "Total Price : ";
             // 
@@ -122,9 +132,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(48, 110);
+            this.label4.Location = new System.Drawing.Point(64, 187);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(105, 21);
+            this.label4.Size = new System.Drawing.Size(131, 28);
             this.label4.TabIndex = 5;
             this.label4.Text = "Discount (%) :";
             // 
@@ -132,9 +143,10 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(17, 143);
+            this.label5.Location = new System.Drawing.Point(23, 228);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(138, 21);
+            this.label5.Size = new System.Drawing.Size(174, 28);
             this.label5.TabIndex = 6;
             this.label5.Text = "Discount Amount :";
             // 
@@ -159,13 +171,14 @@
             this.submit.IconVisible = true;
             this.submit.IconZoom = 90D;
             this.submit.IsTab = false;
-            this.submit.Location = new System.Drawing.Point(161, 192);
+            this.submit.Location = new System.Drawing.Point(214, 287);
+            this.submit.Margin = new System.Windows.Forms.Padding(5);
             this.submit.Name = "submit";
             this.submit.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(191)))), ((int)(((byte)(213)))));
             this.submit.OnHovercolor = System.Drawing.Color.Silver;
             this.submit.OnHoverTextColor = System.Drawing.Color.White;
             this.submit.selected = false;
-            this.submit.Size = new System.Drawing.Size(334, 41);
+            this.submit.Size = new System.Drawing.Size(445, 50);
             this.submit.TabIndex = 46;
             this.submit.Text = "Submit";
             this.submit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -177,26 +190,63 @@
             // 
             this.id.AutoSize = true;
             this.id.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.id.Location = new System.Drawing.Point(511, 72);
+            this.id.Location = new System.Drawing.Point(681, 89);
+            this.id.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.id.Name = "id";
-            this.id.Size = new System.Drawing.Size(0, 21);
+            this.id.Size = new System.Drawing.Size(0, 28);
             this.id.TabIndex = 47;
             // 
             // lbltotalPrice
             // 
             this.lbltotalPrice.AutoSize = true;
             this.lbltotalPrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbltotalPrice.Location = new System.Drawing.Point(511, 164);
+            this.lbltotalPrice.Location = new System.Drawing.Point(681, 202);
+            this.lbltotalPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbltotalPrice.Name = "lbltotalPrice";
-            this.lbltotalPrice.Size = new System.Drawing.Size(0, 21);
+            this.lbltotalPrice.Size = new System.Drawing.Size(0, 28);
             this.lbltotalPrice.TabIndex = 49;
+            // 
+            // gain
+            // 
+            this.gain.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gain.Location = new System.Drawing.Point(214, 133);
+            this.gain.Margin = new System.Windows.Forms.Padding(4);
+            this.gain.Name = "gain";
+            this.gain.ReadOnly = true;
+            this.gain.Size = new System.Drawing.Size(444, 39);
+            this.gain.TabIndex = 50;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(82, 133);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(113, 28);
+            this.label6.TabIndex = 51;
+            this.label6.Text = "Total Gain : ";
+            // 
+            // lblTotalGain
+            // 
+            this.lblTotalGain.AutoSize = true;
+            this.lblTotalGain.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalGain.Location = new System.Drawing.Point(681, 133);
+            this.lblTotalGain.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTotalGain.Name = "lblTotalGain";
+            this.lblTotalGain.Size = new System.Drawing.Size(0, 28);
+            this.lblTotalGain.TabIndex = 52;
+            this.lblTotalGain.Visible = false;
             // 
             // frmdiscount
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(595, 262);
+            this.ClientSize = new System.Drawing.Size(793, 373);
+            this.Controls.Add(this.lblTotalGain);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.gain);
             this.Controls.Add(this.lbltotalPrice);
             this.Controls.Add(this.id);
             this.Controls.Add(this.submit);
@@ -208,6 +258,7 @@
             this.Controls.Add(this.price);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmdiscount";
             this.Text = "discount";
             this.Load += new System.EventHandler(this.frmdiscount_Load);
@@ -223,6 +274,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.TextBox price;
         private System.Windows.Forms.TextBox txtDiscount;
         private System.Windows.Forms.TextBox discountAmount;
         private System.Windows.Forms.Label label3;
@@ -230,7 +282,9 @@
         private System.Windows.Forms.Label label5;
         public Bunifu.Framework.UI.BunifuFlatButton submit;
         public System.Windows.Forms.Label id;
-        public System.Windows.Forms.TextBox price;
         public System.Windows.Forms.Label lbltotalPrice;
+        public System.Windows.Forms.TextBox gain;
+        private System.Windows.Forms.Label label6;
+        public System.Windows.Forms.Label lblTotalGain;
     }
 }

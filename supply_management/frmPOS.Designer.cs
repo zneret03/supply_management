@@ -43,19 +43,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.currentDate = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.Time = new System.Windows.Forms.Label();
-            this.lblvatable = new System.Windows.Forms.TextBox();
-            this.vatlbl = new System.Windows.Forms.TextBox();
-            this.txtdiscount = new System.Windows.Forms.TextBox();
-            this.total_sales = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btn_recovery = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -68,17 +55,7 @@
             this.addDiscount = new Bunifu.Framework.UI.BunifuFlatButton();
             this.searchProduct = new Bunifu.Framework.UI.BunifuFlatButton();
             this.newTransaction = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.dataGridTransaction = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.removeqty = new System.Windows.Forms.DataGridViewImageColumn();
-            this.addqty = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.MainPanel = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.txtQty = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
@@ -87,15 +64,42 @@
             this.Transactionlbl = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.MainPanel = new System.Windows.Forms.Panel();
+            this.dataGridTransaction = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gain = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.removeqty = new System.Windows.Forms.DataGridViewImageColumn();
+            this.addqty = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.txtGain = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.currentDate = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.Time = new System.Windows.Forms.Label();
+            this.lblvatable = new System.Windows.Forms.TextBox();
+            this.vatlbl = new System.Windows.Forms.TextBox();
+            this.txtdiscount = new System.Windows.Forms.TextBox();
+            this.total_sales = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.MainPanel.SuspendLayout();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridTransaction)).BeginInit();
             this.panel6.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel7.SuspendLayout();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridTransaction)).BeginInit();
-            this.panel4.SuspendLayout();
-            this.MainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -179,166 +183,6 @@
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.SystemColors.Control;
-            this.panel6.Controls.Add(this.panel10);
-            this.panel6.Controls.Add(this.panel7);
-            this.panel6.Controls.Add(this.lblvatable);
-            this.panel6.Controls.Add(this.vatlbl);
-            this.panel6.Controls.Add(this.txtdiscount);
-            this.panel6.Controls.Add(this.total_sales);
-            this.panel6.Controls.Add(this.label6);
-            this.panel6.Controls.Add(this.label5);
-            this.panel6.Controls.Add(this.label3);
-            this.panel6.Controls.Add(this.label2);
-            this.panel6.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel6.Location = new System.Drawing.Point(4, 524);
-            this.panel6.Margin = new System.Windows.Forms.Padding(4);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1396, 231);
-            this.panel6.TabIndex = 3;
-            // 
-            // panel10
-            // 
-            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(191)))), ((int)(((byte)(213)))));
-            this.panel10.Controls.Add(this.currentDate);
-            this.panel10.Location = new System.Drawing.Point(1, 124);
-            this.panel10.Margin = new System.Windows.Forms.Padding(4);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(501, 63);
-            this.panel10.TabIndex = 9;
-            // 
-            // currentDate
-            // 
-            this.currentDate.AutoSize = true;
-            this.currentDate.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.currentDate.ForeColor = System.Drawing.Color.White;
-            this.currentDate.Location = new System.Drawing.Point(13, 12);
-            this.currentDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.currentDate.Name = "currentDate";
-            this.currentDate.Size = new System.Drawing.Size(121, 41);
-            this.currentDate.TabIndex = 1;
-            this.currentDate.Text = "label13";
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(191)))), ((int)(((byte)(213)))));
-            this.panel7.Controls.Add(this.Time);
-            this.panel7.Location = new System.Drawing.Point(0, 28);
-            this.panel7.Margin = new System.Windows.Forms.Padding(4);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(640, 89);
-            this.panel7.TabIndex = 8;
-            // 
-            // Time
-            // 
-            this.Time.AutoSize = true;
-            this.Time.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Time.ForeColor = System.Drawing.Color.White;
-            this.Time.Location = new System.Drawing.Point(5, 5);
-            this.Time.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.Time.Name = "Time";
-            this.Time.Size = new System.Drawing.Size(240, 81);
-            this.Time.TabIndex = 0;
-            this.Time.Text = "label12";
-            // 
-            // lblvatable
-            // 
-            this.lblvatable.BackColor = System.Drawing.SystemColors.Control;
-            this.lblvatable.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lblvatable.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblvatable.Location = new System.Drawing.Point(1181, 151);
-            this.lblvatable.Margin = new System.Windows.Forms.Padding(4);
-            this.lblvatable.Name = "lblvatable";
-            this.lblvatable.Size = new System.Drawing.Size(184, 35);
-            this.lblvatable.TabIndex = 7;
-            this.lblvatable.Text = "0.00";
-            this.lblvatable.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // vatlbl
-            // 
-            this.vatlbl.BackColor = System.Drawing.SystemColors.Control;
-            this.vatlbl.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.vatlbl.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vatlbl.Location = new System.Drawing.Point(1181, 111);
-            this.vatlbl.Margin = new System.Windows.Forms.Padding(4);
-            this.vatlbl.Name = "vatlbl";
-            this.vatlbl.Size = new System.Drawing.Size(184, 35);
-            this.vatlbl.TabIndex = 6;
-            this.vatlbl.Text = "0.00";
-            this.vatlbl.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // txtdiscount
-            // 
-            this.txtdiscount.BackColor = System.Drawing.SystemColors.Control;
-            this.txtdiscount.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtdiscount.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtdiscount.Location = new System.Drawing.Point(1180, 69);
-            this.txtdiscount.Margin = new System.Windows.Forms.Padding(4);
-            this.txtdiscount.Name = "txtdiscount";
-            this.txtdiscount.Size = new System.Drawing.Size(184, 35);
-            this.txtdiscount.TabIndex = 5;
-            this.txtdiscount.Text = "0.00";
-            this.txtdiscount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // total_sales
-            // 
-            this.total_sales.BackColor = System.Drawing.SystemColors.Control;
-            this.total_sales.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.total_sales.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.total_sales.Location = new System.Drawing.Point(1180, 30);
-            this.total_sales.Margin = new System.Windows.Forms.Padding(4);
-            this.total_sales.Name = "total_sales";
-            this.total_sales.Size = new System.Drawing.Size(184, 35);
-            this.total_sales.TabIndex = 4;
-            this.total_sales.Text = "0.00";
-            this.total_sales.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(1073, 151);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(96, 28);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "VATABLE :";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(1115, 116);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(54, 28);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "VAT :";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(1048, 75);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(116, 28);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "DISCOUNT :";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(1024, 32);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(139, 28);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "SALES  TOTAL :";
             // 
             // panel3
             // 
@@ -714,120 +558,19 @@
             this.newTransaction.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.newTransaction.Click += new System.EventHandler(this.newTransaction_Click);
             // 
-            // dataGridTransaction
+            // MainPanel
             // 
-            this.dataGridTransaction.AllowUserToAddRows = false;
-            this.dataGridTransaction.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridTransaction.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridTransaction.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column7,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.removeqty,
-            this.addqty,
-            this.Delete});
-            this.dataGridTransaction.Location = new System.Drawing.Point(20, 187);
-            this.dataGridTransaction.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridTransaction.Name = "dataGridTransaction";
-            this.dataGridTransaction.RowHeadersWidth = 51;
-            this.dataGridTransaction.Size = new System.Drawing.Size(1369, 330);
-            this.dataGridTransaction.TabIndex = 1;
-            this.dataGridTransaction.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridTransaction_CellContentClick);
-            this.dataGridTransaction.SelectionChanged += new System.EventHandler(this.dataGridTransaction_SelectionChanged);
-            // 
-            // Column1
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Column1.HeaderText = "#";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 125;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "PRODUCT #";
-            this.Column7.MinimumWidth = 6;
-            this.Column7.Name = "Column7";
-            this.Column7.Width = 125;
-            // 
-            // Column2
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Column2.HeaderText = "PRODUCT NAME";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 310;
-            // 
-            // Column3
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Column3.HeaderText = "PRICE";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 125;
-            // 
-            // Column4
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Column4.HeaderText = "QTY";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 125;
-            // 
-            // Column5
-            // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Column5.HeaderText = "DISCOUNT";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 125;
-            // 
-            // Column6
-            // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.Column6.DefaultCellStyle = dataGridViewCellStyle6;
-            this.Column6.HeaderText = "TOTAL";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 125;
-            // 
-            // removeqty
-            // 
-            this.removeqty.HeaderText = "";
-            this.removeqty.Image = ((System.Drawing.Image)(resources.GetObject("removeqty.Image")));
-            this.removeqty.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.removeqty.MinimumWidth = 6;
-            this.removeqty.Name = "removeqty";
-            this.removeqty.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.removeqty.Width = 20;
-            // 
-            // addqty
-            // 
-            this.addqty.HeaderText = "";
-            this.addqty.Image = ((System.Drawing.Image)(resources.GetObject("addqty.Image")));
-            this.addqty.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.addqty.MinimumWidth = 6;
-            this.addqty.Name = "addqty";
-            this.addqty.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.addqty.Width = 20;
-            // 
-            // Delete
-            // 
-            this.Delete.HeaderText = "";
-            this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
-            this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.Delete.MinimumWidth = 6;
-            this.Delete.Name = "Delete";
-            this.Delete.Width = 20;
+            this.MainPanel.BackColor = System.Drawing.Color.White;
+            this.MainPanel.Controls.Add(this.panel4);
+            this.MainPanel.Controls.Add(this.dataGridTransaction);
+            this.MainPanel.Controls.Add(this.panel3);
+            this.MainPanel.Controls.Add(this.panel6);
+            this.MainPanel.Location = new System.Drawing.Point(-4, 89);
+            this.MainPanel.Margin = new System.Windows.Forms.Padding(4);
+            this.MainPanel.Name = "MainPanel";
+            this.MainPanel.Size = new System.Drawing.Size(1728, 756);
+            this.MainPanel.TabIndex = 31;
+            this.MainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.MainPanel_Paint);
             // 
             // panel4
             // 
@@ -843,6 +586,7 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1367, 164);
             this.panel4.TabIndex = 2;
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // txtQty
             // 
@@ -927,19 +671,322 @@
             this.label7.TabIndex = 8;
             this.label7.Text = "Transaction No :";
             // 
-            // MainPanel
+            // dataGridTransaction
             // 
-            this.MainPanel.BackColor = System.Drawing.Color.White;
-            this.MainPanel.Controls.Add(this.panel4);
-            this.MainPanel.Controls.Add(this.dataGridTransaction);
-            this.MainPanel.Controls.Add(this.panel3);
-            this.MainPanel.Controls.Add(this.panel6);
-            this.MainPanel.Location = new System.Drawing.Point(-4, 89);
-            this.MainPanel.Margin = new System.Windows.Forms.Padding(4);
-            this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(1728, 756);
-            this.MainPanel.TabIndex = 31;
-            this.MainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.MainPanel_Paint);
+            this.dataGridTransaction.AllowUserToAddRows = false;
+            this.dataGridTransaction.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridTransaction.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridTransaction.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column7,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.gain,
+            this.Column6,
+            this.Column8,
+            this.removeqty,
+            this.addqty,
+            this.Delete});
+            this.dataGridTransaction.Location = new System.Drawing.Point(20, 187);
+            this.dataGridTransaction.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridTransaction.Name = "dataGridTransaction";
+            this.dataGridTransaction.RowHeadersWidth = 51;
+            this.dataGridTransaction.Size = new System.Drawing.Size(1369, 330);
+            this.dataGridTransaction.TabIndex = 1;
+            this.dataGridTransaction.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridTransaction_CellContentClick);
+            this.dataGridTransaction.SelectionChanged += new System.EventHandler(this.dataGridTransaction_SelectionChanged);
+            // 
+            // Column1
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Column1.HeaderText = "#";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 125;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "PRODUCT #";
+            this.Column7.MinimumWidth = 6;
+            this.Column7.Name = "Column7";
+            this.Column7.Width = 125;
+            // 
+            // Column2
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Column2.HeaderText = "PRODUCT NAME";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 310;
+            // 
+            // Column3
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Column3.HeaderText = "PRICE";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 125;
+            // 
+            // Column4
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Column4.HeaderText = "QTY";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 125;
+            // 
+            // Column5
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Column5.HeaderText = "DISCOUNT";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 125;
+            // 
+            // gain
+            // 
+            this.gain.HeaderText = "GAIN";
+            this.gain.MinimumWidth = 6;
+            this.gain.Name = "gain";
+            this.gain.Width = 125;
+            // 
+            // Column6
+            // 
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.Column6.DefaultCellStyle = dataGridViewCellStyle6;
+            this.Column6.HeaderText = "TOTAL";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            this.Column6.Width = 125;
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "TOTAL GAIN";
+            this.Column8.MinimumWidth = 6;
+            this.Column8.Name = "Column8";
+            this.Column8.Width = 125;
+            // 
+            // removeqty
+            // 
+            this.removeqty.HeaderText = "";
+            this.removeqty.Image = ((System.Drawing.Image)(resources.GetObject("removeqty.Image")));
+            this.removeqty.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.removeqty.MinimumWidth = 6;
+            this.removeqty.Name = "removeqty";
+            this.removeqty.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.removeqty.Width = 20;
+            // 
+            // addqty
+            // 
+            this.addqty.HeaderText = "";
+            this.addqty.Image = ((System.Drawing.Image)(resources.GetObject("addqty.Image")));
+            this.addqty.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.addqty.MinimumWidth = 6;
+            this.addqty.Name = "addqty";
+            this.addqty.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.addqty.Width = 20;
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "";
+            this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
+            this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.Delete.MinimumWidth = 6;
+            this.Delete.Name = "Delete";
+            this.Delete.Width = 20;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.SystemColors.Control;
+            this.panel6.Controls.Add(this.txtGain);
+            this.panel6.Controls.Add(this.label10);
+            this.panel6.Controls.Add(this.panel10);
+            this.panel6.Controls.Add(this.panel7);
+            this.panel6.Controls.Add(this.lblvatable);
+            this.panel6.Controls.Add(this.vatlbl);
+            this.panel6.Controls.Add(this.txtdiscount);
+            this.panel6.Controls.Add(this.total_sales);
+            this.panel6.Controls.Add(this.label6);
+            this.panel6.Controls.Add(this.label5);
+            this.panel6.Controls.Add(this.label3);
+            this.panel6.Controls.Add(this.label2);
+            this.panel6.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel6.Location = new System.Drawing.Point(4, 524);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(1396, 231);
+            this.panel6.TabIndex = 3;
+            // 
+            // txtGain
+            // 
+            this.txtGain.BackColor = System.Drawing.SystemColors.Control;
+            this.txtGain.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtGain.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGain.Location = new System.Drawing.Point(1181, 181);
+            this.txtGain.Margin = new System.Windows.Forms.Padding(4);
+            this.txtGain.Name = "txtGain";
+            this.txtGain.Size = new System.Drawing.Size(184, 35);
+            this.txtGain.TabIndex = 11;
+            this.txtGain.Text = "0.00";
+            this.txtGain.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(1073, 184);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(68, 28);
+            this.label10.TabIndex = 10;
+            this.label10.Text = "GAIN :";
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(191)))), ((int)(((byte)(213)))));
+            this.panel10.Controls.Add(this.currentDate);
+            this.panel10.Location = new System.Drawing.Point(1, 124);
+            this.panel10.Margin = new System.Windows.Forms.Padding(4);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(501, 63);
+            this.panel10.TabIndex = 9;
+            // 
+            // currentDate
+            // 
+            this.currentDate.AutoSize = true;
+            this.currentDate.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.currentDate.ForeColor = System.Drawing.Color.White;
+            this.currentDate.Location = new System.Drawing.Point(13, 12);
+            this.currentDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.currentDate.Name = "currentDate";
+            this.currentDate.Size = new System.Drawing.Size(121, 41);
+            this.currentDate.TabIndex = 1;
+            this.currentDate.Text = "label13";
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(191)))), ((int)(((byte)(213)))));
+            this.panel7.Controls.Add(this.Time);
+            this.panel7.Location = new System.Drawing.Point(0, 28);
+            this.panel7.Margin = new System.Windows.Forms.Padding(4);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(640, 89);
+            this.panel7.TabIndex = 8;
+            // 
+            // Time
+            // 
+            this.Time.AutoSize = true;
+            this.Time.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Time.ForeColor = System.Drawing.Color.White;
+            this.Time.Location = new System.Drawing.Point(5, 5);
+            this.Time.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Time.Name = "Time";
+            this.Time.Size = new System.Drawing.Size(240, 81);
+            this.Time.TabIndex = 0;
+            this.Time.Text = "label12";
+            // 
+            // lblvatable
+            // 
+            this.lblvatable.BackColor = System.Drawing.SystemColors.Control;
+            this.lblvatable.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lblvatable.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblvatable.Location = new System.Drawing.Point(1181, 143);
+            this.lblvatable.Margin = new System.Windows.Forms.Padding(4);
+            this.lblvatable.Name = "lblvatable";
+            this.lblvatable.Size = new System.Drawing.Size(184, 35);
+            this.lblvatable.TabIndex = 7;
+            this.lblvatable.Text = "0.00";
+            this.lblvatable.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // vatlbl
+            // 
+            this.vatlbl.BackColor = System.Drawing.SystemColors.Control;
+            this.vatlbl.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.vatlbl.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vatlbl.Location = new System.Drawing.Point(1181, 103);
+            this.vatlbl.Margin = new System.Windows.Forms.Padding(4);
+            this.vatlbl.Name = "vatlbl";
+            this.vatlbl.Size = new System.Drawing.Size(184, 35);
+            this.vatlbl.TabIndex = 6;
+            this.vatlbl.Text = "0.00";
+            this.vatlbl.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // txtdiscount
+            // 
+            this.txtdiscount.BackColor = System.Drawing.SystemColors.Control;
+            this.txtdiscount.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtdiscount.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtdiscount.Location = new System.Drawing.Point(1180, 61);
+            this.txtdiscount.Margin = new System.Windows.Forms.Padding(4);
+            this.txtdiscount.Name = "txtdiscount";
+            this.txtdiscount.Size = new System.Drawing.Size(184, 35);
+            this.txtdiscount.TabIndex = 5;
+            this.txtdiscount.Text = "0.00";
+            this.txtdiscount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // total_sales
+            // 
+            this.total_sales.BackColor = System.Drawing.SystemColors.Control;
+            this.total_sales.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.total_sales.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.total_sales.Location = new System.Drawing.Point(1180, 22);
+            this.total_sales.Margin = new System.Windows.Forms.Padding(4);
+            this.total_sales.Name = "total_sales";
+            this.total_sales.Size = new System.Drawing.Size(184, 35);
+            this.total_sales.TabIndex = 4;
+            this.total_sales.Text = "0.00";
+            this.total_sales.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(1073, 143);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(96, 28);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "VATABLE :";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(1115, 108);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(54, 28);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "VAT :";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(1048, 67);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(116, 28);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "DISCOUNT :";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(1024, 24);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(139, 28);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "SALES  TOTAL :";
             // 
             // frmPOS
             // 
@@ -955,17 +1002,17 @@
             this.Load += new System.EventHandler(this.POS_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.MainPanel.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridTransaction)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridTransaction)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.MainPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -979,6 +1026,28 @@
         private System.Windows.Forms.Label lblDisplayTotal;
         public System.Windows.Forms.Label label1;
         public System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panel3;
+        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton2;
+        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Panel panel8;
+        public Bunifu.Framework.UI.BunifuFlatButton Logout;
+        private Bunifu.Framework.UI.BunifuFlatButton dailySales;
+        private Bunifu.Framework.UI.BunifuFlatButton searchProduct;
+        private Bunifu.Framework.UI.BunifuFlatButton newTransaction;
+        private System.Windows.Forms.Panel MainPanel;
+        private Bunifu.Framework.UI.BunifuFlatButton btn_recovery;
+        public Bunifu.Framework.UI.BunifuFlatButton settlePayment;
+        public Bunifu.Framework.UI.BunifuFlatButton addDiscount;
+        private System.Windows.Forms.Panel panel4;
+        public System.Windows.Forms.TextBox txtQty;
+        public System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Label label9;
+        public System.Windows.Forms.Label date;
+        public System.Windows.Forms.Label Transactionlbl;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        public System.Windows.Forms.DataGridView dataGridTransaction;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Label currentDate;
@@ -992,35 +1061,17 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel3;
-        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton2;
-        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Panel panel8;
-        public Bunifu.Framework.UI.BunifuFlatButton Logout;
-        private Bunifu.Framework.UI.BunifuFlatButton dailySales;
-        private Bunifu.Framework.UI.BunifuFlatButton searchProduct;
-        private Bunifu.Framework.UI.BunifuFlatButton newTransaction;
-        public System.Windows.Forms.DataGridView dataGridTransaction;
-        private System.Windows.Forms.Panel panel4;
-        public System.Windows.Forms.TextBox txtQty;
-        public System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label label9;
-        public System.Windows.Forms.Label date;
-        public System.Windows.Forms.Label Transactionlbl;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Panel MainPanel;
-        private Bunifu.Framework.UI.BunifuFlatButton btn_recovery;
-        public Bunifu.Framework.UI.BunifuFlatButton settlePayment;
-        public Bunifu.Framework.UI.BunifuFlatButton addDiscount;
+        public System.Windows.Forms.TextBox txtGain;
+        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gain;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewImageColumn removeqty;
         private System.Windows.Forms.DataGridViewImageColumn addqty;
         private System.Windows.Forms.DataGridViewImageColumn Delete;

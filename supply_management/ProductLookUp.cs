@@ -70,6 +70,7 @@ namespace supply_management
             dataLookup.Columns[5].Width = 150;
             dataLookup.Columns[6].Width = 150;
             dataLookup.Columns[7].Width = 150;
+            dataLookup.Columns[8].Width = 150;
 
             dataLookup.Columns[0].HeaderText = "#";
             dataLookup.Columns[1].HeaderText = "BARCODE";
@@ -79,6 +80,7 @@ namespace supply_management
             dataLookup.Columns[5].HeaderText = "DESCRIPTION";
             dataLookup.Columns[6].HeaderText = "QTY";
             dataLookup.Columns[7].HeaderText = "PRICE";
+            dataLookup.Columns[8].HeaderText = "GAIN";
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -116,7 +118,8 @@ namespace supply_management
             if(e.RowIndex >= 0)   
             {
                 DataGridViewRow dt = this.dataLookup.Rows[e.RowIndex];
-                f.product(dt.Cells[0].Value.ToString(), Convert.ToDouble(dt.Cells[7].Value.ToString()));
+
+                f.product(dt.Cells[0].Value.ToString(), Convert.ToDouble(dt.Cells[7].Value.ToString()), Convert.ToDouble(dt.Cells[8].Value.ToString()));
                 f.productQty(int.Parse(dt.Cells[6].Value.ToString()));
                 frmQuantity quantity = new frmQuantity(f);
                 quantity.Show();

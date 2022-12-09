@@ -23,20 +23,20 @@ namespace supply_management.Controller
 
         public MySqlDataReader displayRecord(String transNo)
         {
-            String query = "SELECT transaction_id, transactionNo, product.products_id, description, product.product_name, price, transaction.quantity, discount, total FROM transaction INNER JOIN product ON product.products_id = transaction.products_id WHERE transactionNo LIKE '" + transNo +"'";
+            String query = "SELECT transaction_id, transactionNo, product.products_id, description, product.product_name, price, totalGain, product.gain, transaction.quantity, discount, total FROM transaction INNER JOIN product ON product.products_id = transaction.products_id WHERE transactionNo LIKE '" + transNo +"'";
             return this.display(query);
         }
 
         public MySqlDataReader displayRecoveryData()
         {
-            String query = "SELECT transaction_id, transactionNo, product.products_id, description, product.product_name, price, transaction.quantity, discount, total, status FROM transaction INNER JOIN product ON product.products_id = transaction.products_id WHERE status = 'pending'";
+            String query = "SELECT transaction_id, transactionNo, product.products_id, description, product.product_name, price, totalGain, product.gain, transaction.quantity, discount, total, status FROM transaction INNER JOIN product ON product.products_id = transaction.products_id WHERE status = 'pending'";
             return this.display(query);
         }
         
 
         public DataTable loadProductLookup()
         {
-            String query = "SELECT products_id, barcode, product_name, category_name, brand_name, description,quantity, price FROM product INNER JOIN category ON category.category_id = product.category_id INNER JOIN brand ON brand.brand_id = product.brand_id WHERE quantity > 0";
+            String query = "SELECT products_id, barcode, product_name, category_name, brand_name, description, quantity, price, gain FROM product INNER JOIN category ON category.category_id = product.category_id INNER JOIN brand ON brand.brand_id = product.brand_id WHERE quantity > 0";
             return this.barcodeSearcing(query);
         }
 
@@ -133,19 +133,19 @@ namespace supply_management.Controller
         }
 
 
-        public void addQty(String pcode, String transNo, double discount, int tableqty, int qty , double price)
+        public void addQty(String pcode, String transNo, double discount, int tableqty, int qty , double price, int totalGain)
         {
-            this.addQuantity(pcode, transNo, discount, tableqty, qty, price);
+            this.addQuantity(pcode, transNo, discount, tableqty, qty, price, totalGain);
         }
 
-        public void removeQty(String pcode, String transNo, double discount, int qty, double price)
+        public void removeQty(String pcode, String transNo, double discount, int qty, double price, int totalGain)
         {
-            this.removeQuantity(pcode, transNo, discount, qty, price);
+            this.removeQuantity(pcode, transNo, discount, qty, price, totalGain);
         }
          
-        public void insertTransact(String pcode, String transactNo, String qty, double total,  String cashier)
+        public void insertTransact(String pcode, String transactNo, String qty, double total,  String cashier, double totalGain)
         {
-            this.insertTransaction(pcode, transactNo, qty, total,  cashier);
+            this.insertTransaction(pcode, transactNo, qty, total, cashier, totalGain);
         }
 
         public void cancelItems(String user, String password, TextBox[] information, ComboBox[] invetory)
@@ -158,12 +158,12 @@ namespace supply_management.Controller
             String query = "";
             if(user.ToString() == "all cashier sales")
             {
-                query = "SELECT transaction_id, transactionNo, t.products_id, p.description, p.product_name, p.price, t.quantity, discount, p.gain, total FROM transaction as t INNER JOIN product as p ON p.products_id = t.products_id WHERE t.date_created BETWEEN '" + date1 + "' AND '" + date2 + "' AND t.quantity != 0  AND status != 'pending'";
+                query = "SELECT transaction_id, transactionNo, t.products_id, p.description, p.product_name, p.price, t.quantity, discount, totalGain, total FROM transaction as t INNER JOIN product as p ON p.products_id = t.products_id WHERE t.date_created BETWEEN '" + date1 + "' AND '" + date2 + "' AND t.quantity != 0  AND status != 'pending'";
             }
             else
             {
                 //MessageBox.Show(date1 + " " + date2 + " " + user);
-                query = "SELECT transaction_id, transactionNo, t.products_id, p.description, p.product_name, p.price, t.quantity, discount, p.gain, total FROM transaction as t INNER JOIN product as p ON p.products_id = t.products_id WHERE t.date_created BETWEEN '" + date1 + "' AND '" + date2 + "' AND cashier = '" + user.ToString() + "' AND t.quantity != 0 AND status != 'pending'";
+                query = "SELECT transaction_id, transactionNo, t.products_id, p.description, p.product_name, p.price, t.quantity, discount, totalGain, total FROM transaction as t INNER JOIN product as p ON p.products_id = t.products_id WHERE t.date_created BETWEEN '" + date1 + "' AND '" + date2 + "' AND cashier = '" + user.ToString() + "' AND t.quantity != 0 AND status != 'pending'";
             }
             
             return this.display(query);
@@ -175,9 +175,9 @@ namespace supply_management.Controller
             return this.isExist(transactionNo, pcode);
         }
 
-        public void updateOrder(String pcode, String qty, double total)
+        public void updateOrder(String pcode, String qty, double total, double totalGain)
         {
-            this.updateExistingOrder(pcode, qty, total);
+            this.updateExistingOrder(pcode, qty, total, totalGain);
         }
 
         public void loadusername(ComboBox users)
@@ -204,9 +204,9 @@ namespace supply_management.Controller
             this.delete(id, loadData);
         }
 
-        public void discount(String id, String discount, String discount_percent, frmdiscount suspend, double totalPrice)
+        public void discount(String id, String discount, String discount_percent, frmdiscount suspend, double totalPrice, double discountedGain)
         {
-            this.isDiscount(id, discount, discount_percent, suspend, totalPrice);
+            this.isDiscount(id, discount, discount_percent, suspend, totalPrice, discountedGain);
         }
 
         public void updTransactionStat(String transactionNo)

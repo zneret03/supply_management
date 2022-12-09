@@ -109,7 +109,7 @@ namespace supply_management.Model
         }
 
         //Add Qunatity dynamically
-        protected void addQuantity(String pcode, String transNo, double discount, int tableqty, int qty, double price)
+        protected void addQuantity(String pcode, String transNo, double discount, int tableqty, int qty, double price, int totalGain)
         {
             try
             {
@@ -125,13 +125,13 @@ namespace supply_management.Model
                 if (discount == 0.00)
                 {
                     //Calculate when discount was not entered qunatity++
-                    addqty(i, tableqty, qty, pcode, transNo, price);
+                    addqty(i, tableqty, qty, pcode, transNo, price, totalGain);
                     return;
                 }
                 else
                 {
                     //calculate when discount was entered
-                    addQty_Discount(i, tableqty, qty, pcode, transNo, price);
+                    addQty_Discount(i, tableqty, qty, pcode, transNo, price, totalGain);
                     //MessageBox.Show("False");
                     return;
                 }
@@ -143,7 +143,7 @@ namespace supply_management.Model
             }
         }
 
-        private void addqty(int i, int tableqty, int qty, String pcode, String transNo, double price)
+        private void addqty(int i, int tableqty, int qty, String pcode, String transNo, double price, int totalGain)
         {
             try
             {
@@ -152,7 +152,7 @@ namespace supply_management.Model
                 conn.Open();
                 if (tableqty <= i)
                 {
-                    using (command = new MySqlCommand("UPDATE transaction SET quantity = quantity + '" + qty + "', total = quantity * '" + price + "' WHERE transactionNo LIKE '" + transNo + "' AND products_id LIKE '" + pcode + "'", conn))
+                    using (command = new MySqlCommand("UPDATE transaction SET quantity = quantity + '" + qty + "', total = quantity * '" + price + "', totalGain = quantity * '" + totalGain + "' WHERE transactionNo LIKE '" + transNo + "' AND products_id LIKE '" + pcode + "'", conn))
                     {
                         command.ExecuteNonQuery();
                     }
@@ -169,7 +169,7 @@ namespace supply_management.Model
             }
         }
 
-        private void addQty_Discount(int i, int tableqty, int qty, String pcode, String transNo, double price)
+        private void addQty_Discount(int i, int tableqty, int qty, String pcode, String transNo, double price, int totalGain)
         {
             try
             {
@@ -178,7 +178,7 @@ namespace supply_management.Model
                 conn.Open();
                 if (tableqty <= i)
                 {
-                    using (command = new MySqlCommand("UPDATE transaction SET quantity = quantity + '" + qty + "', discount = (('" + price + "' * quantity) * discount_percent), total = (('" + price + "' * quantity) - discount) WHERE transactionNo LIKE '" + transNo + "' AND products_id LIKE '" + pcode + "'", conn))
+                    using (command = new MySqlCommand("UPDATE transaction SET quantity = quantity + '" + qty + "', discount = (('" + price + "' * quantity) * discount_percent), total = (('" + price + "' * quantity) - discount), totalGain = (('" + totalGain + "' * quantity) - discount) WHERE transactionNo LIKE '" + transNo + "' AND products_id LIKE '" + pcode + "'", conn))
                     {
                         command.ExecuteNonQuery();
                     }
@@ -197,7 +197,7 @@ namespace supply_management.Model
         //add quantity dynamically
 
         //remove quantity dynamically
-        protected void removeQuantity(String pcode, String transNo, double discount, int qty, double price)
+        protected void removeQuantity(String pcode, String transNo, double discount, int qty, double price, int totalGain)
         {
             try
             {
@@ -215,13 +215,13 @@ namespace supply_management.Model
                 if (discount == 0.00)
                 {
                     //Calculate when discount was not entered qunatity++
-                    removeqty(i, qty, pcode, transNo, price);
+                    removeqty(i, qty, pcode, transNo, price, totalGain);
                     return;
                 }
                 else
                 {
                     //calculate when discount was entered
-                    removeqty_Discount(i, qty, pcode, transNo, price);
+                    removeqty_Discount(i, qty, pcode, transNo, price, totalGain);
                     //MessageBox.Show("False");
                     return;
                 }
@@ -232,7 +232,7 @@ namespace supply_management.Model
             }
         }
 
-        private void removeqty(int i, int qty, String pcode, String transNo, double price)
+        private void removeqty(int i, int qty, String pcode, String transNo, double price, int totalGain)
         {
             try
             {
@@ -240,7 +240,7 @@ namespace supply_management.Model
                 conn.Open();
                 if (i > 1)
                 {
-                    using (command = new MySqlCommand("UPDATE transaction SET quantity = quantity - '" + qty + "', total = quantity * '" + price + "' WHERE transactionNo LIKE '" + transNo + "' AND products_id LIKE '" + pcode + "'", conn))
+                    using (command = new MySqlCommand("UPDATE transaction SET quantity = quantity - '" + qty + "', total = quantity * '" + price + "', totalGain = quantity * '" + totalGain + "' WHERE transactionNo LIKE '" + transNo + "' AND products_id LIKE '" + pcode + "'", conn))
                     {
                         command.ExecuteNonQuery();
                     }
@@ -257,7 +257,7 @@ namespace supply_management.Model
             }
         }
 
-        private void removeqty_Discount(int i, int qty, String pcode, String transNo, double price)
+        private void removeqty_Discount(int i, int qty, String pcode, String transNo, double price, int totalGain)
         {
             try
             {
@@ -265,7 +265,7 @@ namespace supply_management.Model
                 conn.Open();
                 if (i > 1)
                 {
-                    using (command = new MySqlCommand("UPDATE transaction SET quantity = quantity - '" + qty + "', discount = (('" + price + "' * quantity) * discount_percent), total = (('" + price + "' * quantity) - discount) WHERE transactionNo LIKE '" + transNo + "' AND products_id LIKE '" + pcode + "'", conn))
+                    using (command = new MySqlCommand("UPDATE transaction SET quantity = quantity - '" + qty + "', discount = (('" + price + "' * quantity) * discount_percent), total = (('" + price + "' * quantity) - discount), totalGain = (('" + totalGain + "' * quantity) - discount) WHERE transactionNo LIKE '" + transNo + "' AND products_id LIKE '" + pcode + "'", conn))
                     {
                         command.ExecuteNonQuery();
                     }
@@ -427,13 +427,13 @@ namespace supply_management.Model
             
         }
 
-        protected void updateExistingOrder(String pcode, String quantity, double total)
+        protected void updateExistingOrder(String pcode, String quantity, double total, double totalGain)
         {
             try
             {
                 conn = new MySqlConnection(this.connection());
                 conn.Open();
-                using(command = new MySqlCommand("UPDATE transaction SET quantity = quantity + '" + int.Parse(quantity) + "', total = total + '" + total + "' WHERE products_id = '" + pcode +"'", conn))
+                using(command = new MySqlCommand("UPDATE transaction SET quantity = quantity + '" + int.Parse(quantity) + "', total = total + '" + total + "',  totalGain = totalGain + '" + totalGain + "' WHERE products_id = '" + pcode +"'", conn))
                 {
                     command.ExecuteNonQuery();
                 }
@@ -468,7 +468,7 @@ namespace supply_management.Model
         }
 
         //Saving discount to transaction table;
-        protected void isDiscount(String id, String discount, String discount_percent, frmdiscount suspend, double totalPrices)
+        protected void isDiscount(String id, String discount, String discount_percent, frmdiscount suspend, double totalPrices, double discountedGain)
         {
             try
             {
@@ -478,11 +478,12 @@ namespace supply_management.Model
                 DialogResult result = MessageBox.Show("Add this discount?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if(result == DialogResult.Yes)
                 {
-                    using (command = new MySqlCommand("UPDATE transaction SET discount_percent = @disc_percent, discount = @desc, total = @ttal WHERE transaction_id = @id", conn))
+                    using (command = new MySqlCommand("UPDATE transaction SET discount_percent = @disc_percent, discount = @desc, total = @ttal, totalGain = @totalGain WHERE transaction_id = @id", conn))
                     {
                         command.Parameters.AddWithValue("@disc_percent", Convert.ToDouble(discount_percent));
                         command.Parameters.AddWithValue("@desc", Convert.ToDouble(discount));
                         command.Parameters.AddWithValue("@ttal", totalPrices);
+                        command.Parameters.AddWithValue("@totalGain", discountedGain);
                         command.Parameters.AddWithValue("@id", Convert.ToInt32(id));
 
                         bool checkResult = (int)command.ExecuteNonQuery() > 0;
@@ -603,7 +604,7 @@ namespace supply_management.Model
             }
         }
         
-        protected void insertTransaction(String pcode, String transactNo, String qty, double total, String cashier)
+        protected void insertTransaction(String pcode, String transactNo, String qty, double total, String cashier, double gainText)
         {
             try
             {
@@ -612,13 +613,14 @@ namespace supply_management.Model
                     String discount = "0.00";
                     String status = "pending";
                     conn.Open();
-                    command = new MySqlCommand("INSERT INTO transaction (transactionNo, products_id, quantity, discount, total, cashier, date_created, status) VALUES (@transactNo, @prodId, @qty, @desc ,@ttal, @cashier, @date, @status)", conn);
+                    command = new MySqlCommand("INSERT INTO transaction (transactionNo, products_id, quantity, discount, total, cashier, totalGain, date_created, status) VALUES (@transactNo, @prodId, @qty, @desc ,@ttal, @cashier, @totalGain, @date, @status)", conn);
                     command.Parameters.AddWithValue("@transactNo", transactNo);
                     command.Parameters.AddWithValue("@prodId", pcode);
                     command.Parameters.AddWithValue("@qty", qty);
                     command.Parameters.AddWithValue("@desc", discount);
                     command.Parameters.AddWithValue("@ttal", total);
                     command.Parameters.AddWithValue("@cashier", cashier);
+                    command.Parameters.AddWithValue("@totalGain", gainText);
                     command.Parameters.AddWithValue("@date", DateTime.Now.Date.ToString("yyyy-MM-dd"));
                     command.Parameters.AddWithValue("@status", status);
 

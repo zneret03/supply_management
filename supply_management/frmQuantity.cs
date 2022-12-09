@@ -56,10 +56,11 @@ namespace supply_management
         }
 
         private void quantity_KeyPress(object sender, KeyPressEventArgs e)
-        {       
+        {
                 //error handler for numeric quantity
                 bool result = error.checkNum(quantity.Text);
                 //searching through data
+
                 bool found = pos.orderExist(pointOfSale.Transactionlbl.Text, pointOfSale.pcode.ToString());
                 if ((e.KeyChar == 13) && (quantity.Text != string.Empty))
                 {
@@ -69,9 +70,11 @@ namespace supply_management
                         return;
                     }
 
-                        double total = Convert.ToDouble(quantity.Text) * pointOfSale.price;
-                        //if quantity is numeric execute if not throw an error message
-                        if (result == true)
+
+                double total = Convert.ToDouble(quantity.Text) * pointOfSale.price;
+                double totalGain = Convert.ToInt32(quantity.Text) * pointOfSale.gainPrice;
+                //if quantity is numeric execute if not throw an error message
+                if (result == true)
                         {
                             //Search through the data if product exist during transaction
                             if (found == true)
@@ -84,7 +87,7 @@ namespace supply_management
                                 }
 
                                 //adding quantity if already exist
-                                pos.updateOrder(pointOfSale.pcode.ToString(), quantity.Text, total);
+                                pos.updateOrder(pointOfSale.pcode.ToString(), quantity.Text, total, totalGain);
                                 this.Hide();
                                 pointOfSale.tableShow();
                                 pointOfSale.textBox6.Clear();
@@ -94,7 +97,7 @@ namespace supply_management
                                 //execute if product is not duplicated during transaction
                                 pos.insertTransact(pointOfSale.pcode.ToString(),
                                     pointOfSale.Transactionlbl.Text,
-                                    quantity.Text, total, pointOfSale.label1.Text);
+                                    quantity.Text, total, pointOfSale.label1.Text, totalGain);
 
                                 this.Hide();
                                 pointOfSale.tableShow();

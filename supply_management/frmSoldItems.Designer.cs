@@ -36,11 +36,6 @@
             this.totalSales = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridSoldItems = new System.Windows.Forms.DataGridView();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.label5 = new System.Windows.Forms.Label();
-            this.submit = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.username = new System.Windows.Forms.ComboBox();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,6 +46,11 @@
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cancel = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.label5 = new System.Windows.Forms.Label();
+            this.submit = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.username = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridSoldItems)).BeginInit();
             this.SuspendLayout();
@@ -95,6 +95,7 @@
             this.totalGain.Size = new System.Drawing.Size(99, 43);
             this.totalGain.TabIndex = 41;
             this.totalGain.Text = "0.00";
+            this.totalGain.Click += new System.EventHandler(this.totalGain_Click);
             // 
             // label3
             // 
@@ -158,6 +159,78 @@
             this.dataGridSoldItems.Size = new System.Drawing.Size(1553, 690);
             this.dataGridSoldItems.TabIndex = 1;
             this.dataGridSoldItems.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridSoldItems_CellClick);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "#";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 25;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "INVOICE #";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 125;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "PRODUCTS #";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 125;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "PRODUCT NAME";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 540;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "QTY";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            this.Column6.Width = 80;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "PRICE";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 80;
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "TOTAL";
+            this.Column8.MinimumWidth = 6;
+            this.Column8.Name = "Column8";
+            this.Column8.Width = 80;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "DISCOUNT";
+            this.Column7.MinimumWidth = 6;
+            this.Column7.Name = "Column7";
+            this.Column7.Width = 80;
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "GAIN";
+            this.Column9.MinimumWidth = 6;
+            this.Column9.Name = "Column9";
+            this.Column9.Width = 125;
+            // 
+            // Cancel
+            // 
+            this.Cancel.HeaderText = "";
+            this.Cancel.Image = ((System.Drawing.Image)(resources.GetObject("Cancel.Image")));
+            this.Cancel.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.Cancel.MinimumWidth = 6;
+            this.Cancel.Name = "Cancel";
+            this.Cancel.Width = 20;
             // 
             // dateTimePicker1
             // 
@@ -239,78 +312,6 @@
             this.username.TabIndex = 47;
             this.username.SelectedValueChanged += new System.EventHandler(this.username_SelectedValueChanged);
             this.username.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.username_KeyPress);
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "#";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 25;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "INVOICE #";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 125;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "PRODUCTS #";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 125;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "PRODUCT NAME";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 540;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "QTY";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 80;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "PRICE";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 80;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "TOTAL";
-            this.Column8.MinimumWidth = 6;
-            this.Column8.Name = "Column8";
-            this.Column8.Width = 80;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "DISCOUNT";
-            this.Column7.MinimumWidth = 6;
-            this.Column7.Name = "Column7";
-            this.Column7.Width = 80;
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "GAIN";
-            this.Column9.MinimumWidth = 6;
-            this.Column9.Name = "Column9";
-            this.Column9.Width = 125;
-            // 
-            // Cancel
-            // 
-            this.Cancel.HeaderText = "";
-            this.Cancel.Image = ((System.Drawing.Image)(resources.GetObject("Cancel.Image")));
-            this.Cancel.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.Cancel.MinimumWidth = 6;
-            this.Cancel.Name = "Cancel";
-            this.Cancel.Width = 20;
             // 
             // frmSoldItems
             // 

@@ -75,7 +75,7 @@ namespace supply_management
                     while (reader.Read())
                     {
                         total += Convert.ToDouble(reader["total"].ToString());
-                        gain += Convert.ToDouble(reader["gain"].ToString());
+                        gain += Convert.ToDouble(reader["totalGain"].ToString());
 
                         dataGridSoldItems.Rows.Add(reader["transaction_id"].ToString(),
                             reader["transactionNo"].ToString(),
@@ -85,7 +85,7 @@ namespace supply_management
                             reader["price"].ToString(),
                             reader["total"].ToString(),
                             reader["discount"].ToString(),
-                            reader["gain"].ToString());
+                            reader["totalGain"].ToString());
                     }
                 }
                 totalSales.Text = total.ToString("#,##0.00");
@@ -166,6 +166,11 @@ namespace supply_management
         private void username_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
+        }
+
+        private void totalGain_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

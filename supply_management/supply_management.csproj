@@ -413,6 +413,9 @@
     <EmbeddedResource Include="Report6.rdlc" />
     <EmbeddedResource Include="Report7.rdlc" />
     <EmbeddedResource Include="Report8.rdlc" />
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
     <None Include="DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>

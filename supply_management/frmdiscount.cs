@@ -19,6 +19,7 @@ namespace supply_management
         int moveStartY;
 
         double totalPrice;
+        double discountedGain;
         Controller.ErrorHandler error = new Controller.ErrorHandler();
         Controller.posController pos = new Controller.posController();
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
@@ -68,16 +69,18 @@ namespace supply_management
         {
             id.Hide();
             lbltotalPrice.Hide();
-            
+  
         }
 
         private void txtDiscount_TextChanged(object sender, EventArgs e)
         {
             try
             {
-                double discount = Convert.ToDouble(price.Text) * Convert.ToDouble(txtDiscount.Text);
-                totalPrice = Convert.ToDouble(lbltotalPrice.Text) - discount;
-                discountAmount.Text = discount.ToString("#,##0.00");
+                double discountPrice = Convert.ToDouble(price.Text) * Convert.ToDouble(txtDiscount.Text);
+                double gainDiscount = Convert.ToDouble(gain.Text) * Convert.ToDouble(txtDiscount.Text);
+                totalPrice = Convert.ToDouble(lbltotalPrice.Text) - discountPrice;
+                discountedGain = Convert.ToDouble(lblTotalGain.Text) - discountPrice;
+                discountAmount.Text = discountPrice.ToString("#,##0.00");
             }
             catch(Exception ex)
             {
@@ -87,9 +90,9 @@ namespace supply_management
 
         private void submit_Click(object sender, EventArgs e)
         {
-                //MessageBox.Show(totalPrice.ToString());
-                pos.discount(id.Text, discountAmount.Text, txtDiscount.Text, this, totalPrice);
-                pointOfSale.tableShow();
+            //MessageBox.Show(totalPrice.ToString());
+            pos.discount(id.Text, discountAmount.Text, txtDiscount.Text, this, totalPrice, discountedGain);
+            pointOfSale.tableShow();
         }
     }
 }

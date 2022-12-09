@@ -22,6 +22,8 @@ namespace supply_management
 
         public String pcode;
         public double price;
+        public double gainPrice;
+
         public int qty;
         public int cart_qty;
 
@@ -31,6 +33,7 @@ namespace supply_management
         String idDiscount;
         String priceDiscount;
         String totalPrice;
+        String totalGainRow;
 
         Controller.ErrorHandler error = new Controller.ErrorHandler();
         Controller.posController pos = new Controller.posController();
@@ -99,7 +102,7 @@ namespace supply_management
 
         private void label1_Click(object sender, EventArgs e)
         {
-            this.Hide();
+       /*     this.Hide();*/
         }
 
         private void panel24_Click(object sender, EventArgs e)
@@ -181,11 +184,14 @@ namespace supply_management
                 MySqlDataReader reader = pos.displayRecord(Transactionlbl.Text);
                 double total = 0;
                 double isdiscount = 0;
+                double totalGain = 0;
                 while(reader.Read())
                 {
                     total += Convert.ToDouble(reader["total"].ToString());
                     isdiscount += Convert.ToDouble(reader["discount"].ToString());
+                    totalGain += Convert.ToDouble(reader["totalGain"].ToString());
                     cart_qty = int.Parse(reader["quantity"].ToString());
+
                     dataGridTransaction.Rows.Add(
                         reader["transaction_id"].ToString(),
                         reader["products_id"].ToString(),
@@ -193,11 +199,14 @@ namespace supply_management
                         reader["price"].ToString(),
                         reader["quantity"].ToString(),
                         reader["discount"].ToString(),
-                        reader["total"].ToString());
+                        reader["gain"].ToString(),
+                        reader["total"].ToString(),
+                        reader["totalGain"].ToString());
                     hasEnable = true;
                 }
 
                 total_sales.Text = total.ToString("#,##0.00");
+                txtGain.Text = totalGain.ToString("#,##0.00");
                 txtdiscount.Text = isdiscount.ToString("#,##0.00");
                 getTotal();
 
@@ -227,6 +236,8 @@ namespace supply_management
                 bool hasEnable = false;
                 double total = 0;
                 double isdiscount = 0;
+                double totalGain = 0;
+
                 dataGridTransaction.Rows.Clear();
                 MySqlDataReader reader = pos.displayRecoveryData();
                 while(reader.Read())
@@ -234,7 +245,9 @@ namespace supply_management
                         Transactionlbl.Text = reader["transactionNo"].ToString();
                         total += Convert.ToDouble(reader["total"].ToString());
                         isdiscount += Convert.ToDouble(reader["discount"].ToString());
+                        totalGain += Convert.ToDouble(reader["totalGain"].ToString());
                         cart_qty = int.Parse(reader["quantity"].ToString());
+
                         dataGridTransaction.Rows.Add(
                             reader["transaction_id"].ToString(),
                             reader["products_id"].ToString(),
@@ -242,12 +255,15 @@ namespace supply_management
                             reader["price"].ToString(),
                             reader["quantity"].ToString(),
                             reader["discount"].ToString(),
-                            reader["total"].ToString());
+                            reader["gain"].ToString(),
+                            reader["total"].ToString(),
+                            reader["totalGain"].ToString());
                         hasEnable = true;
                 }
 
                 total_sales.Text = total.ToString("#,##0.00");
                 txtdiscount.Text = isdiscount.ToString("#,##0.00");
+                txtGain.Text = totalGain.ToString("#,##0.00");
                 getTotal();
 
                 if (hasEnable == true)
@@ -275,8 +291,8 @@ namespace supply_management
             double vatable = sales - vat;
             vatlbl.Text = vat.ToString("#,##0.00");
             lblvatable.Text = vatable.ToString("#,##0.00");
-
             lblDisplayTotal.Text = sales.ToString("#,##0.00");
+            /*txtGain.Text = sales.ToString("#,##0.00");*/
         }       
         public void transactionNo()
         {
@@ -333,7 +349,6 @@ namespace supply_management
 
           try
           {
-             
               //error handler for numeric quantity
               bool result = error.checkNum(txtQty.Text);
               //searching through data
@@ -345,6 +360,7 @@ namespace supply_management
               }
 
               double total = Convert.ToDouble(txtQty.Text) * _price;
+              double totalGain = Convert.ToDouble(txtQty.Text) * gainPrice;
               //if quantity is numeric execute if not throw an error message
               if (result == true)
               {
@@ -359,7 +375,7 @@ namespace supply_management
                       }
 
                       //adding quantity if already exist
-                      pos.updateOrder(_pcode.ToString(), txtQty.Text, total);
+                      pos.updateOrder(_pcode.ToString(), txtQty.Text, total, totalGain);
                       tableShow();
                       textBox6.SelectionStart = 0;
                       textBox6.SelectionLength = textBox6.Text.Length;
@@ -370,7 +386,7 @@ namespace supply_management
                       //execute if product is not duplicated during transaction
                       pos.insertTransact(_pcode.ToString(),
                           Transactionlbl.Text,
-                          txtQty.Text, total, label1.Text);
+                          txtQty.Text, total, label1.Text, totalGain);
 
                       tableShow();
                       //pointOfSale.transactionNo();
@@ -387,10 +403,11 @@ namespace supply_management
           }
         }
 
-        public void product(String pcode, double price)
+        public void product(String pcode, double price, double gain)
         {
             this.pcode = pcode;
             this.price = price;
+            this.gainPrice = gain;
         }
 
         public void productQty(int qty)
@@ -455,7 +472,8 @@ namespace supply_management
                     Double.Parse(dataGridTransaction.Rows[e.RowIndex].Cells[5].Value.ToString()),
                     int.Parse(dataGridTransaction.Rows[e.RowIndex].Cells[4].Value.ToString()),
                     int.Parse(txtQty.Text),
-                    Double.Parse(dataGridTransaction.Rows[e.RowIndex].Cells[3].Value.ToString()));
+                    Double.Parse(dataGridTransaction.Rows[e.RowIndex].Cells[3].Value.ToString()),
+                    int.Parse(dataGridTransaction.Rows[e.RowIndex].Cells[6].Value.ToString()));
                 tableShow();
             }
 
@@ -465,7 +483,8 @@ namespace supply_management
                     Transactionlbl.Text,
                     Double.Parse(dataGridTransaction.Rows[e.RowIndex].Cells[5].Value.ToString()),
                     int.Parse(txtQty.Text), 
-                    Double.Parse(dataGridTransaction.Rows[e.RowIndex].Cells[3].Value.ToString()));
+                    Double.Parse(dataGridTransaction.Rows[e.RowIndex].Cells[3].Value.ToString()),
+                    int.Parse(dataGridTransaction.Rows[e.RowIndex].Cells[6].Value.ToString()));
                 tableShow();
             }
 
@@ -478,6 +497,8 @@ namespace supply_management
             discount.id.Text = idDiscount;
             discount.price.Text = priceDiscount;
             discount.lbltotalPrice.Text = totalPrice;
+            discount.lblTotalGain.Text = totalGainRow;
+            discount.gain.Text = totalGainRow;
         }
 
         private void dataGridTransaction_SelectionChanged(object sender, EventArgs e)
@@ -486,8 +507,9 @@ namespace supply_management
             if (dataGridTransaction.CurrentCell != null)
             {
                 idDiscount = dataGridTransaction.Rows[dataGridTransaction.CurrentRow.Index].Cells[0].Value.ToString();
-                priceDiscount = dataGridTransaction.Rows[dataGridTransaction.CurrentRow.Index].Cells[6].Value.ToString();
-                totalPrice = dataGridTransaction.Rows[dataGridTransaction.CurrentRow.Index].Cells[6].Value.ToString();
+                priceDiscount = dataGridTransaction.Rows[dataGridTransaction.CurrentRow.Index].Cells[7].Value.ToString();
+                totalPrice = dataGridTransaction.Rows[dataGridTransaction.CurrentRow.Index].Cells[7].Value.ToString();
+                totalGainRow = dataGridTransaction.Rows[dataGridTransaction.CurrentRow.Index].Cells[8].Value.ToString();
             }
 
         }
@@ -526,6 +548,11 @@ namespace supply_management
         }
 
         private void MainPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
         {
 
         }
