@@ -112,7 +112,7 @@
             this.panel1.Controls.Add(this.panel5);
             this.panel1.ForeColor = System.Drawing.Color.Yellow;
             this.panel1.Location = new System.Drawing.Point(-8, -1);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1736, 95);
             this.panel1.TabIndex = 29;
@@ -175,7 +175,7 @@
             this.panel5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel5.BackgroundImage")));
             this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel5.Location = new System.Drawing.Point(27, 6);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(84, 76);
             this.panel5.TabIndex = 14;
@@ -199,7 +199,7 @@
             this.panel3.Controls.Add(this.searchProduct);
             this.panel3.Controls.Add(this.newTransaction);
             this.panel3.Location = new System.Drawing.Point(1396, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(331, 756);
             this.panel3.TabIndex = 0;
@@ -320,7 +320,7 @@
             this.panel9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel9.BackgroundImage")));
             this.panel9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel9.Location = new System.Drawing.Point(-1, 615);
-            this.panel9.Margin = new System.Windows.Forms.Padding(4);
+            this.panel9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(333, 150);
             this.panel9.TabIndex = 21;
@@ -330,7 +330,7 @@
             this.panel8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel8.BackgroundImage")));
             this.panel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel8.Location = new System.Drawing.Point(-3, 447);
-            this.panel8.Margin = new System.Windows.Forms.Padding(4);
+            this.panel8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(333, 171);
             this.panel8.TabIndex = 20;
@@ -357,7 +357,7 @@
             this.Logout.IconZoom = 50D;
             this.Logout.IsTab = false;
             this.Logout.Location = new System.Drawing.Point(-1, 400);
-            this.Logout.Margin = new System.Windows.Forms.Padding(5);
+            this.Logout.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.Logout.Name = "Logout";
             this.Logout.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(72)))), ((int)(((byte)(64)))));
             this.Logout.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(190)))), ((int)(((byte)(17)))));
@@ -566,7 +566,7 @@
             this.MainPanel.Controls.Add(this.panel3);
             this.MainPanel.Controls.Add(this.panel6);
             this.MainPanel.Location = new System.Drawing.Point(-4, 89);
-            this.MainPanel.Margin = new System.Windows.Forms.Padding(4);
+            this.MainPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MainPanel.Name = "MainPanel";
             this.MainPanel.Size = new System.Drawing.Size(1728, 756);
             this.MainPanel.TabIndex = 31;
@@ -582,7 +582,7 @@
             this.panel4.Controls.Add(this.label8);
             this.panel4.Controls.Add(this.label7);
             this.panel4.Location = new System.Drawing.Point(20, 16);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1367, 164);
             this.panel4.TabIndex = 2;
@@ -593,7 +593,7 @@
             this.txtQty.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQty.ForeColor = System.Drawing.Color.Gray;
             this.txtQty.Location = new System.Drawing.Point(795, 103);
-            this.txtQty.Margin = new System.Windows.Forms.Padding(4);
+            this.txtQty.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtQty.Name = "txtQty";
             this.txtQty.ReadOnly = true;
             this.txtQty.Size = new System.Drawing.Size(49, 39);
@@ -606,7 +606,7 @@
             // 
             this.textBox6.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox6.Location = new System.Drawing.Point(208, 103);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox6.MaxLength = 14;
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(577, 39);
@@ -690,7 +690,7 @@
             this.addqty,
             this.Delete});
             this.dataGridTransaction.Location = new System.Drawing.Point(20, 187);
-            this.dataGridTransaction.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridTransaction.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridTransaction.Name = "dataGridTransaction";
             this.dataGridTransaction.RowHeadersWidth = 51;
             this.dataGridTransaction.Size = new System.Drawing.Size(1369, 330);
@@ -819,7 +819,7 @@
             this.panel6.Controls.Add(this.label2);
             this.panel6.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel6.Location = new System.Drawing.Point(4, 524);
-            this.panel6.Margin = new System.Windows.Forms.Padding(4);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(1396, 231);
             this.panel6.TabIndex = 3;
@@ -830,7 +830,7 @@
             this.txtGain.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtGain.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGain.Location = new System.Drawing.Point(1181, 181);
-            this.txtGain.Margin = new System.Windows.Forms.Padding(4);
+            this.txtGain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtGain.Name = "txtGain";
             this.txtGain.Size = new System.Drawing.Size(184, 35);
             this.txtGain.TabIndex = 11;
@@ -841,7 +841,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(1073, 184);
+            this.label10.Location = new System.Drawing.Point(1073, 185);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(68, 28);
@@ -853,7 +853,7 @@
             this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(191)))), ((int)(((byte)(213)))));
             this.panel10.Controls.Add(this.currentDate);
             this.panel10.Location = new System.Drawing.Point(1, 124);
-            this.panel10.Margin = new System.Windows.Forms.Padding(4);
+            this.panel10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(501, 63);
             this.panel10.TabIndex = 9;
@@ -875,7 +875,7 @@
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(191)))), ((int)(((byte)(213)))));
             this.panel7.Controls.Add(this.Time);
             this.panel7.Location = new System.Drawing.Point(0, 28);
-            this.panel7.Margin = new System.Windows.Forms.Padding(4);
+            this.panel7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(640, 89);
             this.panel7.TabIndex = 8;
@@ -898,7 +898,7 @@
             this.lblvatable.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lblvatable.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblvatable.Location = new System.Drawing.Point(1181, 143);
-            this.lblvatable.Margin = new System.Windows.Forms.Padding(4);
+            this.lblvatable.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lblvatable.Name = "lblvatable";
             this.lblvatable.Size = new System.Drawing.Size(184, 35);
             this.lblvatable.TabIndex = 7;
@@ -911,7 +911,7 @@
             this.vatlbl.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.vatlbl.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vatlbl.Location = new System.Drawing.Point(1181, 103);
-            this.vatlbl.Margin = new System.Windows.Forms.Padding(4);
+            this.vatlbl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.vatlbl.Name = "vatlbl";
             this.vatlbl.Size = new System.Drawing.Size(184, 35);
             this.vatlbl.TabIndex = 6;
@@ -923,8 +923,8 @@
             this.txtdiscount.BackColor = System.Drawing.SystemColors.Control;
             this.txtdiscount.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtdiscount.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtdiscount.Location = new System.Drawing.Point(1180, 61);
-            this.txtdiscount.Margin = new System.Windows.Forms.Padding(4);
+            this.txtdiscount.Location = new System.Drawing.Point(1180, 62);
+            this.txtdiscount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtdiscount.Name = "txtdiscount";
             this.txtdiscount.Size = new System.Drawing.Size(184, 35);
             this.txtdiscount.TabIndex = 5;
@@ -937,7 +937,7 @@
             this.total_sales.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.total_sales.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.total_sales.Location = new System.Drawing.Point(1180, 22);
-            this.total_sales.Margin = new System.Windows.Forms.Padding(4);
+            this.total_sales.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.total_sales.Name = "total_sales";
             this.total_sales.Size = new System.Drawing.Size(184, 35);
             this.total_sales.TabIndex = 4;
@@ -970,7 +970,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(1048, 67);
+            this.label3.Location = new System.Drawing.Point(1048, 66);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(116, 28);
@@ -981,7 +981,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(1024, 24);
+            this.label2.Location = new System.Drawing.Point(1024, 25);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(139, 28);
@@ -992,11 +992,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1723, 844);
+            this.ClientSize = new System.Drawing.Size(1725, 844);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.MainPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmPOS";
             this.Text = "User";
             this.Load += new System.EventHandler(this.POS_Load);

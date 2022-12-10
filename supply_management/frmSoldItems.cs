@@ -90,13 +90,10 @@ namespace supply_management
                 }
                 totalSales.Text = total.ToString("#,##0.00");
                 totalGain.Text = gain.ToString("#,##0.00");
-            }
-            catch (Exception ex)
+            } catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-             
-
         }
 
         private void frmSoldItems_Load(object sender, EventArgs e)
@@ -152,10 +149,10 @@ namespace supply_management
                 cancel.txttransactioNo.Text = dataGridSoldItems.Rows[e.RowIndex].Cells[1].Value.ToString();
                 cancel.txtpcode.Text = dataGridSoldItems.Rows[e.RowIndex].Cells[2].Value.ToString();
                 cancel.txtdescription.Text = dataGridSoldItems.Rows[e.RowIndex].Cells[3].Value.ToString();
-                cancel.txtprice.Text = dataGridSoldItems.Rows[e.RowIndex].Cells[4].Value.ToString();
-                cancel.txtqty.Text = dataGridSoldItems.Rows[e.RowIndex].Cells[5].Value.ToString();
-                cancel.txtdiscount.Text = dataGridSoldItems.Rows[e.RowIndex].Cells[6].Value.ToString();
-                cancel.txttotal.Text = dataGridSoldItems.Rows[e.RowIndex].Cells[7].Value.ToString();
+                cancel.txtqty.Text = dataGridSoldItems.Rows[e.RowIndex].Cells[4].Value.ToString();
+                cancel.txtprice.Text = dataGridSoldItems.Rows[e.RowIndex].Cells[5].Value.ToString();
+                cancel.txttotal.Text = dataGridSoldItems.Rows[e.RowIndex].Cells[6].Value.ToString();
+                cancel.txtdiscount.Text = dataGridSoldItems.Rows[e.RowIndex].Cells[7].Value.ToString();
 
                 cancel.txtcancelledBy.Text = username.Text;
 

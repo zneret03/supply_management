@@ -67,7 +67,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1591, 54);
+            this.panel1.Size = new System.Drawing.Size(1556, 54);
             this.panel1.TabIndex = 0;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
@@ -89,7 +89,7 @@
             this.totalGain.AutoSize = true;
             this.totalGain.Font = new System.Drawing.Font("Consolas", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totalGain.ForeColor = System.Drawing.Color.White;
-            this.totalGain.Location = new System.Drawing.Point(534, 6);
+            this.totalGain.Location = new System.Drawing.Point(533, 6);
             this.totalGain.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.totalGain.Name = "totalGain";
             this.totalGain.Size = new System.Drawing.Size(99, 43);
@@ -218,7 +218,7 @@
             // 
             // Column9
             // 
-            this.Column9.HeaderText = "GAIN";
+            this.Column9.HeaderText = "TOTAL GAIN";
             this.Column9.MinimumWidth = 6;
             this.Column9.Name = "Column9";
             this.Column9.Width = 125;
@@ -318,7 +318,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1591, 837);
+            this.ClientSize = new System.Drawing.Size(1556, 837);
             this.Controls.Add(this.username);
             this.Controls.Add(this.submit);
             this.Controls.Add(this.label5);
